@@ -1,13 +1,20 @@
-﻿function move() {
+﻿var width = 0.1;
+var speed = 0.02;
+move();
+function move() {
     var elem = document.getElementById("sireBar"); 
-    var width = 10;
-    var id = setInterval(frame, 10);
+    var id = setInterval(frame, 0.1);
     function frame() {
         if (width >= 100) {
             clearInterval(id);
+            width=0; 
+            elem.style.width = width + '%';
+            move();
         } else {
-            width++; 
-            elem.style.width = width + '%'; 
+            width=width+speed;
+	    elem.style.width = width + '%';
+            
+             
         }
     }
 }

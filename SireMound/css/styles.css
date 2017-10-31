@@ -1,5 +1,5 @@
 ﻿@charset "utf-8";
-body {font-family: sans-serif, "微軟正黑體";}
+body {font-family: sans-serif, "新細明體";}
 
 /* Style the tab */
 div.tab {
@@ -17,7 +17,7 @@ div.tab button {
     cursor: pointer;
     padding: 8px 10px;
     transition: 0.3s;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 /* Change background color of buttons on hover */
@@ -40,13 +40,13 @@ div.tab button.active {
 
 /* 讀取棒 */
 #sireProgress {
-  width: 50%;
+  width: 100%;
   background-color: #ddd;
 }
 
 #sireBar {
-  width: 1%;
-  height: 15px;
+  width: 0%;
+  height: 5px;
   background-color: #4CAF50;
   text-align: center;
   line-height: 30px;

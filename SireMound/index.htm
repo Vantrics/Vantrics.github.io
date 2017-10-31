@@ -3,49 +3,54 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-
-
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, '培養')">培養</button>
-  <button class="tablinks" onclick="openTab(event, '工廠')">工廠</button>
-  <button class="tablinks" onclick="openTab(event, '探險')">探險</button>
-  <button class="tablinks" onclick="openTab(event, '天賦')">天賦</button>
-  <button class="tablinks" onclick="openTab(event, '說明')"id="defaultOpen">說明</button>
-</div>
-<div id="培養" class="tabcontent">
-  <h3>培養頁面</h3>
-
-<div id="sireProgress">
-  <div id="sireBar"></div>
-</div>
-
+  <button class="tablinks" onclick="openTab(event, 'sire')">培養</button>
+  <button class="tablinks" onclick="openTab(event, 'produce')">生產</button>
+  <button class="tablinks" onclick="openTab(event, 'adventure')">探險</button>
+  <button class="tablinks" onclick="openTab(event, 'passive')">天賦</button>
+<button class="tablinks" onclick="openTab(event, 'store')">商店</button>
+  <button class="tablinks" onclick="openTab(event, 'achievement')">成就</button>
+  <button class="tablinks" onclick="openTab(event, 'help')"id="defaultOpen">說明</button></div>
+<div id="sire" class="tabcontent">
+<p>培養中.</p> 
+<div id="sireProgress"><div id="sireBar"></div></div>
 <br>
-<button onclick="move()">加速培養</button> 
-
 </div>
 
 </div>
 
-<div id="工廠" class="tabcontent">
+<div id="produce" class="tabcontent">
   <h3>工廠頁面</h3>
   <p>工廠未建置.</p> 
 </div>
 
-<div id="探險" class="tabcontent">
+<div id="adventure" class="tabcontent">
   <h3>冒險頁面</h3>
   <p>未開發.</p>
 </div>
 
-<div id="天賦" class="tabcontent">
+<div id="passive" class="tabcontent">
   <h3>天賦頁面</h3>
   <p>未開發.</p>
 </div>
 
-<div id="說明" class="tabcontent">
+<div id="store" class="tabcontent">
+  <h3>商店頁面</h3>
+  <p>未開發.</p>
+</div>
+
+<div id="achievement" class="tabcontent">
+  <h3>成就頁面</h3>
+  <p>未開發.</p>
+</div>
+
+<div id="help" class="tabcontent">
  <h3>Sire Mound 怎麼玩?</h3>
  <p>這個一個放置型網頁遊戲.</p>
-<script src="Scripts/tab.js"></script>
-<script src="Scripts/sireProgress.js"></script>
 </div>
+<script src="Scripts/sireProgress.js"></script>
+<script src="Scripts/tab.js"></script>
+<script>document.getElementById("defaultOpen").click();</script>
+
 </body>
 </html>
