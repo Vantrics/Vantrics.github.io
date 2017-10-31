@@ -13,21 +13,27 @@ body {font-family: sans-serif, "微軟正黑體";}
 
 /* Style the tab */
 div.tab {
+    width: 100%;
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #555;
 }
 
+div.tablinks {
+    
+}
 /* Style the buttons inside the tab */
 div.tab button {
+    width: 60px;
     background-color: inherit;
     color: white;
     float: left;
     border: none;
     outline: none;
+    margin:0px auto;
     cursor: pointer;
     padding: 8px 10px;
-    transition: 0.3s;
+    transition: 0.5s;
     font-size: 18px;
 }
 
