@@ -12,8 +12,7 @@
   <button class="tablinks" onclick="openTab(event, 'sire')">💞 培養</button>
   <button class="tablinks" onclick="openTab(event, 'produce')">📦 生產</button>
   <button class="tablinks" onclick="openTab(event, 'adventure')">💥 探險</button>
-  <button class="tablinks" onclick="openTab(event, 'passive')">🌱 天賦</button>
-  <button class="tablinks" onclick="openTab(event, 'evolution')">💉 進化</button>
+  <button class="tablinks" onclick="openTab(event, 'passive')">💉 天賦</button>
   <button class="tablinks" onclick="openTab(event, 'store')">💸 商店</button>
   <button class="tablinks" onclick="openTab(event, 'achievement')">🏆 成就</button>
   <button class="tablinks" onclick="openTab(event, 'chatbox')">💬 討論</button>
@@ -39,12 +38,13 @@
 </div>
 
 <div id="adventure" class="tabcontent">
-  <span>冒險頁面</span> 
+  <span>探險頁面</span> 
   <p>派遣你的🐜，讓他打片天下。</p>
 </div>
 
 <div id="passive" class="tabcontent">
   <span>天賦頁面</span> 
+  <p>進化條件不足.</p>
 </div>
 
 <div id="store" class="tabcontent">
@@ -53,27 +53,12 @@
 </div>
 
 <div id="achievement" class="tabcontent">
-    <div id="myDIV" class="header">
-  <h2 style="margin:5px">成就頁面</h2>
-  <input type="text" id="myInput" placeholder="新增...">
-  <span onclick="newElement()" class="addBtn">添加</span>
-</div>
-<span>還會再修正及新增的成就頁面</span>
-<ul id="myUL">
-  <li>擁有 第 1世代</li>
-  <li>擁有 第 10世代</li>
-  <li>擁有 資產 100</li>
-  <li>擁有 資產 1,000</li>
-</ul>
-</div>
-
-<div id="evolution" class="tabcontent">
-  <span>進化頁面</span> 
-  <p>進化條件不足.</p>
+  <span>成就</span> 
+  <p>未開發.</p>
 </div>
 
 <div id="chatbox" class="tabcontent">
-  <span>聊天室</span> 
+  <span>討論區</span> 
   <p>未開發.</p>
 </div>
 
@@ -98,7 +83,6 @@
  <p>探索這個世界！</p>
 </div>
 <script src="Scripts/sireProgress.js"></script>
-<script src="Scripts/achievement.js"></script>
 <script src="Scripts/tab.js"></script>
 <script>document.getElementById("defaultOpen").click();</script>
 
