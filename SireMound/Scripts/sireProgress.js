@@ -1,5 +1,5 @@
 ﻿var width = 0;
-var speed = 0.04;
+var speed = 0.025;
 move();
 function move() {
     var elem = document.getElementById("sireBar"); 

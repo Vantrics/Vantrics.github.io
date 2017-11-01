@@ -97,14 +97,14 @@ div.tabfloat button:hover {
     background: rgba(100%,100%,100%,0.0);
     color: white;
     display: none;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border: 2px solid #ccc;
 
 }
 
 /* 讀取棒 */
 #sireProgress {
-    width: 100%;
+    width: 50%;
     background-color: black;
     border: 2px solid black;
     border-top-width: 0px;
@@ -135,7 +135,7 @@ table {
     font-family: arial, sans-serif;
     text-align: center;
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
 }
 th {
     background-color: green;
