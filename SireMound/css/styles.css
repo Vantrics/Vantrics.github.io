@@ -107,7 +107,7 @@ div.tabfloat button:hover {
     width: 100%;
     background-color: black;
     border: 2px solid black;
-    border-bottom-width: 0px;
+    border-top-width: 0px;
 }
 
 #sireBar {
@@ -141,9 +141,9 @@ th {
     background-color: green;
     position: fixed
     width: 5%;
+    height: 24px;
     border: 2px solid black;
     color: white;
-    padding: 3px;
 
 }
 td {
@@ -151,7 +151,7 @@ td {
     position: fixed
     text-align: center;
     width: 5%;
+    height: 24px;
     border: 2px solid black;
     color: black;
-    padding: 3px;
 }
