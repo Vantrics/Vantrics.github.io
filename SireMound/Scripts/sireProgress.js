@@ -1,4 +1,4 @@
-﻿var width = 0.1;
+﻿var width = 0;
 var speed = 0.04;
 move();
 function move() {
