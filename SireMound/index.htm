@@ -3,24 +3,69 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-<div class="title">👾 Sire Mound <small>v0.3.0 - 17/11/01 updata </small>
+<div class="title">👾 Sire Mound <small>v0.3.1 - 17/11/01 updata </small>
 <div class="status">
             <span style="margin-left: 15px" >💒 世代: 0</span>
             <span style="margin-left: 15px" >💰 資產: 0</span></div></div>
+
+<div class="tabfloat">
+  <button class="updatanote" onclick="openTab(event, 'updata')">📄 更新</button> </div>
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'sire')">💞 培養</button>
   <button class="tablinks" onclick="openTab(event, 'produce')">📦 生產</button>
   <button class="tablinks" onclick="openTab(event, 'adventure')">💥 探險</button>
-  <button class="tablinks" onclick="openTab(event, 'mine')">🔧 挖掘</button>
+  <button class="tablinks" onclick="openTab(event, 'mine')">🚧 挖掘</button>
   <button class="tablinks" onclick="openTab(event, 'passive')">💉 天賦</button>
-  <button class="tablinks" onclick="openTab(event, 'store')">💸 商店</button>
+  <button class="tablinks" onclick="openTab(event, 'store')">🛒 商店</button>
   <button class="tablinks" onclick="openTab(event, 'achievement')">🏆 成就</button>
   <button class="tablinks" onclick="openTab(event, 'chatbox')">💬 討論</button>
   <button class="tablinks" onclick="openTab(event, 'fileslot')">💾 管理</button>
   <button class="tablinks" onclick="openTab(event, 'help')"id="defaultOpen">🔰 說明</button></div>
+
+<div id="updata" class="tabcontent">
+  <h3>v0.3.1  </h3>
+  <p>新增了 惱人的背景音樂 </p>
+  <p>修正了 錯誤的菜單位置 </p><br>
+  <h3>v0.3.0  </h3>
+  <p>新增了 黑色的主題以免閃蝦狗眼 </p>
+  <p>新增了 更新紀錄 </p>
+</div>
 <div id="sire" class="tabcontent">
- <span>培養頁面</span> 
-<div id="sireProgress"><div id="sireBar"></div></div>
+<table>
+  <tr>
+    <th>🐜 狀態</th>
+    <th>🔍 評價</th>
+    <th>💪 體質</th>
+    <th>🔥 力量</th>
+    <th>⏳ 速度</th>
+    <th>💡 智力</th>
+    <th>叮咬</th>
+    <th>⚡ 螫刺</th>
+  </tr>
+<br><div id="sireProgress"><div id="sireBar"></div></div>
+  <tr>
+    <td>👑 蜂王</td>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+  </tr>
+  <tr>
+    <td>⚜️ 蜂后</td>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+    <td>5</th>
+  </tr>
+</table>
+
+
 <span>目前還是展示用說明.上方的繁殖條跑滿之後即可繁衍出下一代.</span><br>
 <span>由一公一母的🐜下去繁殖</span><br>
 <span>每一隻🐜的狀態屬性基因該狀態的機率為</span> <br><br>

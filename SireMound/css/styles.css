@@ -16,9 +16,10 @@ body {
     font-weight: bold;
 }
 
-/* Style the tab */
+/* 一系列的菜單 */
 div.tab {
     width: auto;
+    height: 60px;
     position: fixed;
     right: 5px;
     bottom: 5px;
@@ -29,8 +30,39 @@ div.tab {
 
 }
 
+div.tabfloat {
+    width: auto;
+    height: 60px;
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    transition: 0.5s;
+    overflow: visible;
+    border: 2px solid #ccc;
+    background: rgba(200, 0, 0, 0.8);
+
+}
+
+
+
 /* 菜單按鈕 */
 div.tab button {
+    width: 60px;
+    background: rgba(0%,0%,0%,0.0);
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    margin:0px auto;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: 0.5s;
+    font-size: 18px;
+
+}
+
+/* 菜單按鈕 */
+div.tabfloat button {
     width: 60px;
     background: rgba(0%,0%,0%,0.0);
     color: white;
@@ -54,6 +86,12 @@ div.tab button:hover {
 div.tab button.active {
     background: rgba(55, 167, 11, 0.5);
 }
+
+/* 菜單按鈕 滑動特效 */
+div.tabfloat button:hover {
+    background: rgba(0%,0%,0%,0.9);
+}
+
 /* 菜單內頁面 */
 .tabcontent {
     background: rgba(100%,100%,100%,0.0);
@@ -67,27 +105,53 @@ div.tab button.active {
 /* 讀取棒 */
 #sireProgress {
     width: 100%;
-    background-color: #ddd;
+    background-color: black;
+    border: 2px solid black;
+    border-bottom-width: 0px;
 }
 
 #sireBar {
     width: 0%;
     height: 5px;
-    background-color: #4CAF50;
+    background-color: green;
     text-align: center;
     line-height: 30px;
     color: white;
 }
-
-/* 菜單按鈕 滑動特效 */
+/* 影音 */
 *.utube {
     width: 72px;
     height: 40px;
     position: fixed;
-    left: 5px;
+    left: 72px;
     bottom: 5px;
     transition: 0.5s;
     overflow: visible;
-    border: 2px solid #ccc;
+    border: 0px solid #ccc;
     background: rgba(10%,10%,10%,0.8);
+}
+/* 表格 */
+table {
+    font-family: arial, sans-serif;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    background-color: green;
+    position: fixed
+    width: 5%;
+    border: 2px solid black;
+    color: white;
+    padding: 3px;
+
+}
+td {
+    background-color: white;
+    position: fixed
+    text-align: center;
+    width: 5%;
+    border: 2px solid black;
+    color: black;
+    padding: 3px;
 }
