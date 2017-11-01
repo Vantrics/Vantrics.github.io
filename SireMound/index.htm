@@ -7,11 +7,11 @@
 <div class="status">
             <span style="margin-left: 15px" >💒 世代: 0</span>
             <span style="margin-left: 15px" >💰 資產: 0</span></div></div>
-<br>
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'sire')">💞 培養</button>
   <button class="tablinks" onclick="openTab(event, 'produce')">📦 生產</button>
   <button class="tablinks" onclick="openTab(event, 'adventure')">💥 探險</button>
+  <button class="tablinks" onclick="openTab(event, 'mine')">🔧 挖掘</button>
   <button class="tablinks" onclick="openTab(event, 'passive')">💉 天賦</button>
   <button class="tablinks" onclick="openTab(event, 'store')">💸 商店</button>
   <button class="tablinks" onclick="openTab(event, 'achievement')">🏆 成就</button>
@@ -40,6 +40,11 @@
 <div id="adventure" class="tabcontent">
   <span>探險頁面</span> 
   <p>派遣你的🐜，讓他打片天下。</p>
+</div>
+
+<div id="mine" class="tabcontent">
+  <span>挖掘頁面</span> 
+  <p>挖好挖滿。</p>
 </div>
 
 <div id="passive" class="tabcontent">
@@ -82,8 +87,13 @@
  <span>💥 探險</span><br>
  <p>探索這個世界！</p>
 </div>
+
+<div class="utube" id="muteYouTubeVideoPlayer"></div>
+<script async src="https://www.youtube.com/iframe_api"></script>
+
 <script src="Scripts/sireProgress.js"></script>
 <script src="Scripts/tab.js"></script>
+<script src="Scripts/utube.js"></script>
 <script>document.getElementById("defaultOpen").click();</script>
 
 </body>

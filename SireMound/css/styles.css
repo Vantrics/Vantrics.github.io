@@ -19,20 +19,20 @@ body {
 /* Style the tab */
 div.tab {
     width: auto;
-    position: absolute;
+    position: fixed;
     right: 5px;
     bottom: 5px;
     transition: 0.5s;
-    overflow: hidden;
+    overflow: visible;
     border: 2px solid #ccc;
-    background: rgba(15%,15%,15%,0.8);
+    background: rgba(10%,10%,10%,0.8);
 
 }
 
-/* Style the buttons inside the tab */
+/* 菜單按鈕 */
 div.tab button {
     width: 60px;
-    background: rgba(0%,0%,0%,0);
+    background: rgba(0%,0%,0%,0.0);
     color: white;
     float: left;
     border: none;
@@ -45,20 +45,19 @@ div.tab button {
 
 }
 
-/* Change background color of buttons on hover */
+/* 菜單按鈕 滑動特效 */
 div.tab button:hover {
-    background: rgba(0%,0%,0%,0.7);;
+    background: rgba(0%,0%,0%,0.9);
 }
 
-/* Create an active/current tablink class */
+/* 菜單按鈕 按下特效 */
 div.tab button.active {
-    background: rgba(34, 105, 6, 0.7);
+    background: rgba(55, 167, 11, 0.5);
 }
-
-/* Style the tab content */  
+/* 菜單內頁面 */
 .tabcontent {
+    background: rgba(100%,100%,100%,0.0);
     color: white;
-    transition: 0.5s;
     display: none;
     padding: 6px 12px;
     border: 2px solid #ccc;
@@ -67,15 +66,28 @@ div.tab button.active {
 
 /* 讀取棒 */
 #sireProgress {
-  width: 100%;
-  background-color: #ddd;
+    width: 100%;
+    background-color: #ddd;
 }
 
 #sireBar {
-  width: 0%;
-  height: 5px;
-  background-color: #4CAF50;
-  text-align: center;
-  line-height: 30px;
-  color: white;
+    width: 0%;
+    height: 5px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+/* 菜單按鈕 滑動特效 */
+*.utube {
+    width: 72px;
+    height: 40px;
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    transition: 0.5s;
+    overflow: visible;
+    border: 2px solid #ccc;
+    background: rgba(10%,10%,10%,0.8);
 }
