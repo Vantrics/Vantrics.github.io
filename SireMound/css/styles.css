@@ -1,5 +1,9 @@
 ﻿@charset "utf-8";
-body {font-family: sans-serif, "微軟正黑體";}
+body {
+    background: rgba(0%,0%,0%,0.99);
+    color: green;
+    font-family: sans-serif, "微軟正黑體";
+}
 .title {
     font-weight: bold;
     font-size: 18px;
@@ -20,7 +24,7 @@ div.tab {
     bottom: 5px;
     transition: 0.5s;
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     background: rgba(15%,15%,15%,0.8);
 
 }
@@ -53,10 +57,11 @@ div.tab button.active {
 
 /* Style the tab content */  
 .tabcontent {
+    color: white;
     transition: 0.5s;
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
 
 }
 
