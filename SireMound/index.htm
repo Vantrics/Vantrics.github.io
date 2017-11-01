@@ -12,11 +12,11 @@
   <button class="tablinks" onclick="openTab(event, 'sire')">💞 培養</button>
   <button class="tablinks" onclick="openTab(event, 'produce')">📦 生產</button>
   <button class="tablinks" onclick="openTab(event, 'adventure')">💥 探險</button>
-  <button class="tablinks" onclick="openTab(event, 'mine')">💎 挖掘</button>
   <button class="tablinks" onclick="openTab(event, 'passive')">🌱 天賦</button>
   <button class="tablinks" onclick="openTab(event, 'evolution')">💉 進化</button>
   <button class="tablinks" onclick="openTab(event, 'store')">💸 商店</button>
   <button class="tablinks" onclick="openTab(event, 'achievement')">🏆 成就</button>
+  <button class="tablinks" onclick="openTab(event, 'chatbox')">💬 聊天</button>
   <button class="tablinks" onclick="openTab(event, 'fileslot')">💾 管理</button>
   <button class="tablinks" onclick="openTab(event, 'help')"id="defaultOpen">🔰 說明</button></div>
 <div id="sire" class="tabcontent">
@@ -35,14 +35,8 @@
   <p>未開發.</p>
 </div>
 
-<div id="mine" class="tabcontent">
-  <span>挖掘頁面</span> 
-  <p>未開發.</p>
-</div>
-
 <div id="passive" class="tabcontent">
   <span>天賦頁面</span> 
-  <p>未開發.</p>
 </div>
 
 <div id="store" class="tabcontent">
@@ -51,13 +45,28 @@
 </div>
 
 <div id="achievement" class="tabcontent">
-  <span>成就頁面</span> 
-  <p>未開發.</p>
+    <div id="myDIV" class="header">
+  <h2 style="margin:5px">成就頁面</h2>
+  <input type="text" id="myInput" placeholder="新增...">
+  <span onclick="newElement()" class="addBtn">添加</span>
+</div>
+
+<ul id="myUL">
+  <li>擁有 第 1世代</li>
+  <li>擁有 第 10世代</li>
+  <li>擁有 資產 100</li>
+  <li>擁有 資產 1,000</li>
+</ul>
 </div>
 
 <div id="evolution" class="tabcontent">
   <span>進化頁面</span> 
   <p>進化條件不足.</p>
+</div>
+
+<div id="chatbox" class="tabcontent">
+  <span>聊天室</span> 
+  <p>未開發.</p>
 </div>
 
 <div id="fileslot" class="tabcontent">
@@ -67,11 +76,12 @@
 
 <div id="help" class="tabcontent">
  <span>怎麼玩?</span> 
- <span>目前只有展示功能還沒有遊戲型態.</span><br>
+ <span>目前沒有任何功能.全部都是展示用.</span><br>
  <span>聽說花了三個小時打造.如果覺得無聊的話可以到培養去看看 (誤</span><br>
 <div class="title"><small>老實說我寫到一半的時候有想去寫商人物語的衝動....</small>
 </div>
 <script src="Scripts/sireProgress.js"></script>
+<script src="Scripts/achievement.js"></script>
 <script src="Scripts/tab.js"></script>
 <script>document.getElementById("defaultOpen").click();</script>
 
