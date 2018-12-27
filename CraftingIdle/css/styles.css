@@ -1,79 +1,77 @@
-﻿@charset "utf-8";
-body {
-    background-color: #111;
-	margin: 0;
-    color: white;
-    font-family: Microsoft JhengHei;
-}
+﻿	@charset "utf-8";
+	body {
+		background-color: #111;
+		margin: 0;
+		color: white;
+		font-family: Microsoft JhengHei;
+	}
 
-* {box-sizing: border-box;}
+	* {box-sizing: border-box;}
 
-#navbar {
-  overflow: hidden;
-  background-color: #111;
-  padding: 10px 10px;
-  transition: 0.5s;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 99;
-}
+	#Logobar {
+	  overflow: hidden;
+	  background-color: #111;
+	  padding: 10px 10px;
+	  transition: 0.5s;
+	  position: fixed;
+	  width: 100%;
+	  top: 0;
+	  z-index: 99;
+	}
 
-#navbar a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 8px;
-  text-decoration: none;
-  font-size: 8px; 
-  border-radius: 4px;
-}
+	#Logobar a {
+	  float: left;
+	  color: white;
+	  text-align: center;
+	  padding: 8px;
+	  text-decoration: none;
+	  font-size: 8px; 
+	  border-radius: 4px;
+	}
 
-#navbar #logo {
-  font-size: 35px;
-  font-weight: bold;
-  transition: 0.5s;
-}
+	#Logobar #logo {
+	  font-size: 35px;
+	  font-weight: bold;
+	  transition: 0.5s;
+	}
 
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+	#Logobar a:hover {
+	  background-color: #ddd;
+	  color: black;
+	  transition: 0.5s;
+	}
 
-#navbar a.active {
-  background-color: dodgerblue;
-  color: white;
-}
 
-#navbar-right {
-  float: right;
-}
+	#Logobar a.active {
+	  background-color: DodgerBlue;
+	  color: white;
+	}
 
-@media screen and (max-width: 580px) {
+	#Logobar-left {
+	  float: left;
+	}
 
-}
+	#bottombar {
+	  background-color: #222;
+	  position: fixed;
+	  bottom: 0px;
+	  width: 100%;
+	  height: 48px;
+	  display: block;
+	  transition: bottom 0.3s;
+	}
 
-#bottombar {
-  background-color: #222;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  height: 48px;
-  display: block;
-  transition: bottom 0.3s;
-}
+	#bottombar a {
+	  width: 20%;
+	  float: left;
+	  display: block;
+	  color: #f2f2f2;
+	  text-align: center;
+	  padding: 8px;
+	  text-decoration: none;
+	}
 
-#bottombar a {
-  width: 20%;
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 8px;
-  text-decoration: none;
-}
-
-#bottombar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+	#bottombar a:hover {
+	  background-color: #ddd;
+	  color: black;
+	}
