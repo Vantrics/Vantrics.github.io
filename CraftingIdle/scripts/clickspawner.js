@@ -5,7 +5,7 @@ function clickCounter() {
     } else {
       sessionStorage.clickcount = 1;
     }
-    document.getElementById("result").innerHTML = "你目前擁有 " + sessionStorage.clickcount + " 個小麥。";
+    document.getElementById("result").innerHTML = "小麥 : " + sessionStorage.clickcount + " ";
   } else {
     document.getElementById("result").innerHTML = "你的瀏覽器不支援.";
     }
@@ -21,7 +21,7 @@ function clickReset() {
     } else {
       sessionStorage.clickcount = 0;
     }
-    document.getElementById("result").innerHTML = "你目前擁有 " + sessionStorage.clickcount + " 個小麥。";
+    document.getElementById("result").innerHTML = "小麥 : " + sessionStorage.clickcount + " ";
   } else {
     document.getElementById("result").innerHTML = "你的瀏覽器不支援.";
     }

@@ -10,23 +10,25 @@
 	</head>
 	<body>
 	<div id="Logobar">
-	  <a href="#" id="logo">Crafting Idle</a>
+	  
+	  <a href="#" id="logo"><img src="./index.png" width="32px"> Crafting Idle</a> 
+	  
 	  <div id="Logobar-left">
-		<a class="active" href="#">v1.0</a>
-	  </div>
+		<a class="active" href="#">v1.1</a></div>
 	</div>
 	<div id="bottombar">
 	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/home_icon.png" width="32px"></a>
 	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/align_just.png" width="32px"></a>
 	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/zoom_icon.png" width="32px"></a>
 	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/faq_icon.png" width="32px"></a>
-	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/wrench_icon.png" width="32px"></a> 
+	  <a href="#" onclick="clickReset(); return false;"><img src="./img/wrench_icon.png" width="32px"></a> 
 	</div>
-
-	<div style="margin-top:60px;padding:8px 8px 800px;font-size:24px;">
-	  <p><button onclick="clickCounter()" type="button">耕耘田地</button> <button onclick="clickReset()" type="button">清理穀倉</button></p>
-	  
-	  <div id="result"></div>
+	
+	<div style="margin-top:60px;padding:8px 8px 8px;font-size:24px;">
+	<div id="object" class="floating">
+	  <a href="#" onclick="clickCounter(); return false;"><img src="./index.png" width="256px"></a>
+	 </div>
+	<div id="result">小麥 : N</div> 
 	</div>
 
 	<script src="scripts/progress.js"></script>
