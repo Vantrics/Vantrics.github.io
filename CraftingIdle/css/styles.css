@@ -2,7 +2,7 @@
 	* {box-sizing: border-box;}
 
 	body {
-		background-color: #222;
+		background-color: #111;
 		margin: 0;
 		color: white;
 		font-family: Microsoft JhengHei;
@@ -54,7 +54,7 @@
 	}
 
 	#bottombar {
-	  background-color: #111;
+	  background-color: #090909;
 	  position: fixed;
 	  bottom: 0px;
 	  width: 100%;
