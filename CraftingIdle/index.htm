@@ -3,31 +3,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head> <title>Crafting Idle</title>
 	<link rel="shortcut icon" type="image/png" href="index.png">
+	
+	
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 	</head>
 	<body>
 	<div id="Logobar">
-	  <a href="./index.htm" id="logo">Crafting Idle</a>
+	  <a href="#" id="logo">Crafting Idle</a>
 	  <div id="Logobar-left">
-		<a class="active" href="./index.htm">v1.0</a>
+		<a class="active" href="#">v1.0</a>
 	  </div>
 	</div>
 	<div id="bottombar">
-	  <a href="./index.htm"><img src="./img/home_icon.png" width="32px"></a>
-	  <a href="./index.htm"><img src="./img/align_just.png" width="32px"></a>
-		<a href="./index.htm"><img src="./img/zoom_icon.png" width="32px"></a>
-	  <a href="./index.htm"><img src="./img/faq_icon.png" width="32px"></a>
-	   <a href="./index.htm"><img src="./img/wrench_icon.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/home_icon.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/align_just.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/zoom_icon.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/faq_icon.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/wrench_icon.png" width="32px"></a> 
 	</div>
 
-	<div style="margin-top:60px;padding:8px 8px 1000px;font-size:24px;">
-	  <p><b>⚡注意！該網頁目前還在進行展示階段，請不要放置超過10分鐘。</b></p>
-
+	<div style="margin-top:60px;padding:8px 8px 800px;font-size:24px;">
+	  <p><button onclick="clickCounter()" type="button">耕耘田地</button> <button onclick="clickReset()" type="button">清理穀倉</button></p>
+	  
+	  <div id="result"></div>
 	</div>
 
 	<script src="scripts/progress.js"></script>
-
+	<script src="scripts/clickspawner.js"></script>
 	<body>
 	</body>
 	</html>
