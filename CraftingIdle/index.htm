@@ -1,6 +1,6 @@
 ﻿
 	<html>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -20,7 +20,7 @@
 	  <a href="#" id="logo"><img src="./img/wheat_icon.png" width="32px"> Crafting Idle</a> 
 	  
 	  <div id="Logobar-left">
-		<a class="active" href="#">v1.1</a></div>
+		<a class="active" href="#">v1.2</a></div>
 	</div>
 	<div id="bottombar">
 	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/home_icon.png" width="32px"></a>
@@ -29,14 +29,13 @@
 	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/faq_icon.png" width="32px"></a>
 	  <a href="#" onclick="clickReset(); return false;"><img src="./img/wrench_icon.png" width="32px"></a> 
 	</div>
-	
-	<div style="margin-top:60px; padding:8px 8px 8px;font-size:24px;">
-	<div id="object" class="tossing">
-	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/wheat_icon.png"></a>
-	  <div id="result">小麥 : 0</div> 
-	 </div>
-	<a>關閉瀏覽器之後將會Reset.</a> 
+	<div style="margin-top:60px; padding:8px 8px 8px;">
 	</div>
+	
+	<div id="object"><a href="#" onclick="clickCounter(); return false;"><img src="./img/wheat_icon.png"></a></div>
+	 <div id="result">小麥 : 0</div> 
+	<a>關閉瀏覽器之後將會Reset.</a> 
+
 
 	<script src="scripts/progress.js"></script>
 	<script src="scripts/clickspawner.js"></script>

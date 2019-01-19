@@ -6,6 +6,7 @@
 		margin: 0;
 		color: white;
 		font-family: Microsoft JhengHei;
+		font-size:24px
 	}
 
 	
@@ -54,6 +55,7 @@
 	}
 	
 	#result{
+	  text-align: center;
 	  float: center;
 	}
 
@@ -85,41 +87,4 @@
 	#object {
 		text-align: center;
 	}
-	
-
-	
-	.tossing{
-	animation-name: tossing;
-	-webkit-animation-name: tossing;	
-
-	animation-duration: 1.5s;	
-	-webkit-animation-duration: 1.5s;
-
-	animation-iteration-count: infinite;
-	-webkit-animation-iteration-count: infinite;
-}
-
-@keyframes tossing {
-	0% {
-		transform: rotate(-4deg);	
-	}
-	50% {
-		transform: rotate(4deg);
-	}
-	100% {
-		transform: rotate(-4deg);	
-	}						
-}
-
-@-webkit-keyframes tossing {
-	0% {
-		-webkit-transform: rotate(-4deg);	
-	}
-	50% {
-		-webkit-transform: rotate(4deg);
-	}
-	100% {
-		-webkit-transform: rotate(-4deg);	
-	}				
-}
 
