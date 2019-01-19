@@ -84,40 +84,42 @@
 	
 	#object {
 		text-align: center;
-		margin:center;
 	}
 	
-	.floating{
-	  animation-name: floating;
-	  -webkit-animation-name: floating;
 
-	  animation-duration: 1.5s;	
-	  -webkit-animation-duration: 1.5s;
+	
+	.tossing{
+	animation-name: tossing;
+	-webkit-animation-name: tossing;	
 
-	  animation-iteration-count: infinite;
-	  -webkit-animation-iteration-count: infinite;
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
 }
 
-	@keyframes floating {
+@keyframes tossing {
 	0% {
-		transform: translateY(0%);	
-	}
-	 50% {
-		transform: translateY(5%);	
-	}	
-	100% {
-		transform: translateY(0%);
-	}			
-}
-
-	@-webkit-keyframes floating {
-	0% {
-		-webkit-transform: translateY(0%);	
+		transform: rotate(-4deg);	
 	}
 	50% {
-		-webkit-transform: translateY(5%);	
-	}	
+		transform: rotate(4deg);
+	}
 	100% {
-		-webkit-transform: translateY(0%);
-	}			
+		transform: rotate(-4deg);	
+	}						
 }
+
+@-webkit-keyframes tossing {
+	0% {
+		-webkit-transform: rotate(-4deg);	
+	}
+	50% {
+		-webkit-transform: rotate(4deg);
+	}
+	100% {
+		-webkit-transform: rotate(-4deg);	
+	}				
+}
+

@@ -1,12 +1,14 @@
 ﻿
 	<html>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="apple-mobile-web-app-title" content="Crafting Idle">
 	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/wheat_icon.png">
+	<meta name="google" content="notranslate">
+
 	<head> <title>Crafting Idle</title>
-	<link rel="shortcut icon" type="image/png" href="index.png">
+	<link rel="shortcut icon" type="image/png" href="./img/wheat_icon.png">
 	
 	
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -15,7 +17,7 @@
 	<body>
 	<div id="Logobar">
 	  
-	  <a href="#" id="logo"><img src="./index.png" width="32px"> Crafting Idle</a> 
+	  <a href="#" id="logo"><img src="./img/wheat_icon.png" width="32px"> Crafting Idle</a> 
 	  
 	  <div id="Logobar-left">
 		<a class="active" href="#">v1.1</a></div>
@@ -28,11 +30,12 @@
 	  <a href="#" onclick="clickReset(); return false;"><img src="./img/wrench_icon.png" width="32px"></a> 
 	</div>
 	
-	<div style="margin-top:60px;padding:8px 8px 8px;font-size:24px;">
-	<div id="object" class="floating">
-	  <a href="#" onclick="clickCounter(); return false;"><img src="./index.png" width="256px"></a>
+	<div style="margin-top:60px; padding:8px 8px 8px;font-size:24px;">
+	<div id="object" class="tossing">
+	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/wheat_icon.png"></a>
+	  <div id="result">小麥 : 0</div> 
 	 </div>
-	<div id="result">小麥 : N</div> 
+	<a>關閉瀏覽器之後將會Reset.</a> 
 	</div>
 
 	<script src="scripts/progress.js"></script>
