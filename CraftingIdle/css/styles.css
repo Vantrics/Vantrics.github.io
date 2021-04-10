@@ -9,16 +9,13 @@
 		font-size:24px
 	}
 	a:link {
-					//設定還沒有瀏覽過的連結
 		text-decoration:none;
 		color:#9BB6DF;
 	}
-	a:visited {
-					//設定已經瀏覽過的連結
+	a:visited {			
 		color:#906F51;
 	}
 	a:hover {
-					//設定滑鼠移經的連結
 		text-decoration:underline;
 	}
 
