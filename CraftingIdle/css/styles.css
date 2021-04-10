@@ -8,17 +8,6 @@
 		font-family: Microsoft JhengHei;
 		font-size:24px
 	}
-	a:link {
-		text-decoration:none;
-		color:#9BB6DF;
-	}
-	a:visited {			
-		color:#906F51;
-	}
-	a:hover {
-		text-decoration:underline;
-	}
-
 	#Logobar {
 	  overflow: hidden;
 	  background-color: #111;
@@ -95,4 +84,14 @@
 	#object {
 		text-align: center;
 	}
-
+	a:link {
+		text-decoration:none;
+		color:#9BB6DF;
+	}
+	a:visited {			
+		color:#906F51;
+	}
+	a:hover {
+		color:#906F51;
+		text-decoration:underline;
+	}
