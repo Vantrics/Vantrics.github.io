@@ -10,7 +10,7 @@
 	}
 	#Logobar {
 	  overflow: hidden;
-	  background-color: #111;
+	  background-color: #1E1E1E;
 	  padding: 5px 5px;
 	  transition: 0.5s;
 	  position: fixed;
@@ -21,7 +21,7 @@
 
 	#Logobar a {
 	  float: left;
-	  color: white;
+	  color: #F7F7F7;
 	  text-align: center;
 	  padding: 5px 5px;
 	  text-decoration: none;
@@ -44,7 +44,7 @@
 
 	#Logobar a.active {
 	  background-color: DodgerBlue;
-	  color: white;
+	  color: #F7F7F7;
 	}
 
 	#Logobar-left {
