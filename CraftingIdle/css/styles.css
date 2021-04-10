@@ -8,6 +8,9 @@
 		font-family: Microsoft JhengHei;
 		font-size:24px
 	}
+	span.small {
+  		font-size: 16px;
+	}
 	#Logobar {
 	  overflow: hidden;
 	  background-color: #1E1E1E;
