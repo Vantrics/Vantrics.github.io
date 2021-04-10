@@ -4,9 +4,22 @@
 	body {
 		background-color: #F7F7F7;
 		margin: 0;
-		color: white;
+		color: #AAA6A2;
 		font-family: Microsoft JhengHei;
 		font-size:24px
+	}
+	a:link {
+					//設定還沒有瀏覽過的連結
+		text-decoration:none;
+		color:#9BB6DF;
+	}
+	a:visited {
+					//設定已經瀏覽過的連結
+		color:#906F51;
+	}
+	a:hover {
+					//設定滑鼠移經的連結
+		text-decoration:underline;
 	}
 
 	#Logobar {
