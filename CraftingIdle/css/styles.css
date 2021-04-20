@@ -100,7 +100,7 @@
 	}
 #WRAPPER {
     margin:0 auto;
-    width:90%;
+    width:100%;
     padding:0 5px;
     overflow:hidden; /* 當內部有 <div> 使用 float 的時候，父層的 <div> 高度會壞掉 */
                      /* 使用 overflow:hidden; 是最簡單破解這個問題的方法 */
