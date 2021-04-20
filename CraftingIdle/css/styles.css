@@ -1,4 +1,4 @@
-﻿	@charset "utf-8";
+	@charset "utf-8";
 	* {box-sizing: border-box;}
 
 	body {
@@ -98,22 +98,30 @@
 		color:#906F51;
 		text-decoration:underline;
 	}
+textarea {
+	background-color: #1E1E1E;
+	margin: 0;
+	color: #F7F7F7;
+	font-family: Consolas;
+	border-radius: 5px;
+	border: 1px solid #1E1E1E;
+}
 #WRAPPER {
-    margin:0 auto;
-    width:100%;
-    padding:0 5px;
-    overflow:hidden; /* 當內部有 <div> 使用 float 的時候，父層的 <div> 高度會壞掉 */
-                     /* 使用 overflow:hidden; 是最簡單破解這個問題的方法 */
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 5px;
+	overflow: hidden; /* 當內部有 <div> 使用 float 的時候，父層的 <div> 高度會壞掉 */
+	/* 使用 overflow:hidden; 是最簡單破解這個問題的方法 */
 }
  
-#SIDE {
+	#SIDE {
     width:30%; /* <div> 要設定寬度，才能配合 float 做水平靠左或靠右排列 */ 
     height:70%;
     float:right; /* 使用 float 讓這個 <div> 做水平靠左排列 */
     overflow:auto;
 }
  
-#CONTENT {
+	#CONTENT {
     width:auto; /* 設定 auto 就會自動伸縮，這是 <div> 的預設值，所以可以省略不寫 */
-    margin-left:30%; /* 上面的 #SIDE <div> 寬度是 170px */
+    margin-right:30%; /* 上面的 #SIDE <div> 寬度是 170px */
                            /* 這個 #CONTENT 設定左間距可以避免多出來的內容文字和上面的 <div> 重疊 */
