@@ -107,7 +107,8 @@
 }
  
 #SIDE {
-    width:30%; /* <div> 要設定寬度，才能配合 float 做水平靠左或靠右排列 */
+    width:30%; /* <div> 要設定寬度，才能配合 float 做水平靠左或靠右排列 */ 
+    height:600 px;
     float:left; /* 使用 float 讓這個 <div> 做水平靠左排列 */
  
 }
