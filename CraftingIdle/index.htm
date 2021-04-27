@@ -1,19 +1,16 @@
-﻿
-	<html>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	
-	<!-- ... NO Translate! I SAY NO! ... -->
-	<meta name="google" content="notranslate">
-
+﻿<!DOCTYPE html>
+<html lang="zh_TW">
+	<head>
+		<meta name="google" content="notranslate">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<head> <title>Crafting Idle</title>
 	<link rel="shortcut icon" type="image/png" href="./img/wheat_icon.png">
 	<link rel="apple-touch-icon" sizes="120x120" href="./img/wheat_icon.png">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-
 	</head>
 	<body>
 	<div id="Logobar">
@@ -24,20 +21,18 @@
 		<a class="active" href="#">v0.1</a></div>
 	</div>
 	<div id="bottombar">
-	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/home_icon.png" width="32px"></a>
-	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/align_just.png" width="32px"></a>
-	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/zoom_icon.png" width="32px"></a>
-	  <a href="#" onclick="clickCounter(); return false;"><img src="./img/faq_icon.png" width="32px"></a>
-	  <a href="#" onclick="clickReset(); return false;"><img src="./img/wrench_icon.png" width="32px"></a> 
+	  <a href="#" onclick="clickCounter();"><img src="./img/home_icon.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter();"><img src="./img/align_just.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter();"><img src="./img/zoom_icon.png" width="32px"></a>
+	  <a href="#" onclick="clickCounter();"><img src="./img/faq_icon.png" width="32px"></a>
+	  <a href="#" onclick="clickReset();"><img src="./img/wrench_icon.png" width="32px"></a> 
 	</div>
 	<div style="margin-top:60px; padding:8px 8px 8px;">
 	</div>
 	
-	<div id="object"><a href="#" onclick="clickCounter(); return false;"><img src="./img/wheat_icon.png"></a></div>
+	<div id="object"><a href="#" onclick="clickCounter();"><img src="./img/wheat_icon.png"></a></div>
 	 <div id="result">小麥 : 0</div> 
 	<a>關閉後會直接重置。</a> 
-
-
 	<script src="scripts/progress.js"></script>
 	<script src="scripts/clickspawner.js"></script>
 	<body>
