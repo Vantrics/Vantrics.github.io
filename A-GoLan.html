@@ -20,7 +20,6 @@
         {
             width: 960px;
             height: 450px;
-            padding: 0px 0px 50px 0px;
             margin: auto;
             display: flex;
             flex-wrap: wrap;
@@ -62,11 +61,16 @@
         {
             text-align: center;
             width: 230px;
+            height: 300px;
             border: 1px solid beige;
             box-sizing: border-box;
             margin: 5px;
         }
-        .item img
+        .item:hover input#button
+        {
+            display:block;
+        }
+        .item img 
         {
             display: flex;
             flex-wrap: wrap;
@@ -74,7 +78,8 @@
         }
         .txt h3
         {
-            font-size: 20;
+            font-weight: normal;
+            font-size: 16px;
             text-align:center;
             margin: 10px 10px;
         }
@@ -105,14 +110,19 @@
         }
         .item input#button
         {
-            text-align: center;
+
             cursor: pointer;
-            width: 240px;
+            width: 208px;
             height: 48px;
+            display: none;
+            text-align: center;
             background-color: white;
             border-radius: 5px;
             transition: 0.5s;
             border: 0px solid white;
+            position:relative;
+            top:-127px;
+            left: 10px;
         }
         .item input#button:hover
         {
@@ -156,7 +166,7 @@
 <body>
     <form action="">
     <div class="container">
-        <h1>🐾藍阿狗恭腰生活</h1>
+        <h1>🐾藍阿狗公腰生活</h1>
     </div>
     <topnav>
         <a href="">首頁</a>
