@@ -33,7 +33,7 @@
             margin: auto;
             position:fixed;
 
-            display: block;
+            display:inline-block;
             font-size:  20px;
             padding: 5px 10px;
             text-align: center;
@@ -180,8 +180,8 @@
             padding: 5px 5px;
             margin: 5px 5px;
             text-decoration: none;
-            display: block;
             color: #303030;
+            display: block;
         }
         .txt p{
             color: gold;
