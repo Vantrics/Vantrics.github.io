@@ -1,271 +1,223 @@
-        body {
-            font-family:  Arial;
-            padding: 0px;
-            margin: 0px;   
-            line-height: 1;
-        }
-        .banner 
-        {
-            width: 960px;
-            height: 450px;
-            margin: auto;
-            padding: 160px 0px 50px 0px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .banner img
-        {
-            width: 800px;
-            height: 450px;
-        }
-        .topnav
-        {   
-            font-size:  18px;
-            z-index: 50;
-            width: 100%;
-            height: 140px;
-            position:fixed;
-            flex-wrap: wrap;
-            justify-content: space-center;
-            opacity: 0.9;
-            background-color: white;
-            transition: top 0.3s;
-            left: 0;
-            top: 0;
-            text-align: center;
-        }
-        input#button.prodbtn{
-            font-size: 18px;
-            cursor: pointer;
-            background-color: white;
-            border: 0px none black;
-            text-decoration: none;
-            color: black;
-            padding: 5px 10px;
-        }
-        .product
-        {   
-            filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
-            z-index: 51;
-            line-height: 2;
-            width: 150px;
-            height: 138px;
-            background-color:white;
-            position: fixed;
-            top: 70px;
-            left: 305px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .prodbtn:hover .product
-        {
-            display: none;
-        }
-        .product a
-        {
-            color: black;
-            text-decoration: none;
-            display: inline-block;
-        }
-        input#button:hover .product{
-            display: none;
-        }
-        .homelife
-        {   
-            filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
-            z-index: 51;
-            line-height: 2;
-            width: 150px;
-            height: 138px;
-            background-color:white;
-            position: fixed;
-            top: 70px;
-            left: 555px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .homelife a
-        {
-            color: black;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .banner img
-        {
-            width: 100%;
-        }
-        .container
-        {
-            width: 960px;
-            border:2px solid none;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .item
-        {
-            cursor: pointer;
-            text-align: center;
-            width: 230px;
-            height: 320px;
-            border: 0px;
-            box-sizing: border-box;
-            margin: 5px;
-        }
-        .item:hover input#button
-        {
-            display:block;
-        }
-        .item:hover .pic2 img
-        {
-            filter: brightness(50%);
-            opacity: 1;
-        }
-        .pic 
-        {
-            position: absolute;
-            width: 230px;
-        }
-        .pic1 img
-        {
-            width: 100%;
-            transition: 0.2s;
-        }
-        .pic2 img 
-        {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            transition: 0.2s;
-            opacity: 0;
-        }
-        .item input#button
-        {
-            width: 208px;
-            height: 40px;
-            cursor: pointer;
-            display: none;
-            background-color: white;
-            border-radius: 5px;
-            transition: 0.2s;
-            border: 0px solid white;
-            position: absolute;
-            bottom: 88px;
-            left: 10px;
-        }
-        .item input#button:hover
-        {
-            color: white;
-            background-color: gold;
-        }
-        .item input#button:active
-        {
-            color: white;
-            background-color: olive;
-        }
-        .page
-        {
-            width: 960px;
-            height: 64px;
-            font-size:  14px;
+body {
+    font-family:  Arial;
+    padding: 0px;
+    margin: 0px;   
+    line-height: 1;
+}
+.banner 
+{
+    width: 960px;
+    height: 450px;
+    margin: auto;
+    padding: 160px 0px 50px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.banner img
+{
+    width: 800px;
+    height: 450px;
+}
+.topnav
+{   
+    font-size:  18px;
+    z-index: 99;
+    width: 100%;
+    height: 140px;
+    position:fixed;
+    flex-wrap: wrap;
+    justify-content: space-center;
+    opacity: 0.9;
+    background-color: white;
+    transition: top 0.3s;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+.topnav a{
+    float:none;
+    background-color: none;
+    text-decoration: none;
+    border-radius:5px;
+    color: black;
+    padding: 5px 10px;
+}
+.banner img
+{
+    width: 100%;
+}
+.container
+{
+    width: 960px;
+    border:2px solid none;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item
+{
+    cursor: pointer;
+    text-align: center;
+    width: 230px;
+    height: 320px;
+    border: 0px;
+    box-sizing: border-box;
+    margin: 5px;
+}
+.item:hover input#button
+{
+    display:block;
+}
+.item:hover .pic2 img
+{
+    filter: brightness(50%);
+    opacity: 100;
+}
+.pic 
+{
+    position: absolute;
+    width: 230px;
+}
+.pic1 img
+{
+    width: 100%;
+    transition: 0.2s;
+}
+.pic2 img 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.2s;
+    opacity: 0;
+}
+.item input#button
+{
+    width: 208px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.2s;
+    border: 0px solid white;
+    position: absolute;
+    bottom: 88px;
+    left: 10px;
+}
+.item input#button:hover
+{
+    color: white;
+    background-color: gold;
+}
+.item input#button:active
+{
+    color: white;
+    background-color: olive;
+}
+.page
+{
+    width: 960px;
+    height: 64px;
+    font-size:  14px;
 
-            margin: auto;
-            text-align: center;
-        }
-        .page a:first-child{
+    margin: auto;
+    text-align: center;
+}
+.page a:first-child{
 
-            border-bottom:2px solid gold ;
-            
-        }
-        .page a{
-            text-align: center;
-            text-decoration: none;
-            color: black;
-            padding: 5px 5px 5px 5px ;
-        }
-        .txt hr
-        {
-            height:2px;
-            border-width:0;
-            width: 30px;
-            background-color:gold;
-        }
-        .txt h2
-        {
-            font-weight: normal;
-            letter-spacing:5px;
-            font-size: 20px;
-            text-align:center;
-            margin: 5px 5px;
+    border-bottom:2px solid gold ;
+    
+}
+.page a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 5px 5px 5px 5px ;
+}
+.txt hr
+{
+    height:2px;
+    border-width:0;
+    width: 30px;
+    background-color:gold;
+}
+.txt h2
+{
+    font-weight: normal;
+    letter-spacing:5px;
+    font-size: 20px;
+    text-align:center;
+    margin: 5px 5px;
 
-        }
-        .txt h3
-        {
-            font-weight: normal;
-            font-size: 14px;
-            text-align:center;
-            margin: 5px 5px;
-        }
-        .txt p{
-            font-size: 16px;
-            font-weight: bold;
-            color: gold;
-            text-align:center;
-            padding:  0px 0px 0px 0px;
-            line-height: 0px;
-            margin: 10px 10px;
-            
-        }
-        .txt s{
-            font-size: 14px;
-            color: gray;
-            text-align:center;
-            line-height: 0px;
-            margin: 10px 10px;
-        }
-        hr{
-            width: 99%;
-            height:1px;
-            border-width:0;
-            background-color: #eee;
-        }
-        .infoabout
-        {
-            font-size:  16px;
-            box-sizing: border-box;
-            width: 480px;
-            padding: 10px 0px 50px 0px;
-        }
-        .infoabout p
-        {
-            padding: 5px 5px;
-            margin: 5px 5px;
-            text-decoration: none;
-            display: block;
-        }
-        .infoabout a
-        {
-            padding: 5px 5px;
-            margin: 5px 5px;
-            text-decoration: none;
-            color: #303030;
-            display: block;
-        }
-        footer
-        {
-            height: 64px;
-            display: block;
-            width: 100%;
-            background-color: #eeeeee;
-            margin: auto;
-            position: absolute;
-        }
-        footer p
-        {
-            padding: 10px 10px;
-            font-size: 14px;
-            text-align: center;
-        }
+}
+.txt h3
+{
+    font-weight: normal;
+    font-size: 14px;
+    text-align:center;
+    margin: 5px 5px;
+}
+.txt p{
+    font-size: 16px;
+    font-weight: bold;
+    color: gold;
+    text-align:center;
+    padding:  0px 0px 0px 0px;
+    line-height: 0px;
+    margin: 10px 10px;
+    
+}
+.txt s{
+    font-size: 14px;
+    color: gray;
+    text-align:center;
+    line-height: 0px;
+    margin: 10px 10px;
+}
+hr{
+    width: 99%;
+    height:1px;
+    border-width:0;
+    background-color: #eee;
+}
+.infoabout
+{
+    font-size:  16px;
+    box-sizing: border-box;
+    width: 480px;
+    padding: 10px 0px 50px 0px;
+}
+.infoabout p
+{
+    padding: 5px 5px;
+    margin: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+.infoabout a
+{
+    padding: 5px 5px;
+    margin: 5px 5px;
+    text-decoration: none;
+    color: #303030;
+    display: block;
+}
+footer
+{
+    height: 64px;
+    display: block;
+    width: 100%;
+    background-color: #eeeeee;
+    margin: auto;
+    position: absolute;
+}
+footer p
+{
+    padding: 10px 10px;
+    font-size: 14px;
+    text-align: center;
+}
