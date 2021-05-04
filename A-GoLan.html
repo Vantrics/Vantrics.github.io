@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/d9344064ff.js" crossorigin="anonymous"></script>
     <meta name="google" content="notranslate">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -71,11 +72,30 @@
         {
             display:block;
         }
-        .item img 
+        .item:hover .pic2 img
         {
-            display: flex;
-            flex-wrap: wrap;
+            filter: brightness(0.3);
+            opacity: 100;
+        }
+        .pic 
+        {
+            position: absolute;
+            width: 230px;
+            height: 300px;
+        }
+        .pic1 img
+        {
             width: 100%;
+            transition: 0.2s;
+        }
+        .pic2 img 
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: 0.2s;
+            opacity: 0;
         }
         .txt h3
         {
@@ -106,22 +126,19 @@
             border-width:0;
             width: 32px;
             background-color:gold;
-
         }
         .item input#button
         {
-
-            cursor: pointer;
             width: 208px;
             height: 48px;
+            cursor: pointer;
             display: none;
-            text-align: center;
             background-color: white;
             border-radius: 5px;
             transition: 0.2s;
             border: 0px solid white;
-            position:relative;
-            top:-127px;
+            position: relative;
+            bottom: 128px;
             left: 10px;
         }
         .item input#button:hover
@@ -185,11 +202,11 @@
     <topnav>
         <a href="">首頁</a>
         <a href="">品牌故事</a>
-        <a href="">所有商品</a>
-        <a href="">居家生活</a>
-        <a href="">玩具公仔</a>
+        <a href="">所有商品<i class="fas fa-angle-down"></i></a>
+        <a href="">居家生活<i class="fas fa-angle-down"></i></a>
+        <a href="">玩具公仔<i class="fas fa-angle-down"></i></a>
         <a href="">阿狗書店</a>
-        <a href="">手機周邊</a>
+        <a href="">手機周邊<i class="fas fa-angle-down"></i></a>
         <a href="">不想運動運動會</a>
         <a href="">獸可思黑漆漆生日館</a>
     </topnav>
@@ -200,68 +217,124 @@
     </div>
     <div class="container">
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
         <div class="item">
-            <img src="https://fakeimg.pl/300x300/eeeeee">
-            <div class="txt">
-                <h3>Title</h3>
-                <p>NT$ 2,000</p>
+            <div class="pic">
+                <div class="pic1">
+                    <img src="https://fakeimg.pl/300x300/eeeeee">
+                </div>
+                <div class="pic2">
+                    <img src="https://fakeimg.pl/600x600/eeeeee">
+                </div>
+                <div class="txt">
+                    <h3>Title</h3>
+                    <p>NT$ 2,000</p>
+                    <input type="button" id="button" value="加入購物車">
+                </div>
             </div>
-            <input type="button" id="button" value="加入購物車">
         </div>
     </div>
         <nav>
@@ -279,68 +352,124 @@
         <hr>
         <div class="container">
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
         </div>
         <nav>
@@ -358,68 +487,124 @@
         <hr>
         <div class="container">
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
         </div>
         <nav>
@@ -436,36 +621,64 @@
         <hr>
         <div class="container">
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
             <div class="item">
-                <img src="https://fakeimg.pl/300x300/eeeeee">
-                <div class="txt">
-                    <h3>Title</h3>
-                    <p>NT$ 2,000</p>
+                <div class="pic">
+                    <div class="pic1">
+                        <img src="https://fakeimg.pl/300x300/eeeeee">
+                    </div>
+                    <div class="pic2">
+                        <img src="https://fakeimg.pl/600x600/eeeeee">
+                    </div>
+                    <div class="txt">
+                        <h3>Title</h3>
+                        <p>NT$ 2,000</p>
+                        <input type="button" id="button" value="加入購物車">
+                    </div>
                 </div>
-                <input type="button" id="button" value="加入購物車">
             </div>
         </div>
         <nav>
