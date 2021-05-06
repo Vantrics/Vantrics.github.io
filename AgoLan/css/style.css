@@ -38,7 +38,7 @@ input#search:hover
     width: 100%;
     height: 100%;
     margin: auto;
-    padding: 160px 0px 50px 0px;
+    padding: 120px 0px 50px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -207,31 +207,25 @@ input#search:hover
     line-height: 0px;
 }
 hr{
-    width: 99%;
+    width: 1200px;
     height:1px;
     border-width:0;
     background-color: #eee;
 }
 .infoabout
 {
-    font-size:  16px;
     box-sizing: border-box;
     width: 480px;
     padding: 10px 0px 50px 0px;
 }
-.infoabout p
+.infoabout p , .infoabout h2 ,.infoabout a
 {
-    padding: 5px 5px;
-    margin: 5px 5px;
-    text-decoration: none;
-    display: block;
-}
-.infoabout a
-{
-    padding: 5px 5px;
-    margin: 5px 5px;
-    text-decoration: none;
     color: #303030;
+    font-weight: normal;
+    font-size:  16px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    text-decoration: none;
     display: block;
 }
 footer
@@ -241,11 +235,16 @@ footer
     width: 100%;
     background-color: #eeeeee;
     margin: auto;
-    position: absolute;
+}
+footer a
+{
+    padding: 10px 10px;
+    font-size: 14px;
+    text-align: center;
 }
 footer p
 {
-    padding: 10px 10px;
+    padding: 25px 25px;
     font-size: 14px;
     text-align: center;
 }
