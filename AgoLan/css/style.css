@@ -32,6 +32,7 @@ input#search:hover
 .banner 
 {
     width: 100%;
+    height: 100%;
     margin: auto;
     padding: 160px 0px 50px 0px;
     display: flex;
@@ -181,9 +182,10 @@ input#search:hover
 .txt h3
 {
     font-weight: normal;
+    line-height: 1.25em;
     font-size: 14px;
     text-align:center;
-    margin: 5px 5px;
+    margin: 10px;
 }
 .txt p{
     font-size: 16px;
@@ -192,7 +194,6 @@ input#search:hover
     text-align:center;
     padding:  0px 0px 0px 0px;
     line-height: 0px;
-    margin: 10px 10px;
     
 }
 .txt s{
@@ -200,7 +201,6 @@ input#search:hover
     color: gray;
     text-align:center;
     line-height: 0px;
-    margin: 10px 10px;
 }
 hr{
     width: 99%;
