@@ -17,6 +17,10 @@ body {
     padding: 5px 5px;
     color: black;
 }
+nav a:hover
+{
+color: gold;
+}
 input#search
 {
     border:0;
@@ -171,6 +175,7 @@ input#search:hover
 }
 .txt h2
 {
+    color: #333;
     font-weight: normal;
     letter-spacing:5px;
     font-size: 20px;
