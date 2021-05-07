@@ -13,9 +13,14 @@ body {
 }
 .toprightbar a
 {   
+    display: inline-block;
     font-size: 14px;
     padding: 5px 5px;
     color: black;
+}
+h1
+{
+    display: none;
 }
 nav a:hover
 {
@@ -38,7 +43,7 @@ input#search:hover
     width: 100%;
     height: 100%;
     margin: auto;
-    padding: 120px 0px 50px 0px;
+    padding: 160px 0px 50px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -52,7 +57,7 @@ input#search:hover
     font-size:  16px;
     z-index: 50;
     width: 100%;
-    height: 120px;
+    height: 160px;
     position:fixed;
     flex-wrap: wrap;
     justify-content: space-center;
@@ -64,12 +69,12 @@ input#search:hover
     text-align: center;
 }
 .topnav a{
-    float:none;
+    width: auto;
+    display: inline-block;
     background-color: none;
     text-decoration: none;
-    border-radius:5px;
     color: black;
-    padding: 5px 10px;
+    padding: 10px 10px;
 }
 .banner img
 {
@@ -85,14 +90,19 @@ input#search:hover
     justify-content: space-between;
 }
 .item
-{
-    cursor: pointer;
+{   
+    display: flex;
+    flex-direction: column;
     text-align: center;
     width: 230px;
-    height: 320px;
+    height: 330px;
     border: 0px;
     box-sizing: border-box;
     margin: 5px;
+}
+.item h3
+{
+    flex-grow: 1
 }
 .item:hover input#button
 {
@@ -220,6 +230,7 @@ hr{
 }
 .infoabout p , .infoabout h2 ,.infoabout a
 {
+    display: block;
     color: #303030;
     font-weight: normal;
     font-size:  16px;
@@ -231,16 +242,8 @@ hr{
 footer
 {
     height: 64px;
-    display: block;
-    width: 100%;
     background-color: #eeeeee;
     margin: auto;
-}
-footer a
-{
-    padding: 10px 10px;
-    font-size: 14px;
-    text-align: center;
 }
 footer p
 {

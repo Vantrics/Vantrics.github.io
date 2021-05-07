@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/d9344064ff.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href=".\img\600px-LINE.png">
+    <title>LINE｜始終陪伴在你身旁。</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            /*不曾存在過的h1*/
+            display: none;
+        }
+
+        .fixed-nav {
+            z-index: 1;
+            background-color: white;
+            width: 100%;
+            min-width: 960px;
+            height: 60px;
+            display: flex;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            opacity: 0.9;
+            line-height: 50px;
+
+        }
+
+        .fixed-nav .logo {
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .fixed-nav ul {
+            height: 60px;
+            display: inline;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .fixed-nav li {
+            width: 200px;
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 5px 0px;
+
+        }
+
+        .fixed-nav li a {
+            border-bottom: 3px solid transparent;
+            font-weight: bold;
+            color: black;
+            padding: 5px 0px;
+            text-decoration: none;
+            transition: .5s;
+        }
+
+        .fixed-nav li a:hover {
+            border-bottom: 3px solid black;
+        }
+
+        .langbtn,
+        .langbtn>a {
+            color: black;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 530px;
+        }
+
+        .pic {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+            
+        }
+
+        .pic img {
+            width: 100%;
+            height: 530px;
+            background-color: rgba(0, 0, 0, .4);
+            position: absolute;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            filter: blur(2px);
+            animation: round 20s linear infinite;
+        }
+@keyframes round {
+    4% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+    20% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+    24% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+}
+        .pic img:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .pic img:nth-child(2) {
+            animation-delay: 4s;
+        }
+        .pic img:nth-child(3) {
+            animation-delay: 8s;
+        }
+        .pic img:nth-child(4) {
+            animation-delay: 12s;
+        }
+        .pic img:nth-child(5) {
+            animation-delay: 16s;
+        }
+        .picinfo h2 {
+            min-width: 1000px;
+            font-size: 7rem;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            box-sizing: border-box;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 200px 0 0 150px;
+        }
+        .picinfo p {
+            min-width: 1000px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            box-sizing: border-box;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 350px 0 0 155px;
+        }
+        .text {
+            width: 100%;
+            text-align: center;
+            padding-top: 60px;
+        }
+        .text h2 {
+            font-size: 4rem;
+            padding-bottom: 20px;
+        }
+        .text p{
+            margin-bottom: 150px;
+        }
+        .container {
+            min-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .container .wrapL {
+            padding-top: 150px ;
+            border-right: 1px dotted gray;
+            text-align: left;
+            width: 495px;
+            box-sizing: border-box;
+        }
+        .container .wrapR {
+            padding-top: 150px ;
+            text-align: left;
+            width: 495px;
+            box-sizing: border-box;
+        }
+        .wrapL h3, .wrapR h3 {
+            line-height: 2;
+            font-size: 2rem;
+        }
+        .wrapL h4, .wrapR h4 {
+            color:  limegreen;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        .wrapL p, .wrapR p {
+            line-height: 1.5;
+            color: #333;
+        }
+        .wrapL i, .wrapR i{
+            font-size: 4.5rem;
+        }
+        .btn {
+            display: block;
+            margin: 75px auto 75px auto;
+        }
+        .btn i{
+            font-size: 20px;
+            margin: 5px;
+        }
+        .btn a {
+            font-size: 16px;
+            margin: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: white;
+            padding: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .btn a:hover{
+            color: white;
+            background-color: limegreen;
+        }
+        .wrapL img , .wrapR img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>LINE｜始終陪伴在你身旁｜切版作業</h1>
+    <!-- 導覽NAV -->
+    <nav class="fixed-nav">
+        <div class="logo"><a href="#"><img src="img\icon-title-pc.png" width="43" height="16" alt=""></a></div>
+        <ul>
+            <li><a href="#">Life on LINE</a></li>
+            <li><a href="#">通訊軟體</a></li>
+            <li><a href="#">服務總覽</a></li>
+        </ul>
+        <div class="langbtn"><a href="#"><i class="fas fa-globe"></i> TW <i class="fas fa-caret-down"></i></a></div>
+    </nav>
+    <!-- banner -->
+    <div class="banner">
+        <div class="pic">
+            <img src="https://picsum.photos/1200/800/?random=1">
+            <img src="https://picsum.photos/1200/800/?random=2">
+            <img src="https://picsum.photos/1200/800/?random=3">
+            <img src="https://picsum.photos/1200/800/?random=4">
+            <img src="https://picsum.photos/1200/800/?random=5">
+                <div class="picinfo">
+                    <h2>完成度不到一半</h2>
+                    <p>LINE始終陪伴在你身旁。</p>
+                </div>
+        </div>
+    </div>
+    <div class="text">
+        <h2>Life on LINE</h2>
+        <p>超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。</p>
+    </div>
+    <div class="container">
+        <div class="wrapL">
+            <i class="fab fa-line"></i>
+            <h3>LINE TODAY</h3>
+            <h4>隨點隨看 生活快充</h4>
+            <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
+            <div class="btn">
+                <a href="#"><i class="fas fa-external-link-alt"></i>其他詳細資訊</a>
+            </div>
+        </div>
+        <div class="wrapR">
+            <img src="https://picsum.photos/900/700/?random=6">
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapL">
+            <img src="https://picsum.photos/900/700/?random=7">
+        </div>
+        <div class="wrapR">
+            <i class="fab fa-line"></i>
+            <h3>LINE貼文串</h3>
+            <h4>探索樂趣，分享生活</h4>
+            <p>在貼文串追蹤你的最愛．有感內容不錯過。打造你的個人閱知頻道，探索生活大小事，啟發創意的無限可能！</p>
+            <div class="btn">
+                <a href="#"><i class="fas fa-external-link-alt"></i>其他詳細資訊</a>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapL">
+            <i class="fab fa-line"></i>
+            <h3>LINE Pay</h3>
+            <h4>付款、轉帳、生活繳費，輕鬆簡單又便利！</h4>
+            <p>付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費， 免出門省時又省力。</p>
+            <div class="btn">
+                <a href="#"><i class="fab fa-apple"></i></a>
+                <a href="#"><i class="fab fa-google-play"></i></a>
+                <a href="#"><i class="fas fa-external-link-alt"></i>其他詳細資訊</a>
+            </div>
+        </div>
+        <div class="wrapR">
+            <img src="https://picsum.photos/900/700/?random=8">
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapL">
+            <img src="https://picsum.photos/900/700/?random=9">
+        </div>
+        <div class="wrapR">
+            <i class="fab fa-line"></i>
+            <h3>LINE購物</h3>
+            <h4>先LINE購物再購物</h4>
+            <p>涵各大購物、拍賣、精品、及票券商店，輕鬆貨比五百家，比價三千萬筆商品，再享回饋賺不停！</p>
+            <div class="btn">
+                <a href="#"><i class="fab fa-apple"></i></a>
+                <a href="#"><i class="fab fa-google-play"></i></a>
+                <a href="#"><i class="fas fa-external-link-alt"></i>其他詳細資訊</a>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapL">
+            <i class="fab fa-line"></i>
+            <h3>LINE TV</h3>
+            <h4>共享追劇生活</h4>
+            <p>和朋友一起追劇，不錯過最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，追劇第一選擇！</p>
+            <div class="btn">
+                <a href="#"><i class="fab fa-apple"></i></a>
+                <a href="#"><i class="fab fa-google-play"></i></a>
+                <a href="#"><i class="fas fa-external-link-alt"></i>其他詳細資訊</a>
+            </div>
+        </div>
+        <div class="wrapR">
+            <img src="https://picsum.photos/900/700/?random=10">
+        </div>
+    </div>
+</body>
+
+</html>
