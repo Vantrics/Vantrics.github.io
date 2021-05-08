@@ -267,19 +267,45 @@
             background-image: url('https://picsum.photos/1400/800/?random=14');
             background-color: rgba(0, 0, 0, .4);
         }
-        .services .picinfo{
-            font-size: 60px;
+        .services .picinfo {
+            font-size: 70px;
             line-height: 240px;
             text-align: center;
             padding: auto 120px 120px auto;
         }
-        .services .picinfo::before{
+        .services .picinfo::before {
             color: white;
             content:'企業服務';
             display: inline-block;
             vertical-align: middle;
         }
-        
+        .container .logo {
+            display: inline-block;
+            padding: 5px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .container .logo img {
+            vertical-align:middle;
+        }
+        .container a {
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+            margin: 40px 15px;
+            text-decoration:  none;
+        }
+        .copyright a#right {
+        }
+        img .qrcode{
+            position: relative;
+
+        }
+        .copyright a i#big{
+            
+            font-size: 32px;
+        }
     </style>
 </head>
 <body>
@@ -304,7 +330,7 @@
             <img src="https://picsum.photos/1200/800/?random=5">
                 <div class="picinfo">
                     <h2>完成度不到一半</h2>
-                    <p>LINE始終陪伴在你身旁。</p>
+                    <p>更多的切版作業始終陪伴在你身旁。</p>
                 </div>
         </div>
     </div>
@@ -435,5 +461,36 @@
             <h2>服務總覽</h2>
         </div>
     </div>
+<!-- CopyRight -->
+<div class="container">
+    <div class="logo">
+        <img src="img\600px-LINE.png" width="40" height="40" alt="">
+    </div>
+    <a href="#"><i class="fab fa-apple"></i>App Store </a>
+    <a href="#"><i class="fab fa-google-play"></i>Google Play </a>
+    <a href="#"><i class="fas fa-desktop"></i>Desktop </a>
+    <a href="#"><i class="fab fa-windows"></i>Windows Store </a>
+    <a href="#"><i class="fab fa-chrome"></i>Chrome </a>
+    <a href="#"><i class="fab fa-android"></i>APK </a>
+    <a href="#"> Screen Saver </a>
+    <div class="logo">
+        <img class="qrcode" src="img\qrcode_LINE.png" width="96px" height="96px" alt="">
+        <p>LINE 加入好友</p>
+    </div>
+
+</div>
+<hr>
+<div class="container">
+    <a href="#">© LINE Corporation</a>
+    <h2><a href="#">常見問題 </a></h2>
+    <h2><a href="#">服務條款 </a></h2>
+    <h2><a href="#">隱私權政策 </a></h2>
+    <h2><a href="#">註冊及移動帳號</a></h2>
+    <a href="#" id="right" >Family sites<i class="fas fa-chevron-down"></i></a>
+    <a href="#"><i id="big" class="fab fa-youtube"></i></a>
+    <a href="#"><i id="big" class="fab fa-facebook"></i></a>
+</div>
+</div>
+</div>
 </body>
 </html>
