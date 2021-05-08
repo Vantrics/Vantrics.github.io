@@ -296,15 +296,23 @@
         .container .logo img {
             vertical-align:middle;
         }
-        .container a {
+        .container a, .container h2 {
             text-align: left;
             font-size: 14px;
             color: #333;
             margin: 40px 15px;
             text-decoration:  none;
         }
-        img .qrcode{
-            position: relative;
+        .qrcode {
+            background-color: #fff;
+            text-align: center;
+            font-size:  12px;
+
+        }
+        .qrcode img {
+            display: block;
+            padding: 5px;
+            border: 1px solid #666;
         }
     </style>
 </head>
@@ -473,7 +481,7 @@
     <a href="#"><i class="fab fa-chrome"></i>Chrome </a>
     <a href="#"><i class="fab fa-android"></i>APK </a>
     <a href="#"> Screen Saver </a>
-    <div class="logo">
+    <div class="qrcode">
         <img class="qrcode" src="img\qrcode_LINE.png" width="96px" height="96px" alt="">
         <p>LINE 加入好友</p>
     </div>
