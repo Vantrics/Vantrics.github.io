@@ -124,20 +124,20 @@
             height: 400px;
         }
 
-        p.slogan:first-child {
+        p.Ctext:nth-child(1) {
             display: block;
             font-size: 140px;
             font-weight: bolder;
             margin-bottom: 20px;
         }
 
-        p.slogan:nth-child(2) {
+        p.Ctext:nth-child(2) {
             display: block;
             font-size: 40px;
             padding-left: 8px;
         }
 
-        .download {
+        .downbtn {
             position: absolute;
             left: 10px;
             bottom: 38px;
@@ -165,7 +165,7 @@
         i.fa-download {
             display: none;
         }
-        
+
 
         a.btn {
             width: 54px;
@@ -237,13 +237,13 @@
             left: 50%;
             width: 2px;
             margin: auto;
-            background-color: #eee;
-            animation: lineMove 1.2s infinite linear;
+            background-color: white;
+            animation: Drop 1.2s infinite linear;
         }
 
-        @keyframes lineMove {
+        @keyframes Drop {
             0% {
-                top: 5px;
+                top: 0;
                 height: 5px;
             }
 
@@ -308,7 +308,7 @@
             justify-content: space-around;
         }
 
-        .liteBanner{
+        .liteBanner {
             width: 100%;
             height: 300px;
             min-width: 1000px;
@@ -319,18 +319,17 @@
             justify-content: center;
         }
 
-        .liteBanner a
-        {
+        .liteBanner a {
             font-size: 70px;
             color: white;
         }
 
         .title {
+            display: flex;
             margin-top: 55px;
             padding-bottom: 80px;
-            display: flex;
-            flex-direction: column;
             text-align: center;
+            flex-direction: column;
             justify-content: center;
         }
 
@@ -339,7 +338,7 @@
         }
 
         h2 {
-            font-size: 65px;
+            font-size: 70px;
             font-weight: bold;
         }
 
@@ -349,43 +348,41 @@
         }
 
         .container {
-            max-width: 960px;
             display: flex;
+            max-width: 960px;
             flex-wrap: wrap;
             margin: auto;
             position: relative;
         }
 
-        .gridline {
+        .vDottedline {
             position: absolute;
             top: 0;
             left: 50%;
             width: 1px;
             height: 100%;
-            border-left: 1px dotted #000;
+            border-left: 1px dotted #666;
         }
 
-        .endcircle {
-            width: 20px;
-            height: 20px;
+        .fldot {
+            width: 15px;
+            height: 15px;
             position: absolute;
             bottom: -10px;
-            left: 469.5px;
-            border: 1px solid #B3B3B2;
-            border-radius: 50%;
+            left: 472px;
+            border: 1px solid #ccc;
+            border-radius: 60%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .endpoint {
-            width: 4px;
-            height: 4px;
-            background-color: #B3B3B2;
+        .dot {
+            width: 5px;
+            height: 5px;
+            background-color: #ccc;
             border-radius: 50%;
         }
-
-
 
         .product {
             width: 1000px;
@@ -398,8 +395,6 @@
             height: 463px;
             margin-left: -123px;
         }
-
-
 
         .product:nth-child(even) {
             flex-direction: row-reverse;
@@ -414,6 +409,14 @@
             box-sizing: border-box;
             display: flex;
             justify-items: center;
+        }
+
+        .info img {
+            height: 80px;
+            margin-bottom: 16px;
+            border: 1px solid #666;
+            border-radius: 15px;
+
         }
 
         .infoblock {
@@ -442,29 +445,13 @@
             right: -13.9%;
         }
 
-        .info img {
-            height: 80px;
-            border: 1px solid #666;
-            border-radius: 15px;
-            margin-bottom: 16px;
-        }
-
         h3 {
             font-size: 40px;
             font-weight: bold;
         }
 
-        .info p {
-            font-size: 18px;
-            font-weight: bold;
-            color: grey;
-            line-height: 1.3;
-        }
-
-        .info p:first-of-type {
-            font-size: 18px;
-            color: limegreen;
-            margin-top: 16px;
+        .downloadicon {
+            display: flex;
         }
 
         .info a {
@@ -482,16 +469,26 @@
             padding: 0 15px;
         }
 
-        .downloadapp {
-            display: flex;
-        }
-
-        a.infoapp {
+        a.downappbtn {
             font-size: 20px;
             width: 54px;
+            height:54px;
             margin-left: 5px;
             margin-right: 5px;
             padding: 0 0;
+        }
+
+        .info p {
+            font-size: 18px;
+            font-weight: bold;
+            color: grey;
+            line-height: 1.3;
+        }
+
+        .info p:first-of-type {
+            font-size: 18px;
+            color: limegreen;
+            margin-top: 16px;
         }
 
         .info a:hover {
@@ -639,9 +636,9 @@
 
     <div class="banner">
         <div class="Content">
-            <p class="slogan">Life on 切版</p>
-            <p class="slogan">更多的切版作業始終陪伴在你身旁。</p>
-            <div class="download">
+            <p class="Ctext">Life on 切版</p>
+            <p class="Ctext">更多的切版作業始終陪伴在你身旁。</p>
+            <div class="downbtn">
                 <div class="dDLine"><img src="img/icon-line-w.png">
                     <p>下載</p>
                 </div>
@@ -674,120 +671,120 @@
         <p>超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。</p>
     </div>
     <a id="Life-on-LINE"></a>
-        <div class="container">
-            <div class="product">
-                <div class="info">
-                    <div class="infoblock">
-                        <img src="img\LINE-TODAY.png">
-                        
-                        <h3>LINE TODAY</h3>
-                        <p>隨點隨看 生活快充</p>
-                        <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
-                        <div class="point"></div>
-                    </div>
-                </div>
-                <div class="pic">
-                    <img src="img\today.png" alt="LineToday">
+    <div class="container">
+        <div class="product">
+            <div class="info">
+                <div class="infoblock">
+                    <img src="img\LINE-TODAY.png">
+
+                    <h3>LINE TODAY</h3>
+                    <p>隨點隨看 生活快充</p>
+                    <p>最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE TODAY陪伴您的每一天！</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
+                    <div class="point"></div>
                 </div>
             </div>
-            <div class="product">
-                <div class="info">
-                    <div class="infoblock">
-                        <img src="img\LINE-PASTE.png">
-                        <h3>LINE 貼文串</h3>
-                        <p>探索樂趣，分享生活</p>
-                        <p>在貼文串追蹤你的最愛．有感內容不錯過。打造你的個人閱知頻道，探索生活大小事。分享所見所聞，串連人際、啟發創意的無限可能！</p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
-                        <div class="point"></div>
-                    </div>
-                </div>
-                <div class="pic">
-                    <img src="img\paste.png" alt="Line貼文串">
-                </div>
-            </div>
-            <div class="product">
-                <div class="info">
-                    <div class="infoblock">
-                        <img src="img\LINE-PAY.png">
-                        <h3>LINE Pay</h3>
-                        <p>付款、轉帳、生活繳費，輕鬆簡單又便利！</p>
-                        <p>付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費， 免出門省時又省力。</p>
-                        <div class="downloadapp">
-                            <a class="infoapp" href="#">
-                                <i class="fab fa-apple fa-1g appicon"></i>
-                                <i class="fas fa-download fa-1g"></i>
-                            </a>
-                            <a class="infoapp" href="#">
-                                <i class="fab fa-google-play fa-1g appicon"></i>
-                                <i class="fas fa-download fa-1g"></i>
-                            </a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
-                        </div>
-                        <div class="point"></div>
-                    </div>
-                </div>
-                <div class="pic">
-                    <img src="img\pay.png" alt="LinePay">
-                </div>
-            </div>
-            <div class="product">
-                <div class="info">
-                    <div class="infoblock">
-                        <img src="img\LINE-SHOP.png">
-                        <h3>LINE 購物</h3>
-                        <p>先LINE購物再購物</p>
-                        <p>涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕鬆貨比五百家，一站比價三千萬筆商品，再享LINE POINTS回饋賺不停！</p>
-                        <div class="downloadapp">
-                            <a class="infoapp" href="#">
-                                <i class="fab fa-apple fa-1g appicon"></i>
-                                <i class="fas fa-download fa-1g"></i>
-                            </a>
-                            <a class="infoapp" href="#">
-                                <i class="fab fa-google-play fa-1g appicon"></i>
-                                <i class="fas fa-download fa-1g"></i>
-                            </a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
-                        </div>
-                        <div class="point"></div>
-                    </div>
-                </div>
-                <div class="pic">
-                    <img src="img\shop.png" alt="Line購物">
-                </div>
-            </div>
-            <div class="product">
-                <div class="info">
-                    <div class="infoblock">
-                        <img src="img\LINE-TV.png">
-                        <h3>LINE TV</h3>
-                        <p>共享追劇生活</p>
-                        <p>和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，LINE TV是您的追劇第一選擇！</p>
-                        <div class="downloadapp">
-                            <a class="infoapp" href="#">
-                                <i class="fab fa-apple fa-1g appicon"></i>
-                                <i class="fas fa-download fa-1g"></i>
-                            </a>
-                            <a class="infoapp" href="#">
-                                <i class="fab fa-google-play fa-1g appicon"></i>
-                                <i class="fas fa-download fa-1g"></i>
-                            </a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
-                        </div>
-                        <div class="point"></div>
-                    </div>
-                </div>
-                <div class="pic">
-                    <img src="img\TV.png" alt="LineTV">
-                </div>
-            </div>
-            <div class="gridline"></div>
-            <div class="endcircle">
-                <div class="endpoint"> </div>
+            <div class="pic">
+                <img src="img\today.png" alt="LineToday">
             </div>
         </div>
+        <div class="product">
+            <div class="info">
+                <div class="infoblock">
+                    <img src="img\LINE-PASTE.png">
+                    <h3>LINE 貼文串</h3>
+                    <p>探索樂趣，分享生活</p>
+                    <p>在貼文串追蹤你的最愛．有感內容不錯過。打造你的個人閱知頻道，探索生活大小事。分享所見所聞，串連人際、啟發創意的無限可能！</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
+                    <div class="point"></div>
+                </div>
+            </div>
+            <div class="pic">
+                <img src="img\paste.png" alt="Line貼文串">
+            </div>
+        </div>
+        <div class="product">
+            <div class="info">
+                <div class="infoblock">
+                    <img src="img\LINE-PAY.png">
+                    <h3>LINE Pay</h3>
+                    <p>付款、轉帳、生活繳費，輕鬆簡單又便利！</p>
+                    <p>付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費， 免出門省時又省力。</p>
+                    <div class="downloadicon">
+                        <a class="downappbtn" href="#">
+                            <i class="fab fa-apple fa-1g appicon"></i>
+                            <i class="fas fa-download fa-1g"></i>
+                        </a>
+                        <a class="downappbtn" href="#">
+                            <i class="fab fa-google-play fa-1g appicon"></i>
+                            <i class="fas fa-download fa-1g"></i>
+                        </a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
+                    </div>
+                    <div class="point"></div>
+                </div>
+            </div>
+            <div class="pic">
+                <img src="img\pay.png" alt="LinePay">
+            </div>
+        </div>
+        <div class="product">
+            <div class="info">
+                <div class="infoblock">
+                    <img src="img\LINE-SHOP.png">
+                    <h3>LINE 購物</h3>
+                    <p>先LINE購物再購物</p>
+                    <p>涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕鬆貨比五百家，一站比價三千萬筆商品，再享LINE POINTS回饋賺不停！</p>
+                    <div class="downloadicon">
+                        <a class="downappbtn" href="#">
+                            <i class="fab fa-apple fa-1g appicon"></i>
+                            <i class="fas fa-download fa-1g"></i>
+                        </a>
+                        <a class="downappbtn" href="#">
+                            <i class="fab fa-google-play fa-1g appicon"></i>
+                            <i class="fas fa-download fa-1g"></i>
+                        </a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
+                    </div>
+                    <div class="point"></div>
+                </div>
+            </div>
+            <div class="pic">
+                <img src="img\shop.png" alt="Line購物">
+            </div>
+        </div>
+        <div class="product">
+            <div class="info">
+                <div class="infoblock">
+                    <img src="img\LINE-TV.png">
+                    <h3>LINE TV</h3>
+                    <p>共享追劇生活</p>
+                    <p>和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，LINE TV是您的追劇第一選擇！</p>
+                    <div class="downloadicon">
+                        <a class="downappbtn" href="#">
+                            <i class="fab fa-apple fa-1g appicon"></i>
+                            <i class="fas fa-download fa-1g"></i>
+                        </a>
+                        <a class="downappbtn" href="#">
+                            <i class="fab fa-google-play fa-1g appicon"></i>
+                            <i class="fas fa-download fa-1g"></i>
+                        </a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> 其他詳細資訊</a>
+                    </div>
+                    <div class="point"></div>
+                </div>
+            </div>
+            <div class="pic">
+                <img src="img\TV.png" alt="LineTV">
+            </div>
+        </div>
+        <div class="vDottedline"></div>
+        <div class="fldot">
+            <div class="dot"> </div>
+        </div>
     </div>
-    
+    </div>
+
     <div class="container2">
         <a id="software"></a>
         <div class="text">
@@ -829,53 +826,53 @@
     <div class="liteBanner">
         <a href="#">企業服務</a>
     </div>
-    
 
-        <div class="container2">
-            <div class="text">
-                <a id="service"></a>
-                <h2>服務總覽</h2>
+
+    <div class="container2">
+        <div class="text">
+            <a id="service"></a>
+            <h2>服務總覽</h2>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="footerlink">
+            <img src="img/600px-LINE.png">
+            <a href="#"><i class="fab fa-apple"></i> App Store</a>
+            <a href="#"><i class="fab fa-google-play"></i> Google Store</a>
+            <a href="#"><i class="fas fa-desktop"></i> Desktop</a>
+            <a href="#"><i class="fab fa-windows"></i> Windows Store</a>
+            <a href="#">Chrome</a>
+            <a href="#">APK</a>
+            <a href="#">Screen Saver</a>
+            <div class="QRcode">
+                <img src="img/QRcode.png">
+                <p>Line加入好友</p>
             </div>
         </div>
-
-        
-
-        <div class="footer">
-            <div class="footerlink">
-                <img src="img/600px-LINE.png">
-                <a href="#"><i class="fab fa-apple"></i> App Store</a>
-                <a href="#"><i class="fab fa-google-play"></i> Google Store</a>
-                <a href="#"><i class="fas fa-desktop"></i> Desktop</a>
-                <a href="#"><i class="fab fa-windows"></i> Windows Store</a>
-                <a href="#">Chrome</a>
-                <a href="#">APK</a>
-                <a href="#">Screen Saver</a>
-                <div class="QRcode">
-                    <img src="img/QRcode.png">
-                    <p>Line加入好友</p>
-                </div>
-            </div>
-            <div class="userTerms">
-                <a class="listTerms" href="#">&copy; LINE Corporation</a>
-                <ul>
-                    <h2>
-                        <li><a href="#">常見問題</a></li>
-                    </h2>
-                    <h2>
-                        <li><a href="#">服務條款</a></li>
-                    </h2>
-                    <h2>
-                        <li><a href="#">隱私權政策</a></li>
-                    </h2>
-                    <h2>
-                        <li><a href="#">註冊及移動帳號</a></li>
-                    </h2>
-                </ul>
-                <a class="siteTerms" href="#">Family site <i class="fas fa-angle-down"></i></a>
-                <a class="fansTerms" href="#"><i class="fab fa-youtube fa-2x"></i></a>
-                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-            </div>
+        <div class="userTerms">
+            <a class="listTerms" href="#">&copy; LINE Corporation</a>
+            <ul>
+                <h2>
+                    <li><a href="#">常見問題</a></li>
+                </h2>
+                <h2>
+                    <li><a href="#">服務條款</a></li>
+                </h2>
+                <h2>
+                    <li><a href="#">隱私權政策</a></li>
+                </h2>
+                <h2>
+                    <li><a href="#">註冊及移動帳號</a></li>
+                </h2>
+            </ul>
+            <a class="siteTerms" href="#">Family site <i class="fas fa-angle-down"></i></a>
+            <a class="fansTerms" href="#"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
         </div>
+    </div>
 </body>
 
 </html>
