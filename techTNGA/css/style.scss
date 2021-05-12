@@ -1,0 +1,333 @@
+@import "normalize.css";
+body,
+html {
+    scroll-behavior: smooth;
+}
+body {
+    padding: 0;
+    margin: 0;
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    a {
+        padding: 0;
+        margin: 0;
+    }
+    s {
+        text-decoration: none;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.wrap01 {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    .pos1{
+        z-index: 1;
+        top: 100px;
+        left:150px;
+        position:absolute;
+    }
+    .pos2{
+
+        z-index: -1;
+        position: relative;
+        top: 239px; 
+        left: 370px;
+    }
+    .pos3{
+        z-index: -1;
+        position: relative;
+        top: -50px; 
+        left: 180px;
+    }
+    .pos4{
+        width: 400px;
+        height: 250px;
+        background-color: #eee;
+        z-index: -2;
+        position: relative;
+        top: -270px; 
+        left: 750px;
+    }
+    .pos5{
+
+        background-color: #eee;
+        z-index: 2;
+        position: relative;
+        top: -470px; 
+        left: 1060px;
+    }
+}
+
+.wrap02 {
+@extend .wrap01;
+    .pos1{
+        left:795px;
+        position:absolute;
+    }
+    .pos2{
+
+
+        top: 240px; 
+        left: 150px;
+    }
+    .pos3{
+        top: -50px; 
+        left: 350px;
+    }
+    .pos4{
+        top: -270px; 
+        left: 440px;
+    }
+    .pos5{
+        top: -390px; 
+        left: 140px;
+    }
+}
+.wrap03 {
+    @extend .wrap01;
+    .pos1{
+        top: 100px;
+        left:150px;
+    }
+    .pos2{
+        top: 239px; 
+        left: 340px;
+    }
+    .pos3{
+        top: -50px; 
+        left: 180px;
+    }
+    .pos4{
+        top: -270px; 
+        left: 690px;
+    }
+    .pos5{
+        top: -470px; 
+        left: 990px;
+    }
+}
+
+.wrap04 {
+    @extend .wrap01;
+        .pos1{
+            left:795px;
+            position:absolute;
+        }
+        .pos2{
+            top: -50px; 
+            left: 400px;
+        }
+        .pos3{
+            top: 240px; 
+            left: 195px;
+        }
+        .pos4{
+            top: -270px; 
+            left: 440px;
+        }
+        .pos5{
+            top: -390px; 
+            left: 185px;
+        }
+    }
+
+    .wrap05 {
+        @extend .wrap01;
+        .pos1{
+            top: 100px;
+            left:150px;
+        }
+        .pos2{
+            top: -50px; 
+            left: 160px;
+        }
+        .pos3{
+            top: 239px; 
+            left: 330px;
+        }
+        .pos4{
+            top: -270px; 
+            left: 690px;
+        }
+        .pos5{
+            top: -380px; 
+            left: 980px;
+        }
+    }
+
+.Nav-Tab-Module {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    h3 {
+        text-align: center;
+        display: block;
+        font-size: 40px;
+
+        &::after {
+            width: 50px;
+            height: 15px;
+            margin: auto;
+            display: block;
+            content: "    ";
+            border-bottom: 4px solid black;
+        }
+    }
+    a {
+        padding: 7px 50px;
+        line-height: 34px;
+        color: black;
+        text-decoration: none;
+        &:hover {
+            color: white;
+        }
+    }
+    ul {
+        width: 1000px;
+        margin: 0 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li {
+            width: 185px;
+            height: 34px;
+            text-align: center;
+            margin: 0 5px;
+            flex-wrap: wrap;
+            color: black;
+            border: 1px dotted #ccc;
+            border-bottom: 2px solid #bb0404;
+            list-style: none;
+            transition: 0.3s;
+            &:hover {
+                color: white;
+                background-color: #bb0404;
+            }
+        }
+    }
+}
+.Title-Module {
+    display: block;
+    color: white;
+    width: 360px;
+    height: 390px;
+    padding: 0;
+    margin: 0;
+
+    .title {
+        height: 140px;
+        background-color: #bb0404;
+        s {
+            display: inline-block;
+            color: white;
+            font-size: 150px;
+            transform: rotate(90deg);
+            line-height: 140px;
+        }
+        p {
+            display: inline-block;
+            font-size: 50px;
+        }
+    }
+
+    .info {
+        width: 360px;
+        height: 250px;
+        background-color: black;
+        padding: 0;
+        margin: 0;
+
+        p:nth-child(1) {
+            font-size: 25px;
+            font-weight: bold;
+            padding: 5px 15px;
+            font-size: 30px;
+            line-height: 2;
+        }
+        p:nth-child(2) {
+            font-size: 20px;
+            padding: 0 15px;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+    }
+}
+
+.InfoText-Module {
+    display: inline-block;
+    width: 685px;
+    height: 275px;
+    background-color: #eee;
+    .info {
+        margin: 18px 0px 0px 25px;
+        font-size: 15px;
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #bb0404;
+            margin-bottom: 10px;
+            &::after {
+                content: " —————————————————————";
+            }
+        }
+        ul {
+            li.title {
+                list-style-type: none;
+                display: inline-block;
+                width: 130px;
+                height: 26px;
+                font-size: 16px;
+                padding: 0px 15px;
+                border-radius: 5px;
+                background-color: black;
+                color: white;
+                font-weight: bold;
+            }
+            li.text {
+                list-style-type: disc;
+                margin: 7px 30px;
+                color: #444;
+            }
+        }
+    }
+}
+
+.InfoText-Small-Module {
+    @extend .InfoText-Module;
+    height: 200px;
+    background-color: #eee;
+    .info {
+        margin: 18px 0px 0px 25px;
+        font-size: 15px;
+    }
+    ul {
+        li.title {
+            list-style-type: none;
+            display: inline-block;
+            width: 130px;
+            height: 26px;
+            font-size: 16px;
+            padding: 0px 10px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+        li.text {
+            list-style-type: disc;
+            margin: 7px 30px;
+            color: #444;
+        }
+    }
+}

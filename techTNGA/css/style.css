@@ -1,0 +1,369 @@
+@charset "UTF-8";
+@import url(c:\Users\vazk\Desktop\new-bin\Vantrics.github.io\techTNGA\css\normalize.css);
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body p {
+  padding: 0;
+  margin: 0;
+}
+
+body a {
+  padding: 0;
+  margin: 0;
+}
+
+body s {
+  text-decoration: none;
+}
+
+body ul {
+  padding: 0;
+  margin: 0;
+}
+
+.wrap01, .wrap02, .wrap03, .wrap04, .wrap05 {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.wrap01 .pos1, .wrap02 .pos1, .wrap03 .pos1, .wrap04 .pos1, .wrap05 .pos1 {
+  z-index: 1;
+  top: 100px;
+  left: 150px;
+  position: absolute;
+}
+
+.wrap01 .pos2, .wrap02 .pos2, .wrap03 .pos2, .wrap04 .pos2, .wrap05 .pos2 {
+  z-index: -1;
+  position: relative;
+  top: 239px;
+  left: 370px;
+}
+
+.wrap01 .pos3, .wrap02 .pos3, .wrap03 .pos3, .wrap04 .pos3, .wrap05 .pos3 {
+  z-index: -1;
+  position: relative;
+  top: -50px;
+  left: 180px;
+}
+
+.wrap01 .pos4, .wrap02 .pos4, .wrap03 .pos4, .wrap04 .pos4, .wrap05 .pos4 {
+  width: 400px;
+  height: 250px;
+  background-color: #eee;
+  z-index: -2;
+  position: relative;
+  top: -270px;
+  left: 750px;
+}
+
+.wrap01 .pos5, .wrap02 .pos5, .wrap03 .pos5, .wrap04 .pos5, .wrap05 .pos5 {
+  background-color: #eee;
+  z-index: 2;
+  position: relative;
+  top: -470px;
+  left: 1060px;
+}
+
+.wrap02 .pos1 {
+  left: 795px;
+  position: absolute;
+}
+
+.wrap02 .pos2 {
+  top: 240px;
+  left: 150px;
+}
+
+.wrap02 .pos3 {
+  top: -50px;
+  left: 350px;
+}
+
+.wrap02 .pos4 {
+  top: -270px;
+  left: 440px;
+}
+
+.wrap02 .pos5 {
+  top: -390px;
+  left: 140px;
+}
+
+.wrap03 .pos1 {
+  top: 100px;
+  left: 150px;
+}
+
+.wrap03 .pos2 {
+  top: 239px;
+  left: 340px;
+}
+
+.wrap03 .pos3 {
+  top: -50px;
+  left: 180px;
+}
+
+.wrap03 .pos4 {
+  top: -270px;
+  left: 690px;
+}
+
+.wrap03 .pos5 {
+  top: -470px;
+  left: 990px;
+}
+
+.wrap04 .pos1 {
+  left: 795px;
+  position: absolute;
+}
+
+.wrap04 .pos2 {
+  top: -50px;
+  left: 400px;
+}
+
+.wrap04 .pos3 {
+  top: 240px;
+  left: 195px;
+}
+
+.wrap04 .pos4 {
+  top: -270px;
+  left: 440px;
+}
+
+.wrap04 .pos5 {
+  top: -390px;
+  left: 185px;
+}
+
+.wrap05 .pos1 {
+  top: 100px;
+  left: 150px;
+}
+
+.wrap05 .pos2 {
+  top: -50px;
+  left: 160px;
+}
+
+.wrap05 .pos3 {
+  top: 239px;
+  left: 330px;
+}
+
+.wrap05 .pos4 {
+  top: -270px;
+  left: 690px;
+}
+
+.wrap05 .pos5 {
+  top: -380px;
+  left: 980px;
+}
+
+.Nav-Tab-Module {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Nav-Tab-Module h3 {
+  text-align: center;
+  display: block;
+  font-size: 40px;
+}
+
+.Nav-Tab-Module h3::after {
+  width: 50px;
+  height: 15px;
+  margin: auto;
+  display: block;
+  content: "    ";
+  border-bottom: 4px solid black;
+}
+
+.Nav-Tab-Module a {
+  padding: 7px 50px;
+  line-height: 34px;
+  color: black;
+  text-decoration: none;
+}
+
+.Nav-Tab-Module a:hover {
+  color: white;
+}
+
+.Nav-Tab-Module ul {
+  width: 1000px;
+  margin: 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Nav-Tab-Module ul li {
+  width: 185px;
+  height: 34px;
+  text-align: center;
+  margin: 0 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: black;
+  border: 1px dotted #ccc;
+  border-bottom: 2px solid #bb0404;
+  list-style: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.Nav-Tab-Module ul li:hover {
+  color: white;
+  background-color: #bb0404;
+}
+
+.Title-Module {
+  display: block;
+  color: white;
+  width: 360px;
+  height: 390px;
+  padding: 0;
+  margin: 0;
+}
+
+.Title-Module .title {
+  height: 140px;
+  background-color: #bb0404;
+}
+
+.Title-Module .title s {
+  display: inline-block;
+  color: white;
+  font-size: 150px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  line-height: 140px;
+}
+
+.Title-Module .title p {
+  display: inline-block;
+  font-size: 50px;
+}
+
+.Title-Module .info {
+  width: 360px;
+  height: 250px;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.Title-Module .info p:nth-child(1) {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px 15px;
+  font-size: 30px;
+  line-height: 2;
+}
+
+.Title-Module .info p:nth-child(2) {
+  font-size: 20px;
+  padding: 0 15px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.InfoText-Module, .InfoText-Small-Module {
+  display: inline-block;
+  width: 685px;
+  height: 275px;
+  background-color: #eee;
+}
+
+.InfoText-Module .info, .InfoText-Small-Module .info {
+  margin: 18px 0px 0px 25px;
+  font-size: 15px;
+}
+
+.InfoText-Module .info p, .InfoText-Small-Module .info p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #bb0404;
+  margin-bottom: 10px;
+}
+
+.InfoText-Module .info p::after, .InfoText-Small-Module .info p::after {
+  content: " —————————————————————";
+}
+
+.InfoText-Module .info ul li.title, .InfoText-Small-Module .info ul li.title {
+  list-style-type: none;
+  display: inline-block;
+  width: 130px;
+  height: 26px;
+  font-size: 16px;
+  padding: 0px 15px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.InfoText-Module .info ul li.text, .InfoText-Small-Module .info ul li.text {
+  list-style-type: disc;
+  margin: 7px 30px;
+  color: #444;
+}
+
+.InfoText-Small-Module {
+  height: 200px;
+  background-color: #eee;
+}
+
+.InfoText-Small-Module .info {
+  margin: 18px 0px 0px 25px;
+  font-size: 15px;
+}
+
+.InfoText-Small-Module ul li.title {
+  list-style-type: none;
+  display: inline-block;
+  width: 130px;
+  height: 26px;
+  font-size: 16px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.InfoText-Small-Module ul li.text {
+  list-style-type: disc;
+  margin: 7px 30px;
+  color: #444;
+}
+/*# sourceMappingURL=style.css.map */
