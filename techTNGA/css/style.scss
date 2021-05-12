@@ -23,17 +23,21 @@ body {
         margin: 0;
     }
 }
-
+.contenter{
+    width: 960px;
+    min-width: 100%;
+}
 .wrap01 {
-    display: inline-block;
+    display: block;
     position: relative;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    width: 960px;
+
+    padding: 0 auto;
+    margin: 0 auto;
     .pos1{
         z-index: 1;
         top: 100px;
-        left:150px;
+        left:-10px;
         position:absolute;
     }
     .pos2{
@@ -41,13 +45,13 @@ body {
         z-index: -1;
         position: relative;
         top: 239px; 
-        left: 370px;
+        left: 210px;
     }
     .pos3{
         z-index: -1;
         position: relative;
         top: -50px; 
-        left: 180px;
+        left: 0px;
     }
     .pos4{
         width: 400px;
@@ -56,7 +60,7 @@ body {
         z-index: -2;
         position: relative;
         top: -270px; 
-        left: 750px;
+        left: 590px;
     }
     .pos5{
 
@@ -64,80 +68,79 @@ body {
         z-index: 2;
         position: relative;
         top: -470px; 
-        left: 1020px;
+        left: 860px;
     }
 }
 
 .wrap02 {
 @extend .wrap01;
     .pos1{
-        left:795px;
+        left:635px;
+        top: 100px;
         position:absolute;
     }
     .pos2{
-
-
         top: 240px; 
-        left: 150px;
+        left: 0px;
     }
     .pos3{
         top: -50px; 
-        left: 350px;
+        left: 190px;
     }
     .pos4{
         top: -270px; 
-        left: 440px;
+        left: 280px;
     }
     .pos5{
-        top: -390px; 
-        left: 140px;
+        top: -380px; 
+        left: -10px;
     }
 }
 .wrap03 {
     @extend .wrap01;
     .pos1{
         top: 100px;
-        left:150px;
+        left:-10px;
     }
     .pos2{
         top: 239px; 
-        left: 340px;
+        left: 180px;
     }
     .pos3{
         top: -50px; 
-        left: 180px;
+        left: 20px;
     }
     .pos4{
         top: -270px; 
-        left: 690px;
+        left: 530px;
     }
     .pos5{
-        top: -470px; 
-        left: 990px;
+        top: -450px; 
+        left: 830px;
     }
 }
 
 .wrap04 {
     @extend .wrap01;
         .pos1{
-            left:795px;
+            left:635px;
             position:absolute;
         }
         .pos2{
             top: -50px; 
-            left: 400px;
+            left: 240px;
         }
         .pos3{
             top: 240px; 
-            left: 195px;
+            left: 35px;
         }
         .pos4{
             top: -270px; 
-            left: 440px;
+            left: 280px;
         }
         .pos5{
             top: -390px; 
-            left: 185px;
+            left: 25px;
         }
     }
 
@@ -145,23 +148,23 @@ body {
         @extend .wrap01;
         .pos1{
             top: 100px;
-            left:150px;
+            left:-10px;
         }
         .pos2{
             top: -50px; 
-            left: 160px;
+            left: 0px;
         }
         .pos3{
             top: 239px; 
-            left: 330px;
+            left: 170px;
         }
         .pos4{
             top: -270px; 
-            left: 690px;
+            left: 530px;
         }
         .pos5{
             top: -380px; 
-            left: 980px;
+            left: 820px;
         }
     }
 

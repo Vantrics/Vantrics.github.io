@@ -29,18 +29,23 @@ body ul {
   margin: 0;
 }
 
+.contenter {
+  width: 960px;
+  min-width: 100%;
+}
+
 .wrap01, .wrap02, .wrap03, .wrap04, .wrap05 {
-  display: inline-block;
+  display: block;
   position: relative;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  width: 960px;
+  padding: 0 auto;
+  margin: 0 auto;
 }
 
 .wrap01 .pos1, .wrap02 .pos1, .wrap03 .pos1, .wrap04 .pos1, .wrap05 .pos1 {
   z-index: 1;
   top: 100px;
-  left: 150px;
+  left: -10px;
   position: absolute;
 }
 
@@ -48,14 +53,14 @@ body ul {
   z-index: -1;
   position: relative;
   top: 239px;
-  left: 370px;
+  left: 210px;
 }
 
 .wrap01 .pos3, .wrap02 .pos3, .wrap03 .pos3, .wrap04 .pos3, .wrap05 .pos3 {
   z-index: -1;
   position: relative;
   top: -50px;
-  left: 180px;
+  left: 0px;
 }
 
 .wrap01 .pos4, .wrap02 .pos4, .wrap03 .pos4, .wrap04 .pos4, .wrap05 .pos4 {
@@ -65,7 +70,7 @@ body ul {
   z-index: -2;
   position: relative;
   top: -270px;
-  left: 750px;
+  left: 590px;
 }
 
 .wrap01 .pos5, .wrap02 .pos5, .wrap03 .pos5, .wrap04 .pos5, .wrap05 .pos5 {
@@ -73,107 +78,108 @@ body ul {
   z-index: 2;
   position: relative;
   top: -470px;
-  left: 1020px;
+  left: 860px;
 }
 
 .wrap02 .pos1 {
-  left: 795px;
+  left: 635px;
+  top: 100px;
   position: absolute;
 }
 
 .wrap02 .pos2 {
   top: 240px;
-  left: 150px;
+  left: 0px;
 }
 
 .wrap02 .pos3 {
   top: -50px;
-  left: 350px;
+  left: 190px;
 }
 
 .wrap02 .pos4 {
   top: -270px;
-  left: 440px;
+  left: 280px;
 }
 
 .wrap02 .pos5 {
-  top: -390px;
-  left: 140px;
+  top: -380px;
+  left: -10px;
 }
 
 .wrap03 .pos1 {
   top: 100px;
-  left: 150px;
+  left: -10px;
 }
 
 .wrap03 .pos2 {
   top: 239px;
-  left: 340px;
+  left: 180px;
 }
 
 .wrap03 .pos3 {
   top: -50px;
-  left: 180px;
+  left: 20px;
 }
 
 .wrap03 .pos4 {
   top: -270px;
-  left: 690px;
+  left: 530px;
 }
 
 .wrap03 .pos5 {
-  top: -470px;
-  left: 990px;
+  top: -450px;
+  left: 830px;
 }
 
 .wrap04 .pos1 {
-  left: 795px;
+  left: 635px;
   position: absolute;
 }
 
 .wrap04 .pos2 {
   top: -50px;
-  left: 400px;
+  left: 240px;
 }
 
 .wrap04 .pos3 {
   top: 240px;
-  left: 195px;
+  left: 35px;
 }
 
 .wrap04 .pos4 {
   top: -270px;
-  left: 440px;
+  left: 280px;
 }
 
 .wrap04 .pos5 {
   top: -390px;
-  left: 185px;
+  left: 25px;
 }
 
 .wrap05 .pos1 {
   top: 100px;
-  left: 150px;
+  left: -10px;
 }
 
 .wrap05 .pos2 {
   top: -50px;
-  left: 160px;
+  left: 0px;
 }
 
 .wrap05 .pos3 {
   top: 239px;
-  left: 330px;
+  left: 170px;
 }
 
 .wrap05 .pos4 {
   top: -270px;
-  left: 690px;
+  left: 530px;
 }
 
 .wrap05 .pos5 {
   top: -380px;
-  left: 980px;
+  left: 820px;
 }
 
 .Nav-Tab-Module {
