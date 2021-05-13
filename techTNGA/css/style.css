@@ -319,7 +319,7 @@ body ul {
 }
 
 .InfoText-Module .info p::after, .InfoText-Small-Module .info p::after {
-  content: " —————————————————————";
+  content: " ——————————————————————";
 }
 
 .InfoText-Module .info ul li.title, .InfoText-Small-Module .info ul li.title {
