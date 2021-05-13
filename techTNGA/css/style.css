@@ -255,7 +255,6 @@ body ul {
   display: block;
   color: white;
   width: 360px;
-  height: 390px;
   padding: 0;
   margin: 0;
 }
@@ -305,7 +304,6 @@ body ul {
 .InfoText-Module, .InfoText-Small-Module {
   display: inline-block;
   width: 685px;
-  height: 275px;
   background-color: #eee;
 }
 
@@ -345,7 +343,6 @@ body ul {
 }
 
 .InfoText-Small-Module {
-  height: 200px;
   background-color: #eee;
 }
 

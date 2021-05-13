@@ -224,7 +224,6 @@ body {
     display: block;
     color: white;
     width: 360px;
-    height: 390px;
     padding: 0;
     margin: 0;
 
@@ -270,7 +269,6 @@ body {
 .InfoText-Module {
     display: inline-block;
     width: 685px;
-    height: 275px;
     background-color: #eee;
     .info {
         margin: 18px 0px 0px 25px;
@@ -308,7 +306,6 @@ body {
 
 .InfoText-Small-Module {
     @extend .InfoText-Module;
-    height: 200px;
     background-color: #eee;
     .info {
         margin: 18px 0px 0px 25px;
