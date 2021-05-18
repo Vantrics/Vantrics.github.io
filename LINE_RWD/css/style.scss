@@ -67,6 +67,265 @@ a {
     }
 }
 
+.banner-module {
+    min-width: 100%;
+    margin-top: 80px;
+    animation: round 5s infinite alternate;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+    background-color: black;
+}
+
+@keyframes round {
+    0% {
+        background-image: url("/img/mv01.jpg");
+    }
+
+    100% {
+        background-image: url("/img/mv02.jpg");
+    }
+}
+
+.Content {
+    color: white;
+    position: relative;
+    height: 550px;
+}
+
+p.Ctext:nth-child(1) {
+    display: block;
+    font-size: 140px;
+    font-weight: bolder;
+    margin: 200px 0 0 0; 
+}
+
+p.Ctext:nth-child(2) {
+    display: block;
+    font-size: 40px;
+    padding-left: 8px;
+}
+
+.downbtn {
+    position: absolute;
+    left: 10px;
+    bottom: 38px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 270px;
+}
+
+.dDLine {
+    width: 250px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.dDLine img {
+    height: 20px;
+}
+
+.dDLine p {
+    margin: 5px;
+}
+
+i.fa-download {
+    display: none;
+}
+
+
+a.btn {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    margin: 1px;
+    justify-content: center;
+    align-items: center;
+}
+
+a.btn:hover {
+    background-color: limegreen;
+}
+
+a.btn:hover .fa-apple {
+    display: none;
+}
+
+a.btn:hover .fa-google-play {
+    display: none;
+}
+
+a.btn:hover .fa-desktop {
+    display: none;
+}
+
+a.btn:hover .fa-download {
+    display: inline;
+}
+
+.scroll {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    width: fit-content;
+    height: 130px;
+    font-size: 14px;
+}
+
+.scrollmove {
+    height: 10px;
+}
+
+.scroll p {
+    animation: scrollUpdown 2s infinite alternate linear;
+}
+
+@keyframes scrollUpdown {
+    0% {
+        padding-top: 0px;
+    }
+
+    100% {
+        padding-top: 10px;
+    }
+}
+
+.linem {
+    height: 125px;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    margin: auto;
+    background-color: white;
+    animation: Drop 1.2s infinite linear;
+}
+
+@keyframes Drop {
+    0% {
+        top: 0;
+        height: 5px;
+    }
+
+    33% {
+        top: 10%;
+        height: 20px;
+    }
+
+    66% {
+        top: 50%;
+        height: 50px;
+    }
+
+    100% {
+        top: 100%;
+        height: 0px;
+    }
+}
+
+
+.LifeOnLine {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.LifeOnLine .container {
+    padding: 30px 20px;
+    position: relative;
+}
+
+.LifeOnLine .item {
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.LifeOnLine .item img.xs {
+    width: 100%;
+}
+
+.gridLine {
+    width: 1px;
+    height: calc(100% - 80px);
+    border-left: 1px dashed #757475;
+    position: absolute;
+    top: 80px;
+    left: 38px;
+    z-index: -1;
+}
+
+.infoblock {
+    text-align: left;
+    display: flex;
+}
+
+.infoblock img {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.text {
+    margin-top: 30px;
+}
+
+.text h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.text p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+.text h3+p {
+    color: #00c300;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.downloadapp a {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #757475;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.downloadapp a.infoapp {
+    display: none;
+}
+
+.pic {
+    display: none;
+}
+
 .software-container-module {
     width: 100%;
     background-color: #eee;
@@ -109,7 +368,7 @@ a {
     width: 100%;
     margin: auto;
     a {
-        background-image: url("/LINE_RWD/img/inc-sites-banner.png");
+        background-image: url("/img/inc-sites-banner.png");
         background-repeat: no-repeat;
         background-size: cover;
         display: inline-block;
@@ -228,6 +487,18 @@ a {
             text-align: center;
         }
     }
+    p.Ctext:nth-child(1) {
+        display: block;
+        font-size: 50px;
+        font-weight: bolder;
+    }
+    
+    p.Ctext:nth-child(2) {
+        display: block;
+        font-size: 20px;
+        padding-left: 8px;
+    }
+
     .software-container-module {
         width: 100%;
         background-color: #eee;
@@ -265,6 +536,14 @@ a {
                 margin: 20px;
                 color: #666;
             }
+        }
+    }
+    .footer-bar-module {
+        .footerlink {
+            display: none;
+        }
+        .userTerms{
+            display: block;
         }
     }
 }
