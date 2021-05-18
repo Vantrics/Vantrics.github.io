@@ -80,11 +80,11 @@ a {
 
 @keyframes round {
     0% {
-        background-image: url("/img/mv01.jpg");
+        background-image: url("../img/mv01.jpg");
     }
 
     100% {
-        background-image: url("/img/mv02.jpg");
+        background-image: url("../img/mv02.jpg");
     }
 }
 
@@ -368,7 +368,7 @@ a.btn:hover .fa-download {
     width: 100%;
     margin: auto;
     a {
-        background-image: url("/img/inc-sites-banner.png");
+        background-image: url("img/inc-sites-banner.png");
         background-repeat: no-repeat;
         background-size: cover;
         display: inline-block;
@@ -538,6 +538,14 @@ a.btn:hover .fa-download {
             }
         }
     }
+    .business-banner {
+        a {
+            h2 {
+                font-size: 28px;
+            }
+        }
+    }
+
     .footer-bar-module {
         .footerlink {
             display: none;
