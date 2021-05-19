@@ -472,7 +472,7 @@ a.btn:hover .fa-download {
 }
 
 .business-banner a {
-  background-image: url("img/inc-sites-banner.png");
+  background-image: url("../img/inc-sites-banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
