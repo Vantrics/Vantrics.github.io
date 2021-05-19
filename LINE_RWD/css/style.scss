@@ -233,33 +233,6 @@ a.btn:hover .fa-download {
     }
 }
 
-
-.LifeOnLine {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-}
-
-.LifeOnLine .container {
-    padding: 30px 20px;
-    position: relative;
-}
-
-.LifeOnLine .item {
-    padding-bottom: 80px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.LifeOnLine .item img.xs {
-    width: 100%;
-}
-
 .gridLine {
     width: 1px;
     height: calc(100% - 80px);
