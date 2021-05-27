@@ -308,6 +308,73 @@ a.btn:hover .fa-download {
   }
 }
 
+.LifeonLINE-module {
+  margin: 5px;
+}
+
+.LifeonLINE-module .title h3 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.LifeonLINE-module .title p {
+  text-align: center;
+  color: #666;
+}
+
+.LifeonLINE-module .wrap-module {
+  width: 100%;
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.LifeonLINE-module .wrap-module .col {
+  width: calc(50% -10px);
+}
+
+.LifeonLINE-module .wrap-module .col img.iconpic {
+  margin-top: 55px;
+  width: 80px;
+  border: 1px solid #666;
+  border-radius: 15px;
+}
+
+.LifeonLINE-module .wrap-module .col img.mainpic {
+  height: 463px;
+  margin-left: -124px;
+}
+
+.LifeonLINE-module .wrap-module .col h3 {
+  margin: 5px;
+}
+
+.LifeonLINE-module .wrap-module .col span {
+  margin: 5px;
+  color: limegreen;
+}
+
+.LifeonLINE-module .wrap-module .col p {
+  margin: 5px;
+}
+
+.LifeonLINE-module .wrap-module .col a {
+  line-height: 50px;
+  display: block;
+  width: 120px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.LifeonLINE-module .wrap-module .col:nth-child(odd) {
+  margin-left: 150px;
+  border-right: 1px dashed #666;
+}
+
 .software-container-module {
   width: 100%;
   background-color: #eee;
