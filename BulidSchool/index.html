@@ -8,6 +8,30 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/webp" href="/BulidSchool/img/buildschool.webp">
     <style>
+        .square{
+            width: 85px; 
+            height: 55px; 
+            border: 7px solid black;
+            box-shadow:5px 5px 5px 0px #aaa;
+        }
+        .line{
+            margin-top: 18px;
+            width: 45px;
+            height: 7px;
+            background-color: red;
+            transform: rotate(-45deg);
+        }
+        .triangle{
+            margin: auto;
+            position: relative;
+            top: 0;
+            left: -20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 10px;
+            border-color: #000000 transparent transparent transparent;
+        }
         a.navbar-brand span{
             font-size: 30px;
         }
@@ -95,7 +119,11 @@
     <div class="container-xl">
         <div class="row g-5 mx-auto" style="margin-bottom: 200px;">
             <div class="col-12 col-md-6 align-self-center">
-                <img class="mx-auto d-block" src="./img/bcmd.png" alt="">
+                <div class="square mx-auto">
+                    <div class="line mx-auto">
+                    </div>
+                </div>
+            <div class="triangle"></div>
                 <h3 class="text-center fw-bold">Build School</h3>
                 <h3 class="text-center fw-bold">/*我們的理念*/</h3>
                 <p>Build = 將程式碼編譯及建置成<span class="text-decoration-underline">可執行的軟體</span></p>
