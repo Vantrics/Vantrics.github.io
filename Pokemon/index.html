@@ -21,16 +21,32 @@
         <h1>寶可夢圖鑑列表</h1>
     </div>
     <div class="div class='container-xl text-center">
-        <div class="input-group container-xl">
+        <div class="input-group container-xl mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">圖鑑檢索</span>
+                <span class="input-group-text" id="basic-addon1">編號</span>
             </div>
             <input type="text" class="form-control" placeholder="No. 001 - 898" aria-label="Username"
                 aria-describedby="basic-addon1">
         </div>
-        <button class="btn btn-primary" onclick="fetchPokemon()">寶可夢圖鑑列表fetchPokemon()</button>
-        <button class="btn btn-primary appendChild">寶可夢圖鑑列表appendChild()</button>
-        <button class="btn btn-success addEventListener">寶可夢圖鑑列表addEventListener()</button>
+        <div class="input-group container-xl mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">地區</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>請選擇...</option>
+                <option value="1">第一世代-城都地區</option>
+                <option value="2">第二世代-關都地區</option>
+                <option value="3">第三世代-豐緣地區</option>
+                <option value="4">第四世代-神奧地區</option>
+                <option value="5">第五世代-合眾地區</option>
+                <option value="6">第六世代-卡洛斯地區</option>
+                <option value="7">第七世代-阿羅拉地區 </option>
+                <option value="8">第八世代-伽勒爾地區</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" onclick="fetchPokemon()">寶可夢全圖鑑列表fetchPokemon()</button>
+        <button class="btn btn-primary appendChild">寶可夢全圖鑑列表appendChild()</button>
+        <button class="btn btn-success addEventListener">寶可夢全圖鑑列表addEventListener()</button>
         <button class="btn btn-danger reset">重置Reset()</button>
     </div>
     <div class="container-xxl" id="container">
@@ -90,6 +106,141 @@
                 container.appendChild(alert);
                 container.appendChild(img);
                 container.appendChild(info);
+            }
+        }
+
+        var select = document.querySelector("#inputGroupSelect01");
+        select.addEventListener('change', showValue);
+
+        function showValue(e) {
+            container.innerHTML = null;
+            if (e.target.value == 1) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 1; i <= 151; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
+            }
+            if (e.target.value == 2) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>關都地區 《金·銀》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 152; i <= 251; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
+            }
+            if (e.target.value == 3) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 252; i <= 386; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
+            }
+            if (e.target.value == 4) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 387; i <= 493; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
+            }
+            if (e.target.value == 5) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 494; i <= 649; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
+            }
+            if (e.target.value == 6) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 650; i <= 721; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
+            }
+            if (e.target.value == 7) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 722; i <= 809; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
+            }
+            if (e.target.value == 8) { 
+                let alert = document.createElement('alert');
+                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`;
+                container.appendChild(alert);
+                for (let i = 810; i <= 898; i++) {
+                    let img = document.createElement('img');
+                    let info = document.createElement('info');
+                    let fileName = i.toString().padStart(3, '0');
+                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                    img.setAttribute('src', pathFile);
+                    img.setAttribute('alt', fileName);
+                    info.innerHTML = `<span> No.${fileName}</span>`;
+                    container.appendChild(img);
+                    container.appendChild(info);
+                }
             }
         }
 
