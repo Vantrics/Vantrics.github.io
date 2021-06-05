@@ -20,14 +20,14 @@
     <div class="jumbotron">
         <h1>Pokemon圖鑑列表</h1>
     </div>
-
-    <button class="btn btn-primary" onclick="fetchPokemon()">寶可夢圖鑑列表fetchPokemon()</button>
-    <button class="btn btn-primary appendChild">寶可夢圖鑑列表appendChild()</button>
-    <button class="btn btn-success addEventListener">寶可夢圖鑑列表addEventListener()</button>
-    <button class="btn btn-danger reset">Reset()</button>
-
-    <div id="container"></div>
-
+    <div class="div class='container text-center">
+        <button class="btn btn-primary" onclick="fetchPokemon()">寶可夢圖鑑列表fetchPokemon()</button>
+        <button class="btn btn-primary appendChild">寶可夢圖鑑列表appendChild()</button>
+        <button class="btn btn-success addEventListener">寶可夢圖鑑列表addEventListener()</button>
+        <button class="btn btn-danger reset">Reset()</button>
+    </div>
+    <div class="container-xxl" id="container">
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -48,39 +48,39 @@
                 let fileName = i.toString().padStart(3, '0');
                 let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
 
-                let pokemonImg = `<img src="${pathFile}" alt="${fileName}"> <span> No.${fileName}</span>`;
                 if (i == 1) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第一世代-城都地區 《紅·綠·藍》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`
                     pokemons += infodex;
                 }
                 if (i == 152) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第二世代-關都地區 《金·銀》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center " role="alert"><h3>關都地區 《金·銀》</h3></div>`
                     pokemons += infodex;
                 }
                 if (i == 252) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第三世代-豐緣地區 《紅寶石·藍寶石》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`
                     pokemons += infodex;
                 }
                 if (i == 387) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第四世代-神奧地區 《鑽石·珍珠》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`
                     pokemons += infodex;
                 }
                 if (i == 494) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第五世代-合眾地區 《黑·白》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`
                     pokemons += infodex;
                 }
                 if (i == 650) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第六世代-卡洛斯地區 《X·Y》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`
                     pokemons += infodex;
                 }
                 if (i == 722) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第七世代-阿羅拉地區 《太陽·月亮》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`
                     pokemons += infodex;
                 }
                 if (i == 810) {
-                    let infodex = `<div class="alert alert-primary" role="alert"><h3>第八世代-伽勒爾地區 《劍·盾》</h3></div>`
+                    let infodex = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`
                     pokemons += infodex;
                 }
+                let pokemonImg = `<img src="${pathFile}" alt="${fileName}"> <span> No.${fileName}</span>`;
                 pokemons += pokemonImg;
 
 
@@ -91,7 +91,7 @@
         let btnAppendChild = document.querySelector(".appendChild");
         //選擇器
         btnAppendChild.onclick = function (event) {
-            container.innerHTML = "";
+            container.innerHTML = null;
 
             for (let i = 1; i < 899; i++) {
                 let fileName = i.toString().padStart(3, '0');
@@ -103,28 +103,28 @@
                 img.setAttribute('alt', fileName);
                 info.innerHTML = `<span> No.${fileName}</span>`;
                 if (i == 1) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第一世代-城都地區 《紅·綠·藍》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`;
                 }
                 if (i == 152) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第二世代-關都地區 《金·銀》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>關都地區 《金·銀》</h3></div>`;
                 }
                 if (i == 252) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第三世代-豐緣地區 《紅寶石·藍寶石》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`;
                 }
                 if (i == 387) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第四世代-神奧地區 《鑽石·珍珠》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`;
                 }
                 if (i == 494) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第五世代-合眾地區 《黑·白》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`;
                 }
                 if (i == 650) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第六世代-卡洛斯地區 《X·Y》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`;
                 }
                 if (i == 722) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第七世代-阿羅拉地區 《太陽·月亮》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`;
                 }
                 if (i == 810) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第八世代-伽勒爾地區 《劍·盾》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`;
                 }
                 container.appendChild(alert);
                 container.appendChild(img);
@@ -136,7 +136,7 @@
         let btnAddEventListener = document.querySelector(".addEventListener");
         //選擇器
         btnAddEventListener.addEventListener("click", function (event) {
-            container.innerHTML = "";
+            container.innerHTML = null;
 
             for (let i = 1; i < 899; i++) {
                 let fileName = i.toString().padStart(3, '0');
@@ -148,28 +148,28 @@
                 img.setAttribute('alt', fileName);
                 info.innerHTML = `<span> No.${fileName}</span>`;
                 if (i == 1) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第一世代-城都地區 《紅·綠·藍》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`;
                 }
                 if (i == 152) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第二世代-關都地區 《金·銀》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>關都地區 《金·銀》</h3></div>`;
                 }
                 if (i == 252) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第三世代-豐緣地區 《紅寶石·藍寶石》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`;
                 }
                 if (i == 387) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第四世代-神奧地區 《鑽石·珍珠》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`;
                 }
                 if (i == 494) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第五世代-合眾地區 《黑·白》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`;
                 }
                 if (i == 650) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第六世代-卡洛斯地區 《X·Y》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`;
                 }
                 if (i == 722) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第七世代-阿羅拉地區 《太陽·月亮》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`;
                 }
                 if (i == 810) {
-                    alert.innerHTML = `<div class="alert alert-primary" role="alert"><h3>第八世代-伽勒爾地區 《劍·盾》</h3></div>`;
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`;
                 }
                 container.appendChild(alert);
                 container.appendChild(img);
@@ -179,12 +179,11 @@
         })
 
         let btnReset = document.querySelector(".reset");
+
         //選擇器
         btnReset.onclick = function _reset() {
             container.innerHTML = null;
         };
-
-        window.onload = _reset();
 
     </script>
 
