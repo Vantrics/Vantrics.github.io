@@ -20,11 +20,18 @@
     <div class="jumbotron text-center">
         <h1>寶可夢圖鑑列表</h1>
     </div>
-    <div class="div class='container text-center">
+    <div class="div class='container-xl text-center">
+        <div class="input-group container-xl">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">圖鑑檢索</span>
+            </div>
+            <input type="text" class="form-control" placeholder="No. 001 - 898" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
         <button class="btn btn-primary" onclick="fetchPokemon()">寶可夢圖鑑列表fetchPokemon()</button>
         <button class="btn btn-primary appendChild">寶可夢圖鑑列表appendChild()</button>
         <button class="btn btn-success addEventListener">寶可夢圖鑑列表addEventListener()</button>
-        <button class="btn btn-danger reset">Reset()</button>
+        <button class="btn btn-danger reset">重置Reset()</button>
     </div>
     <div class="container-xxl" id="container">
     </div>
@@ -41,10 +48,55 @@
             return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
         }
 
+        let input = document.querySelector('input');
+        input.addEventListener('input', updateValue);
+
+        function updateValue(i) {
+            container.innerHTML = null;
+            if (i.target.value >= 1 && i.target.value <= 898) {
+                container.innerHTML = null;
+                let fileName = i.target.value.toString().padStart(3, '0');
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let img = document.createElement('img');
+                let info = document.createElement('info');
+                let alert = document.createElement('alert');
+                img.setAttribute('src', pathFile);
+                img.setAttribute('alt', fileName);
+                info.innerHTML = `<span> No.${fileName}</span>`;
+                if (i.target.value >= 1 && i.target.value <= 151) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`;
+                }
+                if (i.target.value >= 152 && i.target.value <= 251) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>關都地區 《金·銀》</h3></div>`;
+                }
+                if (i.target.value >= 252 && i.target.value <= 386) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`;
+                }
+                if (i.target.value >= 387 && i.target.value <= 493) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`;
+                }
+                if (i.target.value >= 494 && i.target.value <= 649) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`;
+                }
+                if (i.target.value >= 650 && i.target.value <= 721) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`;
+                }
+                if (i.target.value >= 722 && i.target.value <= 809) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`;
+                }
+                if (i.target.value >= 810) {
+                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`;
+                }
+                container.appendChild(alert);
+                container.appendChild(img);
+                container.appendChild(info);
+            }
+        }
+
         function fetchPokemon() {
 
             let = pokemons = '';
-            for (let i = 1; i < 899; i++) {
+            for (let i = 1; i <= 898; i++) {
                 let fileName = i.toString().padStart(3, '0');
                 let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
 
@@ -93,7 +145,7 @@
         btnAppendChild.onclick = function (event) {
             container.innerHTML = null;
 
-            for (let i = 1; i < 899; i++) {
+            for (let i = 1; i <= 898; i++) {
                 let fileName = i.toString().padStart(3, '0');
                 let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
                 let img = document.createElement('img');
@@ -138,7 +190,7 @@
         btnAddEventListener.addEventListener("click", function (event) {
             container.innerHTML = null;
 
-            for (let i = 1; i < 899; i++) {
+            for (let i = 1; i <= 898; i++) {
                 let fileName = i.toString().padStart(3, '0');
                 let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
                 let img = document.createElement('img');
