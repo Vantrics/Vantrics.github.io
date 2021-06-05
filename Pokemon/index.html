@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>寶可夢圖鑑列表</title>
+    <style>
+        img {
+            width: 215px;
+            height: 215px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Pokemon圖鑑列表</h1>
+    </div>
+
+    <button class="btn btn-primary" onclick="fetchPokemon()">載入寶可夢圖鑑列表</button>
+    <button class="btn btn-primary appendChild">載入寶可夢圖鑑列表appendChild()</button>
+    <button class="btn btn-success AddPokemon">AddPokemon</button>
+    <button class="btn btn-danger reset">Reset</button>
+
+    <div id="container"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script>
+        let container = document.getElementById("container");
+        //選擇器
+        function setImagePath(fileName) {
+            return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+        }
+
+        function fetchPokemon() {
+
+            let = pokemons = '';
+            for (let i = 1; i < 899; i++) {
+                let fileName = i.toString().padStart(3, '0');
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+
+                let pokemonImg = `<img src="${pathFile}" alt="${fileName}"> <span> No.${fileName}</span>`;
+                if (i == 1) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第一世代-城都地區 《紅·綠·藍》</div>`
+                    pokemons += infodex;
+                }
+                if (i == 152) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第二世代-關都地區 《金·銀》</div>`
+                    pokemons += infodex;
+                }
+                if (i == 252) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第三世代-豐緣地區 《紅寶石·藍寶石》</div>`
+                    pokemons += infodex;
+                }
+                if (i == 387) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第四世代-神奧地區 《鑽石·珍珠》</div>`
+                    pokemons += infodex;
+                }
+                if (i == 494) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第五世代-合眾地區 《黑·白》</div>`
+                    pokemons += infodex;
+                }
+                if (i == 650) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第六世代-卡洛斯地區 《X·Y》</div>`
+                    pokemons += infodex;
+                }
+                if (i == 722) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第七世代-阿羅拉地區 《太陽·月亮》</div>`
+                    pokemons += infodex;
+                }
+                if (i == 810) {
+                    let infodex = `<div class="alert alert-primary" role="alert">第八世代-伽勒爾地區 《劍·盾》</div>`
+                    pokemons += infodex;
+                }
+                pokemons += pokemonImg;
+
+
+            }
+            container.innerHTML = pokemons;
+        }
+
+        let btnAppend = document.querySelector(".appendChild");
+        //選擇器
+        btnAppend.onclick = function (event) {
+            container.innerHTML = "";
+
+            for (let i = 1; i < 899; i++) {
+                let fileName = i.toString().padStart(3, '0');
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let img = document.createElement('img');
+                let info = document.createElement('info');
+                let alert = document.createElement('alert');
+                img.setAttribute('src', pathFile);
+                img.setAttribute('alt', fileName);
+                info.innerHTML = `<span> No.${fileName}</span>`;
+                if (i == 1) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第一世代-城都地區 《紅·綠·藍》</div>`;
+                }
+                if (i == 152) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第二世代-關都地區 《金·銀》</div>`;
+                }
+                if (i == 252) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第三世代-豐緣地區 《紅寶石·藍寶石》</div>`;
+                }
+                if (i == 387) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第四世代-神奧地區 《鑽石·珍珠》</div>`;
+                }
+                if (i == 494) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第五世代-合眾地區 《黑·白》</div>`;
+                }
+                if (i == 650) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第六世代-卡洛斯地區 《X·Y》</div>`;
+                }
+                if (i == 722) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第七世代-阿羅拉地區 《太陽·月亮》</div>`;
+                }
+                if (i == 810) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第八世代-伽勒爾地區 《劍·盾》</div>`;
+                }
+                container.appendChild(alert);
+                container.appendChild(img);
+                container.appendChild(info);
+
+            }
+        };
+
+        let btnEventList = document.querySelector(".AddPokemon");
+        //選擇器
+        btnEventList.addEventListener("click", function (event) {
+            container.innerHTML = "";
+
+            for (let i = 1; i < 899; i++) {
+                let fileName = i.toString().padStart(3, '0');
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let img = document.createElement('img');
+                let info = document.createElement('info');
+                let alert = document.createElement('alert');
+                img.setAttribute('src', pathFile);
+                img.setAttribute('alt', fileName);
+                info.innerHTML = `<span> No.${fileName}</span>`;
+                if (i == 1) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第一世代-城都地區 《紅·綠·藍》</div>`;
+                }
+                if (i == 152) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第二世代-關都地區 《金·銀》</div>`;
+                }
+                if (i == 252) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第三世代-豐緣地區 《紅寶石·藍寶石》</div>`;
+                }
+                if (i == 387) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第四世代-神奧地區 《鑽石·珍珠》</div>`;
+                }
+                if (i == 494) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第五世代-合眾地區 《黑·白》</div>`;
+                }
+                if (i == 650) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第六世代-卡洛斯地區 《X·Y》</div>`;
+                }
+                if (i == 722) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第七世代-阿羅拉地區 《太陽·月亮》</div>`;
+                }
+                if (i == 810) {
+                    alert.innerHTML = `<div class="alert alert-primary" role="alert">第八世代-伽勒爾地區 《劍·盾》</div>`;
+                }
+                container.appendChild(alert);
+                container.appendChild(img);
+                container.appendChild(info);
+            }
+        })
+
+        let reset = document.querySelector(".reset");
+        //選擇器
+        reset.onclick = function _reset() {
+            container.innerHTML = null;
+        };
+
+        window.onload = _reset();
+
+    </script>
+
+</body>
+
+</html>
