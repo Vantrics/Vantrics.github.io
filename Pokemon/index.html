@@ -21,10 +21,10 @@
         <h1>Pokemon圖鑑列表</h1>
     </div>
 
-    <button class="btn btn-primary" onclick="fetchPokemon()">寶可夢圖鑑列表</button>
+    <button class="btn btn-primary" onclick="fetchPokemon()">寶可夢圖鑑列表fetchPokemon()</button>
     <button class="btn btn-primary appendChild">寶可夢圖鑑列表appendChild()</button>
-    <button class="btn btn-success addPokemon">AddPokemon()</button>
-    <button class="btn btn-danger reset">Reset</button>
+    <button class="btn btn-success addEventListener">寶可夢圖鑑列表addEventListener()</button>
+    <button class="btn btn-danger reset">Reset()</button>
 
     <div id="container"></div>
 
@@ -133,7 +133,7 @@
             }
         };
 
-        let btnAddEventListener = document.querySelector(".addPokemon");
+        let btnAddEventListener = document.querySelector(".addEventListener");
         //選擇器
         btnAddEventListener.addEventListener("click", function (event) {
             container.innerHTML = "";
