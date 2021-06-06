@@ -390,7 +390,7 @@
             for (let e = 1; e <= 10; e++) {
                 let img = document.createElement('img');
                 let info = document.createElement('info');
-                let fileName = Math.floor(Math.random() * 899).toString().padStart(3, '0');
+                let fileName = (Math.floor(Math.random()*898)+1).toString().padStart(3, '0');
                 let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
                 img.setAttribute('src', pathFile);
                 img.setAttribute('alt', fileName);
