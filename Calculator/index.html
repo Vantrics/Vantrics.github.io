@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Hello, Calculator!</title>
@@ -20,6 +22,13 @@
         .input_result {
             color: white;
             font-size: 56px;
+            text-align: right;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .history {
+            color: #555;
+            font-size: 28px;
             text-align: right;
             overflow: hidden;
             margin-bottom: 10px;
@@ -47,15 +56,16 @@
 <body>
     <div class="container-md">
         <div class="row">
-            <h3 style="margin-top: 40px;">The Calculator</h3>
+            <h3 style="margin-top: 10px;">The Calculator</h3>
             <div class="col-12">
-                <div class="input_result">0</div>
+                <p class="input_result">0</p>
+                <p class="history">-</p>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-light rounded-circle AC-btn">AC</button>
+                <button type="button" class="btn btn-light rounded-circle AC_btn">AC</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-light rounded-circle backspace-btn">⌫</button>
+                <button type="button" class="btn btn-light rounded-circle backspace_btn">⌫</button>
             </div>
             <div class="col-3">
                 <button type="button" class="btn btn-light rounded-circle p-btn">%</button>
@@ -100,32 +110,52 @@
                 <button type="button" class="btn btn-success rounded-circle">+</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">0</button>
-            </div>
-            <div class="col-3">
                 <button type="button" class="btn btn-dark rounded-circle decimal_btn">.</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle">±</button>
+                <button type="button" class="btn btn-dark rounded-circle num_btn">0</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle">=</button>
+                <button type="button" class="btn btn-dark rounded-circle num_">±</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-success rounded-circle result_btn">=</button>
             </div>
         </div>
     </div>
     <script>
-        let displayResult = document.querySelector('.input_result');
-        let pendingValue;
+        let h3 = document.querySelector("h3.tipDisplay");
+        let input = document.querySelector("p.input_result");
+        let history = document.querySelector("p.history");
+        const numBtn = document.querySelectorAll(".num_btn");
+        const backspaceBtn = document.querySelector('.backspace_btn');
+        const ACBtn = document.querySelector('.AC_btn');
 
+        ACBtn.addEventListener("click", function (event) {
+            input.innerText = '0';
+        });
 
-        let btnText = e.target.innerText;
-            if (displayVal === '0') {
-                displayVal = '';
+        backspaceBtn.addEventListener("click", function (event) {
+            
+            if (input.innerText == '') {
+                input.innerText = '0';
+            }else if(input.innerText.length <= 1){
+                input.innerText = '0';
+            }else{
+                input.innerText = input.innerText.slice(0, input.innerText.length - 1);
             }
-            displayVal += btnText;
-            disPlayresult.innerText = displayVal;
-        }
+        });
 
+        numBtn.forEach((x) => {
+                x.addEventListener("click", () => {
+
+                    if (input.innerText == 0) {
+                        input.innerText = x.innerText;
+                    } else {
+                        input.innerText += x.innerText;
+                    }
+                });
+            });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
