@@ -7,16 +7,23 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="img/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Hello, Primary Number!</title>
+    <title>終極數字</title>
     <style>
         html {
             height: 100%;
         }
 
         body {
-            height: 100% !important;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            background-image: url("https://picsum.photos/1200/900/?random=1");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
         }
 
         .container-md {
@@ -27,7 +34,7 @@
 
         .input_result {
             color: white;
-            font-size: 36px;
+            font-size: 50px;
             text-align: center;
             overflow: hidden;
             margin-bottom: 10px;
@@ -75,7 +82,7 @@
             <div class="col-12">
                 <h3 class="tipDisplay">按下產出數字開始</h3>
                 <p class="input_result">0</p>
-                <button class="btn btn-primary rounded-3 start_btn" type="button">產出數字</button>
+                <button class="btn btn-primary rounded-3 align-items-center start_btn" type="button">產出數字</button>
             </div>
             <div class="col-4">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">1</button>
