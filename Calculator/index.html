@@ -36,7 +36,6 @@
             font-size: 56px;
             text-align: right;
             overflow: hidden;
-            margin-bottom: 10px;
         }
 
         .history {
@@ -44,7 +43,6 @@
             font-size: 28px;
             text-align: right;
             overflow: hidden;
-            margin-bottom: 10px;
         }
 
         button {
@@ -167,12 +165,12 @@
                 multi++;
                 numSecond = input.innerText;
                 input.innerText = Number(numFirst) + Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
             } else {
                 numFirst = input.innerText;
                 input.innerText = 0;
                 Operator = '+';
-                history.innerText = `${numFirst} ${Operator}`;
+                history.innerText = `${numFirst}${Operator}`;
             }
         });
 
@@ -181,12 +179,12 @@
                 multi++;
                 numSecond = input.innerText;
                 input.innerText = Number(numFirst) - Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
             } else {
                 numFirst = input.innerText;
                 input.innerText = 0;
                 Operator = '-';
-                history.innerText = `${numFirst} ${Operator}`;
+                history.innerText = `${numFirst}${Operator}`;
             }
         });
 
@@ -195,12 +193,12 @@
                 multi++;
                 numSecond = input.innerText;
                 input.innerText = Number(numFirst) * Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
             } else {
                 numFirst = input.innerText;
                 input.innerText = 0;
                 Operator = '×';
-                history.innerText = `${numFirst} ${Operator}`;
+                history.innerText = `${numFirst}${Operator}`;
             }
         });
 
@@ -209,12 +207,12 @@
                 multi++;
                 numSecond = input.innerText;
                 input.innerText = Number(numFirst) / Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
             } else {
                 numFirst = input.innerText;
                 input.innerText = 0;
                 Operator = '÷';
-                history.innerText = `${numFirst} ${Operator}`;
+                history.innerText = `${numFirst}${Operator}`;
             }
         });
 
@@ -222,25 +220,25 @@
             numSecond = input.innerText;
             if (Operator == '+') {
                 input.innerText = Number(numFirst) + Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '-') {
                 input.innerText = Number(numFirst) - Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '×') {
                 input.innerText = Number(numFirst) * Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '÷') {
                 input.innerText = Number(numFirst) / Number(numSecond);
-                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
