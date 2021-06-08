@@ -33,6 +33,10 @@
             height: 100% !important;
         }
 
+        .row {
+            vertical-align:text-bottom;
+        }
+
         .input_result {
             color: white;
             font-size: 50px;
@@ -53,7 +57,7 @@
         }
 
         .btn {
-            margin: 7px 0px;
+            margin: 10px 0px;
             font-size: 28px;
             width: 80px;
             height: 80px;
@@ -68,71 +72,71 @@
 </head>
 
 <body>
-    <div class="container-md">
+    <div class="container-md d-flex align-content-center flex-wrap">
         <div class="row">
             <div class="col-12">
                 <p class="input_result">0</p>
                 <p class="history">0</p>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-light rounded-circle AC_btn">AC</button>
+                <button type="button" class="btn btn-light rounded-circle align-items-center AC_btn">AC</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-light rounded-circle backspace_btn">⌫</button>
+                <button type="button" class="btn btn-light rounded-circle align-items-center backspace_btn">⌫</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-light rounded-circle sqrt_btn">√</button>
+                <button type="button" class="btn btn-light rounded-circle align-items-center sqrt_btn">√</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle division_btn">÷</button>
+                <button type="button" class="btn btn-success rounded-circle align-items-center division_btn">÷</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">7</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">7</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">8</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">8</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">9</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">9</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle times_btn">×</button>
+                <button type="button" class="btn btn-success rounded-circle align-items-center times_btn">×</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">4</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">4</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">5</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">5</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">6</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">6</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle minus_btn">-</button>
+                <button type="button" class="btn btn-success rounded-circle align-items-center minus_btn">-</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">1</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">1</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">2</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">2</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">3</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">3</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle plus_btn">+</button>
+                <button type="button" class="btn btn-success rounded-circle align-items-center plus_btn">+</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle decimal_btn">.</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center decimal_btn">.</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">0</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">0</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle neg_btn">+/-</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center neg_btn">+/-</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle is_btn">=</button>
+                <button type="button" class="btn btn-success rounded-circle align-items-center is_btn">=</button>
             </div>
         </div>
     </div>
@@ -285,7 +289,7 @@
                     input.innerText = 0;
                     multi = 0;
                 }
-                if(input.innerText == 'NaN'){
+                if (input.innerText == 'NaN') {
                     input.innerText = 0;
                 }
                 if (input.innerText == '0') {
