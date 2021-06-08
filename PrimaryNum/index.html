@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap._min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Hello, Primary Number!</title>
     <style>
@@ -124,10 +124,10 @@
                     }
                 });
             });
-            let min = 1;
-            let max = 100;
-            let ansIs = Math.floor(Math.random() * max + min);
-            h3.innerText = `Range ${min} - ${max} `;
+            let _min = 1;
+            let _max = 100;
+            let ansIs = Math.floor(Math.random() * max + _min);
+            h3.innerText = `Range ${_min} - ${max} `;
             console.log(ansIs);
             startBtn.disabled = true;
             delBtn.addEventListener("click", function (event) {
@@ -135,7 +135,7 @@
             });
 
             entryBtn.addEventListener("click", function (event) {
-                if (input.innerText >= max || input.innerText <= min) {
+                if (input.innerText >= max || input.innerText <= _min) {
                     alert("ERROR!");
                     input.innerText = "0";
                 } else {
@@ -145,12 +145,12 @@
                         h3.innerText = `Range ${input.innerText} - ${input.innerText}`;
                         location.reload();
                     } else if (input.innerText < ansIs) {
-                        h3.innerText = `Range ${input.innerText} - ${max}`;
-                        min = input.innerText;
+                        h3.innerText = `Range ${input.innerText} - ${_max}`;
+                        _min = input.innerText;
                         input.innerText = "0";
                         guessTime++;
                     } else {
-                        h3.innerText = `Range ${min} - ${input.innerText}`;
+                        h3.innerText = `Range ${_min} - ${input.innerText}`;
                         max = input.innerText;
                         input.innerText = "0";
                         guessTime++;
@@ -159,7 +159,7 @@
             });
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle._min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 </body>
