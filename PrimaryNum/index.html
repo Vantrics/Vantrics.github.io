@@ -11,11 +11,18 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Hello, Primary Number!</title>
     <style>
-        body{
-            background: black;
+        html {
+            height: 100%;
         }
+
+        body {
+            height: 100% !important;
+        }
+
         .container-md {
+            background: rgba(0, 0, 0, 0.6);
             width: 414px !important;
+            height: 100% !important;
         }
 
         .input_result {
@@ -37,6 +44,7 @@
         }
 
         .btn {
+            opacity: 0.8;
             margin: 10px 0px;
             font-size: 36px;
             width: 96px;
@@ -62,48 +70,48 @@
 </head>
 
 <body>
-    <div class="container-md">
-        <div class="row justify-content-around">
+    <div class="container-md d-flex align-content-center flex-wrap">
+        <div class="row">
             <div class="col-12">
-                <h3 class="tipDisplay">按下生產數字開始</h3>
+                <h3 class="tipDisplay">按下產出數字開始</h3>
                 <p class="input_result">0</p>
-                <button class="btn btn-primary rounded-3 start_btn" type="button">產生數字</button>
+                <button class="btn btn-primary rounded-3 start_btn" type="button">產出數字</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">1</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">1</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">2</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">2</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">3</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">3</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">4</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">4</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">5</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">5</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">6</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">6</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">7</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">7</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">8</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">8</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">9</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">9</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-danger rounded-circle del_btn ">X</button>
+                <button type="button" class="btn btn-danger rounded-circle align-items-center del_btn ">X</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-dark rounded-circle num_btn">0</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">0</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-success rounded-circle entry_btn">O</button>
+                <button type="button" class="btn btn-success rounded-circle align-items-center entry_btn">O</button>
             </div>
         </div>
     </div>
