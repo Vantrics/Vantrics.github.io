@@ -26,6 +26,7 @@
             overflow: hidden;
             margin-bottom: 10px;
         }
+
         .history {
             color: #555;
             font-size: 28px;
@@ -59,7 +60,7 @@
             <h3 style="margin-top: 10px;">The Calculator</h3>
             <div class="col-12">
                 <p class="input_result">0</p>
-                <p class="history">-</p>
+                <p class="history">0</p>
             </div>
             <div class="col-3">
                 <button type="button" class="btn btn-light rounded-circle AC_btn">AC</button>
@@ -68,10 +69,10 @@
                 <button type="button" class="btn btn-light rounded-circle backspace_btn">⌫</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-light rounded-circle p-btn">%</button>
+                <button type="button" class="btn btn-light rounded-circle sqrt_btn">√</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle">÷</button>
+                <button type="button" class="btn btn-success rounded-circle division_btn">÷</button>
             </div>
             <div class="col-3">
                 <button type="button" class="btn btn-dark rounded-circle num_btn">7</button>
@@ -83,7 +84,7 @@
                 <button type="button" class="btn btn-dark rounded-circle num_btn">9</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle">×</button>
+                <button type="button" class="btn btn-success rounded-circle times_btn">×</button>
             </div>
             <div class="col-3">
                 <button type="button" class="btn btn-dark rounded-circle num_btn">4</button>
@@ -95,7 +96,7 @@
                 <button type="button" class="btn btn-dark rounded-circle num_btn">6</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle">-</button>
+                <button type="button" class="btn btn-success rounded-circle minus_btn">-</button>
             </div>
             <div class="col-3">
                 <button type="button" class="btn btn-dark rounded-circle num_btn">1</button>
@@ -107,7 +108,7 @@
                 <button type="button" class="btn btn-dark rounded-circle num_btn">3</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle">+</button>
+                <button type="button" class="btn btn-success rounded-circle plus_btn">+</button>
             </div>
             <div class="col-3">
                 <button type="button" class="btn btn-dark rounded-circle decimal_btn">.</button>
@@ -116,10 +117,10 @@
                 <button type="button" class="btn btn-dark rounded-circle num_btn">0</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-dark rounded-circle num_">±</button>
+                <button type="button" class="btn btn-dark rounded-circle neg_btn">+/-</button>
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-success rounded-circle result_btn">=</button>
+                <button type="button" class="btn btn-success rounded-circle is_btn">=</button>
             </div>
         </div>
     </div>
@@ -127,35 +128,158 @@
         let h3 = document.querySelector("h3.tipDisplay");
         let input = document.querySelector("p.input_result");
         let history = document.querySelector("p.history");
+
+        let Operator = '';
+        let numFirst = 0;
+        let numSecond = 0;
+        let multi = 0;
+
         const numBtn = document.querySelectorAll(".num_btn");
         const backspaceBtn = document.querySelector('.backspace_btn');
         const ACBtn = document.querySelector('.AC_btn');
+        const sqrtBtn = document.querySelector('.sqrt_btn');
+        const decimalBtn = document.querySelector('.decimal_btn');
+        const negBtn = document.querySelector('.neg_btn');
 
-        ACBtn.addEventListener("click", function (event) {
-            input.innerText = '0';
-        });
+        const plusBtn = document.querySelector('.plus_btn');
+        const minusBtn = document.querySelector('.minus_btn');
+        const timesBtn = document.querySelector('.times_btn');
+        const divisionBtn = document.querySelector('.division_btn');
+        
+        
+        const isBtn = document.querySelector('.is_btn');
 
-        backspaceBtn.addEventListener("click", function (event) {
-            
-            if (input.innerText == '') {
-                input.innerText = '0';
-            }else if(input.innerText.length <= 1){
-                input.innerText = '0';
-            }else{
-                input.innerText = input.innerText.slice(0, input.innerText.length - 1);
+        plusBtn.addEventListener("click", function (event) {
+            if (Operator == '+') {
+                multi++;
+                numSecond = input.innerText;
+                input.innerText = Number(numFirst) + Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+            } else {
+                numFirst = input.innerText;
+                input.innerText = 0;
+                Operator = '+';
+                history.innerText = `${numFirst} ${Operator}`;
             }
         });
 
-        numBtn.forEach((x) => {
-                x.addEventListener("click", () => {
+        minusBtn.addEventListener("click", function (event) {
+            if (Operator == '-') {
+                multi++;
+                numSecond = input.innerText;
+                input.innerText = Number(numFirst) - Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+            } else {
+                numFirst = input.innerText;
+                input.innerText = 0;
+                Operator = '-';
+                history.innerText = `${numFirst} ${Operator}`;
+            }
+        });
 
-                    if (input.innerText == 0) {
-                        input.innerText = x.innerText;
-                    } else {
-                        input.innerText += x.innerText;
-                    }
-                });
+        timesBtn.addEventListener("click", function (event) {
+            if (Operator == '×') {
+                multi++;
+                numSecond = input.innerText;
+                input.innerText = Number(numFirst) * Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+            } else {
+                numFirst = input.innerText;
+                input.innerText = 0;
+                Operator = '×';
+                history.innerText = `${numFirst} ${Operator}`;
+            }
+        });
+
+        divisionBtn.addEventListener("click", function (event) {
+            if (Operator == '÷') {
+                multi++;
+                numSecond = input.innerText;
+                input.innerText = Number(numFirst) / Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+            } else {
+                numFirst = input.innerText;
+                input.innerText = 0;
+                Operator = '÷';
+                history.innerText = `${numFirst} ${Operator}`;
+            }
+        });
+
+        isBtn.addEventListener("click", function (event) {
+            numSecond = input.innerText;
+            if (Operator == '+') {
+                input.innerText = Number(numFirst) + Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                Operator = '';
+                numFirst=0;
+            }
+            if (Operator == '-') {
+                input.innerText = Number(numFirst) - Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                Operator = '';
+                numFirst=0;
+            }
+            if (Operator == '×') {
+                input.innerText = Number(numFirst) * Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                Operator = '';
+                numFirst=0;
+            }
+            if (Operator == '÷') {
+                input.innerText = Number(numFirst) / Number(numSecond);
+                history.innerText = `${numFirst} ${Operator} ${numSecond}`;
+                Operator = '';
+                numFirst=0;
+            }
+        });
+
+
+        ACBtn.addEventListener("click", function (event) {
+            input.innerText = 0;
+            history.innerText = 0;
+            numFirst = 0;
+            numSecond = 0;
+            Operator = '';
+            multi =0;
+        });
+
+        backspaceBtn.addEventListener("click", function (event) {
+
+            if (input.innerText == '') {
+                input.innerText = 0;
+            } else if (input.innerText.length <= 1) {
+                input.innerText = 0;
+            } else {
+                input.innerText = input.innerText.slice(0, input.innerText.length - 1);
+            }
+        });
+        sqrtBtn.addEventListener('click', function () {
+            input.innerText = Math.sqrt(input.innerText);
+        });
+
+        decimalBtn.addEventListener('click', function () {
+            if (!input.innerText.includes('.'))
+                input.innerText += '.';
+        });
+
+        negBtn.addEventListener('click', function () {
+            input.innerText = input.innerText * -1;
+        });
+
+        numBtn.forEach((x) => {
+            x.addEventListener("click", () => {
+                if (multi >= 1) {
+                    numFirst = input.innerText;
+                    input.innerText = 0;
+                    multi =0;
+                }
+                if (input.innerText == '0') {
+                    input.innerText = x.innerText;
+                } else {
+                    input.innerText += x.innerText;
+                }
             });
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
