@@ -136,25 +136,24 @@
 
             entryBtn.addEventListener("click", function (event) {
                 if (input.innerText >= _max || input.innerText <= _min) {
-                    alert("ERROR!");
-                    input.innerText = "0";
-                } else {
-                    if (input.innerText == ansIs) {
-                        guessTime++;
-                        alert(`SUCCSE! You Try ${guessTime} times`);
-                        h3.innerText = `Range ${input.innerText} - ${input.innerText}`;
-                        location.reload();
-                    } else if (input.innerText < ansIs) {
-                        h3.innerText = `Range ${input.innerText} - ${_max}`;
-                        _min = input.innerText;
-                        input.innerText = "0";
-                        guessTime++;
-                    } else {
-                        h3.innerText = `Range ${_min} - ${input.innerText}`;
-                        max = input.innerText;
-                        input.innerText = "0";
-                        guessTime++;
-                    }
+                    alert("超出範圍!");
+                    input.innerText = 0;
+                } else if (input.innerText == ansIs) {
+                    guessTime++;
+                    alert(`SUCCSE! You Try ${guessTime} times`);
+                    h3.innerText = `Range ${input.innerText} - ${input.innerText}`;
+                    location.reload();
+                } else if (input.innerText < ansIs && input.innerText < _max) {
+                    guessTime++;
+                    h3.innerText = `Range ${input.innerText} - ${_max}`;
+                    _min = input.innerText;
+                    input.innerText = 0;
+
+                } else if (input.innerText > ansIs && input.innerText > _min) {
+                    guessTime++;
+                    h3.innerText = `Range ${_min} - ${input.innerText}`;
+                    _max = input.innerText;
+                    input.innerText = 0;
                 }
             });
         });
