@@ -11,12 +11,24 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Hello, Calculator!</title>
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
-            background: black;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            background-image: url("https://picsum.photos/1200/900/?random=1");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
         }
 
         .container-md {
+            background-color: rgba(0, 0, 0, 0.5);
             width: 414px !important;
+            height: 100% !important;
         }
 
         .input_result {
@@ -36,6 +48,7 @@
         }
 
         button {
+            opacity: 0.85;
             text-align: center;
         }
 
@@ -145,8 +158,8 @@
         const minusBtn = document.querySelector('.minus_btn');
         const timesBtn = document.querySelector('.times_btn');
         const divisionBtn = document.querySelector('.division_btn');
-        
-        
+
+
         const isBtn = document.querySelector('.is_btn');
 
         plusBtn.addEventListener("click", function (event) {
@@ -211,25 +224,25 @@
                 input.innerText = Number(numFirst) + Number(numSecond);
                 history.innerText = `${numFirst} ${Operator} ${numSecond}`;
                 Operator = '';
-                numFirst=0;
+                numFirst = 0;
             }
             if (Operator == '-') {
                 input.innerText = Number(numFirst) - Number(numSecond);
                 history.innerText = `${numFirst} ${Operator} ${numSecond}`;
                 Operator = '';
-                numFirst=0;
+                numFirst = 0;
             }
             if (Operator == '×') {
                 input.innerText = Number(numFirst) * Number(numSecond);
                 history.innerText = `${numFirst} ${Operator} ${numSecond}`;
                 Operator = '';
-                numFirst=0;
+                numFirst = 0;
             }
             if (Operator == '÷') {
                 input.innerText = Number(numFirst) / Number(numSecond);
                 history.innerText = `${numFirst} ${Operator} ${numSecond}`;
                 Operator = '';
-                numFirst=0;
+                numFirst = 0;
             }
         });
 
@@ -240,7 +253,7 @@
             numFirst = 0;
             numSecond = 0;
             Operator = '';
-            multi =0;
+            multi = 0;
         });
 
         backspaceBtn.addEventListener("click", function (event) {
@@ -271,7 +284,7 @@
                 if (multi >= 1) {
                     numFirst = input.innerText;
                     input.innerText = 0;
-                    multi =0;
+                    multi = 0;
                 }
                 if (input.innerText == '0') {
                     input.innerText = x.innerText;
