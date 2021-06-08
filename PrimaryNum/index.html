@@ -9,8 +9,6 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Hello, Calculator!</title>
     <style>
-
-
         .container-md {
             background: black;
             width: 414px !important;
@@ -24,7 +22,7 @@
             margin-bottom: 10px;
         }
 
-        .tipDisplay{
+        .tipDisplay {
             margin-top: 20px;
             color: #ddd;
         }
@@ -40,15 +38,17 @@
             height: 96px;
             text-align: center;
         }
-        .start_btn{
+
+        .start_btn {
             height: 64px;
             font-size: 28px;
         }
 
         .btn-primary {
             width: 100%;
-            margin-bottom:  15px;
+            margin-bottom: 15px;
         }
+
         .entry_btn {
             margin-bottom: 15px;
         }
@@ -60,7 +60,7 @@
         <div class="row justify-content-around">
             <div class="col-12">
                 <h3 class="tipDisplay">按下生產數字開始</h3>
-                <div class="input_result">0</div>
+                <p class="input_result">0</p>
                 <button class="btn btn-primary rounded-3 start_btn" type="button">產生數字</button>
             </div>
             <div class="col-4">
@@ -103,17 +103,55 @@
     </div>
     <script>
 
-        let h3 = document.querySelector(".tipDisplay h3");
-
-        const startBtn =  document.querySelector(".start_btn");
+        let h3 = document.querySelector("h3.tipDisplay");
+        let input = document.querySelector("p.input_result");
+        const numBtn = document.querySelectorAll(".num_btn");
+        const delBtn = document.querySelector(".del_btn");
+        const entryBtn = document.querySelector(".entry_btn");
+        const startBtn = document.querySelector(".start_btn");
 
         startBtn.addEventListener("click", function (event) {
-            h3.innerHTML = `W`;
-        })
+            numBtn.forEach((x) => {
+            x.addEventListener("click", () => {
+                numBtn.disabled = false;
+                if (input.innerText == 0) {
+                    input.innerText = x.innerText;
+                } else {
+                    input.innerText += x.innerText;
+                }
+            });
+        });
+            let min = 1;
+            let max = 100;
+            let ansIs = Math.floor(Math.random() * max + min);
+            h3.innerText = `Range ${min} - ${max} `;
+            console.log(ansIs);
+            startBtn.disabled = true;
+            delBtn.addEventListener("click", function (event) {
+                input.innerHTML = 0;
+            });
 
-
-
-
+            entryBtn.addEventListener("click", function (event) {
+                if (input.innerText >= max || input.innerText <= min) {
+                    alert("ERROR!");
+                    input.innerText = "0";
+                } else {
+                    if (input.innerText == ansIs) {
+                        alert("SUCCSE!");
+                        h3.innerText = `Range ${input.innerText} - ${input.innerText}`;
+                        location.reload()
+                    } else if (input.innerText < ansIs) {
+                        h3.innerText = `Range ${input.innerText} - ${max}`;
+                        min = input.innerText;
+                        input.innerText = "0";
+                    } else {
+                        h3.innerText = `Range ${min} - ${input.innerText}`;
+                        max = input.innerText;
+                        input.innerText = "0";
+                    }
+                }
+            });
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
