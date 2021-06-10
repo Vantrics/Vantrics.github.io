@@ -28,10 +28,14 @@
 
         .container-md {
             background: rgba(0, 0, 0, 0.6);
-            width: 414px !important;
+            max-width: 414px !important;
             height: 100% !important;
         }
 
+        .row{
+            vertical-align:text-bottom;
+            max-width: 414px !important;
+        }
         .input_result {
             color: white;
             font-size: 50px;
@@ -73,6 +77,10 @@
         .entry_btn {
             margin-bottom: 10px;
         }
+
+        .col-3 {
+            padding: 0 0;
+        }
     </style>
 </head>
 
@@ -84,40 +92,40 @@
                 <p class="input_result">0</p>
                 <button class="btn btn-primary rounded-3 align-items-center start_btn" type="button">產出數字</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">1</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">2</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">3</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">4</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">5</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">6</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">7</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">8</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">9</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-danger rounded-circle align-items-center del_btn ">X</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">0</button>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex justify-content-center">
                 <button type="button" class="btn btn-success rounded-circle align-items-center entry_btn">O</button>
             </div>
         </div>

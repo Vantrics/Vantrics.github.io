@@ -29,12 +29,13 @@
 
         .container-md {
             background-color: rgba(0, 0, 0, 0.5);
-            width: 414px !important;
+            max-width: 414px !important;
             height: 100% !important;
         }
 
         .row {
             vertical-align:text-bottom;
+            max-width: 414px !important;
         }
 
         .input_result {
@@ -63,11 +64,16 @@
             width: 80px;
             height: 80px;
             text-align: center;
+            padding: 0 0;
         }
 
         .form-control {
             background-color: black;
             color: white;
+        }
+        .col-3
+        {
+            padding:0 0;
         }
     </style>
 </head>
@@ -79,64 +85,64 @@
                 <p class="input_result">0</p>
                 <p class="history">0</p>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-light rounded-circle align-items-center AC_btn">AC</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-light rounded-circle align-items-center backspace_btn">⌫</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-light rounded-circle align-items-center sqrt_btn">√</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-success rounded-circle align-items-center division_btn">÷</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">7</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">8</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">9</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-success rounded-circle align-items-center times_btn">×</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">4</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">5</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">6</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-success rounded-circle align-items-center minus_btn">-</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">1</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">2</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">3</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-success rounded-circle align-items-center plus_btn">+</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center decimal_btn">.</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">0</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-dark rounded-circle align-items-center neg_btn">+/-</button>
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-success rounded-circle align-items-center is_btn">=</button>
             </div>
         </div>
