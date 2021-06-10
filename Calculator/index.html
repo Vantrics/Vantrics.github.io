@@ -34,7 +34,7 @@
         }
 
         .row {
-            vertical-align:text-bottom;
+            vertical-align: text-bottom;
             max-width: 414px !important;
         }
 
@@ -71,9 +71,9 @@
             background-color: black;
             color: white;
         }
-        .col-3
-        {
-            padding:0 0;
+
+        .col-3 {
+            padding: 0 0;
         }
     </style>
 </head>
@@ -169,7 +169,6 @@
         const timesBtn = document.querySelector('.times_btn');
         const divisionBtn = document.querySelector('.division_btn');
 
-
         const isBtn = document.querySelector('.is_btn');
 
         plusBtn.addEventListener("click", function (event) {
@@ -182,7 +181,8 @@
                 numFirst = input.innerText;
                 input.innerText = 0;
                 Operator = '+';
-                history.innerText = `${numFirst}${Operator}`;
+                history.innerText = '';
+                history.innerText += `${numFirst}${Operator}`;
             }
         });
 
@@ -232,25 +232,25 @@
             numSecond = input.innerText;
             if (Operator == '+') {
                 input.innerText = Number(numFirst) + Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}=`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '-') {
                 input.innerText = Number(numFirst) - Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}=`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '×') {
                 input.innerText = Number(numFirst) * Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}=`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '÷') {
                 input.innerText = Number(numFirst) / Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}`;
+                history.innerText = `${numFirst}${Operator}${numSecond}=`;
                 Operator = '';
                 numFirst = 0;
             }
@@ -258,12 +258,17 @@
 
 
         ACBtn.addEventListener("click", function (event) {
-            input.innerText = 0;
-            history.innerText = 0;
-            numFirst = 0;
-            numSecond = 0;
-            Operator = '';
-            multi = 0;
+            if (ACBtn.innerText != `AC`) {
+                input.innerText = 0;
+                ACBtn.innerText = 'AC';
+            } else {
+                input.innerText = 0;
+                history.innerText = 0;
+                numFirst = 0;
+                numSecond = 0;
+                Operator = '';
+                multi = 0;
+            }
         });
 
         backspaceBtn.addEventListener("click", function (event) {
@@ -292,6 +297,7 @@
         numBtn.forEach((x) => {
             x.addEventListener("click", () => {
                 if (multi >= 1) {
+                    ACBtn.innerText = 'C';
                     numFirst = input.innerText;
                     input.innerText = 0;
                     multi = 0;
@@ -300,8 +306,11 @@
                     input.innerText = 0;
                 }
                 if (input.innerText == '0') {
+                    ACBtn.innerText = 'C';
+                    input.innerText = '';
                     input.innerText = x.innerText;
                 } else {
+                    ACBtn.innerText = 'C';
                     input.innerText += x.innerText;
                 }
             });
