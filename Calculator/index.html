@@ -156,22 +156,10 @@
         let numFirst = 0;
         let numSecond = 0;
         let multi = 0;
-
-        const numBtn = document.querySelectorAll(".num_btn");
-        const backspaceBtn = document.querySelector('.backspace_btn');
+        
         const ACBtn = document.querySelector('.AC_btn');
-        const sqrtBtn = document.querySelector('.sqrt_btn');
-        const decimalBtn = document.querySelector('.decimal_btn');
-        const negBtn = document.querySelector('.neg_btn');
 
-        const plusBtn = document.querySelector('.plus_btn');
-        const minusBtn = document.querySelector('.minus_btn');
-        const timesBtn = document.querySelector('.times_btn');
-        const divisionBtn = document.querySelector('.division_btn');
-
-        const isBtn = document.querySelector('.is_btn');
-
-        plusBtn.addEventListener("click", function (event) {
+        document.querySelector('.plus_btn').addEventListener("click", function (event) {
             if (Operator == '+') {
                 multi++;
                 numSecond = input.innerText;
@@ -186,7 +174,7 @@
             }
         });
 
-        minusBtn.addEventListener("click", function (event) {
+        document.querySelector('.minus_btn').addEventListener("click", function (event) {
             if (Operator == '-') {
                 multi++;
                 numSecond = input.innerText;
@@ -200,7 +188,7 @@
             }
         });
 
-        timesBtn.addEventListener("click", function (event) {
+        document.querySelector('.times_btn').addEventListener("click", function (event) {
             if (Operator == '×') {
                 multi++;
                 numSecond = input.innerText;
@@ -214,7 +202,7 @@
             }
         });
 
-        divisionBtn.addEventListener("click", function (event) {
+        document.querySelector('.division_btn').addEventListener("click", function (event) {
             if (Operator == '÷') {
                 multi++;
                 numSecond = input.innerText;
@@ -228,29 +216,29 @@
             }
         });
 
-        isBtn.addEventListener("click", function (event) {
+        document.querySelector('.is_btn').addEventListener("click", function (event) {
             numSecond = input.innerText;
             if (Operator == '+') {
                 input.innerText = Number(numFirst) + Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}=`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '-') {
                 input.innerText = Number(numFirst) - Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}=`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '×') {
                 input.innerText = Number(numFirst) * Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}=`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
             if (Operator == '÷') {
                 input.innerText = Number(numFirst) / Number(numSecond);
-                history.innerText = `${numFirst}${Operator}${numSecond}=`;
+                history.innerText = `${numFirst}${Operator}${numSecond}`;
                 Operator = '';
                 numFirst = 0;
             }
@@ -271,7 +259,7 @@
             }
         });
 
-        backspaceBtn.addEventListener("click", function (event) {
+        document.querySelector('.backspace_btn').addEventListener("click", function (event) {
 
             if (input.innerText == '') {
                 input.innerText = 0;
@@ -281,20 +269,22 @@
                 input.innerText = input.innerText.slice(0, input.innerText.length - 1);
             }
         });
-        sqrtBtn.addEventListener('click', function () {
+        document.querySelector('.sqrt_btn').addEventListener('click', function () {
+            history.innerText = `sqrt(${input.innerText})`;
             input.innerText = Math.sqrt(input.innerText);
         });
 
-        decimalBtn.addEventListener('click', function () {
+        document.querySelector('.decimal_btn').addEventListener('click', function () {
             if (!input.innerText.includes('.'))
                 input.innerText += '.';
         });
 
-        negBtn.addEventListener('click', function () {
+        document.querySelector('.neg_btn').addEventListener('click', function () {
+            history.innerText = `${input.innerText}×-1`;
             input.innerText = input.innerText * -1;
         });
 
-        numBtn.forEach((x) => {
+        document.querySelectorAll(".num_btn").forEach((x) => {
             x.addEventListener("click", () => {
                 if (multi >= 1) {
                     ACBtn.innerText = 'C';
