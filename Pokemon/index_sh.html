@@ -10,8 +10,14 @@
     <title>寶可夢圖鑑列表</title>
     <style>
         img {
+            cursor: pointer;
             width: 215px;
             height: 215px;
+            transition: .5s ease;
+        }
+
+        img:hover {
+            opacity: 0.4;
         }
     </style>
 </head>
@@ -19,306 +25,86 @@
 <body>
     <div class="jumbotron text-center">
         <h1>寶可夢圖鑑列表</h1>
-        <iframe class="" width="380" height="100"
-        src="https://www.youtube.com/embed/d-lEahV5Q_o?rel=0&autoplay=1&loop=1&playlist=d-lEahV5Q_o&amp;showinfo=0"
-        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-    <div class="div class='container-xl text-center">
-        <div class="input-group container-xl mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">編號</span>
-            </div>
-            <input type="text" class="form-control" maxlength="3" placeholder="No. 001 - 898" aria-label="Number"
-                aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group container-xl mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">地區</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect01">
-                <option selected>請選擇...</option>
-                <option value="1">第一世代-城都地區</option>
-                <option value="2">第二世代-關都地區</option>
-                <option value="3">第三世代-豐緣地區</option>
-                <option value="4">第四世代-神奧地區</option>
-                <option value="5">第五世代-合眾地區</option>
-                <option value="6">第六世代-卡洛斯地區</option>
-                <option value="7">第七世代-阿羅拉地區 </option>
-                <option value="8">第八世代-伽勒爾地區</option>
-            </select>
-        </div>
-        <button class="btn btn-success addEventListener">addEvent</button>
-        <button class="btn btn-info tenslot">十連</button>
-        <button class="btn btn-danger reset">清空</button>
 
+    <div class="div class='container-xl text-center">
+        <button class="btn btn-success" id="loadAll">LoadALL</button>
+        <button class="btn btn-danger" id="reSet">Reset</button>
+        <button class="btn btn-light" id="timerSlot">Timer Slot</button>
+        <button class="btn btn-dark" id="timeslotStop">Slot Stop</button>
+        <button class="btn btn-info" id="plus">index+1</button>
+        <button class="btn btn-info" id="minus">index-1</button>
     </div>
+
     <div class="container-xxl" id="container">
     </div>
+
+    <script>
+        let container = document.querySelector("#container");
+        let _index = 1;
+
+        function AddPokemon(_index) {
+            let fileName = _index.toString().padStart(3, '0');
+            let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+            let img = document.createElement('img');
+            img.setAttribute('src', pathFile);
+            container.appendChild(img);
+            img.addEventListener('click', function () {
+                Remove(img);
+            })
+        }
+
+        function Remove(img) {
+            container.removeChild(img);
+        }
+
+        document.querySelector("#loadAll").addEventListener('click', function () {
+            _index = 1;
+            container.innerHTML = '';
+            for (_index = 1; _index <= 898; _index++) {
+                AddPokemon(_index);
+            }
+        });
+
+        document.querySelector("#reSet").addEventListener('click', function () {
+            container.innerHTML = '';
+            PokemonCount = 1;
+        });
+
+        let timerBtn = document.querySelector("#timerSlot");
+        timerBtn.addEventListener('click', function () {
+            timerBtn.disabled = true;
+            var slot = setInterval(function () {
+                _index++;
+                AddPokemon(_index);
+            }, 350)
+
+            let stopBtn = document.querySelector("#timeslotStop");
+            stopBtn.addEventListener('click', function () {
+                timerBtn.disabled = false;
+                clearInterval(slot);
+            });
+        });
+
+        document.querySelector("#plus").addEventListener('click', function () {
+            AddPokemon(_index);
+            _index++;
+        })
+
+        document.querySelector("#minus").addEventListener('click', function () {
+            if (_index > 1) {
+                container.removeChild(container.lastChild);
+                _index--;
+            }
+        })
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-    <script>
-        let container = document.getElementById("container");
-        //選擇器
-        function setImagePath(fileName) {
-            return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-        }
-
-        let input = document.querySelector('input');
-        input.addEventListener('input', updateValue);
-
-        function updateValue(i) {
-            container.innerHTML = null;
-            if (i.target.value >= 1 && i.target.value <= 898) {
-                container.innerHTML = null;
-                let fileName = i.target.value.toString().padStart(3, '0');
-                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                let img = document.createElement('img');
-                let info = document.createElement('info');
-                let alert = document.createElement('alert');
-                img.setAttribute('src', pathFile);
-                img.setAttribute('alt', fileName);
-                info.innerHTML = `<span> No.${fileName}</span>`;
-                if (i.target.value >= 1 && i.target.value <= 151) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`;
-                }
-                if (i.target.value >= 152 && i.target.value <= 251) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>關都地區 《金·銀》</h3></div>`;
-                }
-                if (i.target.value >= 252 && i.target.value <= 386) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`;
-                }
-                if (i.target.value >= 387 && i.target.value <= 493) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`;
-                }
-                if (i.target.value >= 494 && i.target.value <= 649) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`;
-                }
-                if (i.target.value >= 650 && i.target.value <= 721) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`;
-                }
-                if (i.target.value >= 722 && i.target.value <= 809) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`;
-                }
-                if (i.target.value >= 810) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`;
-                }
-                container.appendChild(alert);
-                container.appendChild(img);
-                container.appendChild(info);
-            }
-        }
-
-        var select = document.querySelector("#inputGroupSelect01");
-        select.addEventListener('change', showValue);
-
-        function showValue(e) {
-            container.innerHTML = null;
-            if (e.target.value == 1) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 1; i <= 151; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-            if (e.target.value == 2) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>關都地區 《金·銀》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 152; i <= 251; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-            if (e.target.value == 3) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 252; i <= 386; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-            if (e.target.value == 4) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 387; i <= 493; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-            if (e.target.value == 5) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 494; i <= 649; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-            if (e.target.value == 6) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 650; i <= 721; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-            if (e.target.value == 7) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 722; i <= 809; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-            if (e.target.value == 8) {
-                let alert = document.createElement('alert');
-                alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`;
-                container.appendChild(alert);
-                for (let i = 810; i <= 898; i++) {
-                    let img = document.createElement('img');
-                    let info = document.createElement('info');
-                    let fileName = i.toString().padStart(3, '0');
-                    let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                    img.setAttribute('src', pathFile);
-                    img.setAttribute('alt', fileName);
-                    info.innerHTML = `<span> No.${fileName}</span>`;
-                    container.appendChild(img);
-                    container.appendChild(info);
-                }
-            }
-        }
-
-        let btnAddEventListener = document.querySelector(".addEventListener");
-        //選擇器
-        btnAddEventListener.addEventListener("click", function (event) {
-            container.innerHTML = null;
-
-            for (let i = 1; i <= 898; i++) {
-                let fileName = i.toString().padStart(3, '0');
-                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                let img = document.createElement('img');
-                let info = document.createElement('info');
-                let alert = document.createElement('alert');
-                img.setAttribute('src', pathFile);
-                img.setAttribute('alt', fileName);
-                info.innerHTML = `<span> No.${fileName}</span>`;
-                if (i == 1) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>城都地區 《紅·綠·藍》</h3></div>`;
-                }
-                if (i == 152) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>關都地區 《金·銀》</h3></div>`;
-                }
-                if (i == 252) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>豐緣地區 《紅寶石·藍寶石》</h3></div>`;
-                }
-                if (i == 387) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>神奧地區 《鑽石·珍珠》</h3></div>`;
-                }
-                if (i == 494) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>合眾地區 《黑·白》</h3></div>`;
-                }
-                if (i == 650) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>卡洛斯地區 《X·Y》</h3></div>`;
-                }
-                if (i == 722) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>阿羅拉地區 《太陽·月亮》</h3></div>`;
-                }
-                if (i == 810) {
-                    alert.innerHTML = `<div class="alert alert-primary text-center" role="alert"><h3>伽勒爾地區 《劍·盾》</h3></div>`;
-                }
-                container.appendChild(alert);
-                container.appendChild(img);
-                container.appendChild(info);
-            }
-
-        })
-        let btnTenslot = document.querySelector(".tenslot");
-
-        //選擇器
-        btnTenslot.onclick = function tenslot() {
-            container.innerHTML = null;
-            for (let e = 1; e <= 10; e++) {
-                let img = document.createElement('img');
-                let info = document.createElement('info');
-                let fileName = (Math.floor(Math.random()*898)+1).toString().padStart(3, '0');
-                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
-                img.setAttribute('src', pathFile);
-                img.setAttribute('alt', fileName);
-                info.innerHTML = `<span> No.${fileName}</span>`;
-                container.appendChild(img);
-                container.appendChild(info);
-            }
-        };
-
-
-        let btnReset = document.querySelector(".reset");
-
-        //選擇器
-        btnReset.onclick = function _reset() {
-            container.innerHTML = null;
-        };
-
-    </script>
-
 </body>
 
 </html>
