@@ -87,14 +87,14 @@
         });
 
         document.querySelector("#plus").addEventListener('click', function () {
-            AddPokemon(_index);
             _index++;
+            AddPokemon(_index);
         })
 
         document.querySelector("#minus").addEventListener('click', function () {
             if (_index > 1) {
-                container.removeChild(container.lastChild);
                 _index--;
+                container.removeChild(container.lastChild);
             }
         })
     </script>
