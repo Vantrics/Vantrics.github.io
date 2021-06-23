@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://kit.fontawesome.com/d9344064ff.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <style>
+        .container{
+            min-width: 960px;
+            max-width: 960px;
+        }
+        i {
+            font-size: 48px;
+        }
+        
+        [box-id] {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            transition: .3s;
+        }
+
+        [box-id].active {
+
+            border: 5px solid red;
+            box-shadow: 0 0 20px red;
+            transition: 0s;
+        }
+
+        #msg {
+            font-size: 36px;
+            text-align: center;
+        }
+    </style>
+    <title>小瑪莉</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div box-id="1" class="col-1"></div>
+            <div box-id="2" class="col-1"></div>
+            <div box-id="3" class="col-1"></div>
+            <div box-id="4" class="col-1"></div>
+
+            <div box-id="5" class="col-1"></div>
+            <div box-id="6" class="col-1"></div>
+            <div box-id="7" class="col-1"></div>
+            <div box-id="8" class="col-1"></div>
+
+            <div box-id="9" class="col-1"></div>
+            <div box-id="10" class="col-1"></div>
+            <div box-id="11" class="col-1"></div>
+            <div box-id="12" class="col-1"></div>
+        </div>
+
+        <div class="row">
+            <div box-id="32" class="col-1"></div>
+            <div class="col-10"></div>
+            <div box-id="13" class="col-1"></div>
+        </div>
+
+        <div class="row">
+            <div box-id="31" class="col-1"></div>
+            <div class="col-10">
+                <p id="msg" class="mx-auto"></p>
+            </div>
+            <div box-id="14" class="col-1"></div>
+        </div>
+
+        <div class="row">
+            <div box-id="30" class="col-1"></div>
+            <div class="col-10"></div>
+            <div box-id="15" class="col-1"></div>
+        </div>
+
+        <div class="row">
+            <div box-id="29" class="col-1"></div>
+            <div class="col-10"></div>
+            <div box-id="16" class="col-1"></div>
+        </div>
+
+        <div class="row">
+            <div box-id="28" class="col-1"></div>
+            <div box-id="27" class="col-1"></div>
+            <div box-id="26" class="col-1"></div>
+            <div box-id="25" class="col-1"></div>
+
+            <div box-id="24" class="col-1"></div>
+            <div box-id="23" class="col-1"></div>
+            <div box-id="22" class="col-1"></div>
+            <div box-id="21" class="col-1"></div>
+
+            <div box-id="20" class="col-1"></div>
+            <div box-id="19" class="col-1"></div>
+            <div box-id="18" class="col-1"></div>
+            <div box-id="17" class="col-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary w-100">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let brickData = [
+            {
+                id: '1',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '2',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '3',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '4',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '5',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '6',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '7',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '8',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '9',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '10',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '11',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '12',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '13',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '14',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '15',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '16',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '17',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '18',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '19',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '20',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '21',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '22',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '23',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '24',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '25',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '26',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '27',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '28',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '29',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '30',
+                color: 'green',
+                icon: 'fab fa-line',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '31',
+                color: 'red',
+                icon: 'fab fa-instagram-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            },
+            {
+                id: '32',
+                color: 'blue',
+                icon: 'fab fa-facebook-square',
+                target: function () {
+                    return `${this.icon.split('-')[1]}`;
+                }
+            }
+        ]
+
+        let bricks = document.querySelectorAll('[box-id]');
+        bricks = Array.from(bricks).sort((a, b) => {
+            return a.getAttributeNode('box-id').value - b.getAttributeNode('box-id').value;
+        });
+        console.log(bricks);
+
+        bricks.forEach((x, index) => {
+            let id = index + 1;
+            let data = brickData.find(x => x.id == id);
+            icon = document.createElement('i');
+            icon.setAttribute('class', data.icon);
+            icon.style.color = data.color;
+            x.appendChild(icon);
+        })
+
+        let steps = 0;
+        let allSteps = 0;
+        let current = 0;
+
+        let speed;
+
+        document.querySelector('button').addEventListener('click', function () {
+            speed = 50;
+            let random = Math.floor(Math.random() * brickData.length) + 1;
+            steps = random ;
+            allSteps = steps;
+            spinAround();
+        });
+        function spinAround() {
+
+            bricks[current].classList.remove('active');
+            current++;
+            if (current >= bricks.length) current = 0;
+
+            bricks[current].classList.add('active');
+            steps--;
+            if (steps > 0) {
+                setTimeout(spinAround, speed);
+            } else {
+                let msgBox = document.querySelector('#msg');
+                let val = brickData[current].target();
+                msgBox.innerText = `中獎的是 ${val}`;
+            }
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
