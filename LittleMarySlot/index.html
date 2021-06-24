@@ -397,7 +397,7 @@
         document.querySelector('button').addEventListener('click', function () {
             speed = 50;
             let random = Math.floor(Math.random() * brickData.length) + 1;
-            steps = random ;
+            steps = random +(3*bricks.length);
             allSteps = steps;
             spinAround();
         });
