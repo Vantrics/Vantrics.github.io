@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+        }
+
+        .container-md {
+            background-color: black;
+            height: 100% !important;
+            max-width: 414px !important;
+            position: absolute;
+            top: 0%;
+            left: calc(50% - 207px);
+        }
+
+        .row {
+            background-color: black;
+            height: 80px;
+            width: 414px !important;
+            position: absolute;
+            bottom: calc(0%);
+            left: calc(50% - 192px);
+        }
+
+        .col-2_5 {
+            border-top: 2px solid transparent;
+            flex: 0 0 20%;
+            max-width: 20%;
+            margin: auto;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            padding: 5px 5px;
+            color:white;
+        }
+        .btn-link:hover {
+            color:teal;
+        }
+        .active {
+            border-top: 2px solid #0d6efd;
+            color: #0d6efd;
+        }
+        .active>button{
+            color: #0d6efd;
+        }
+
+        img {
+            align-items: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="text-warning">Coin : <span class="text-light" id="coin">-</span></span>
+    <div class="container-md">
+        <p class="page info">明細</p>
+        <p class="page notify">通知</p>
+        <p class="page farm">農場</p>
+        <p class="page skill">天賦</p>
+        <p class="page store">商店</p>
+
+        <div class="row">
+            <div id="nav-0" class="navlist col-2_5">
+                <button type="button" class="btn btn-link align-items-center">明細</button>
+            </div>
+            <div id="nav-1" class="navlist col-2_5">
+                <button type="button" class="btn btn-link align-items-center">通知</button>
+            </div>
+            <div id="nav-2" class="navlist col-2_5 active">
+                <button type="button" class="btn btn-link align-items-center">農場</button>
+            </div>
+            <div id="nav-3" class="navlist col-2_5">
+                <button type="button" class="btn btn-link align-items-center">天賦</button>
+            </div>
+            <div id="nav-4" class="navlist col-2_5">
+                <button type="button" class="btn btn-link align-items-center">商店</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+
+    <script>
+        let coin = 125;
+        let info = document.querySelector('#coin');
+        let showCoin = document.querySelector('#coin');
+        showCoin.innerHTML = coin;
+
+        let nav0 = document.querySelector('#nav-0');
+        let nav1 = document.querySelector('#nav-1');
+        let nav2 = document.querySelector('#nav-2');
+        let nav3 = document.querySelector('#nav-3');
+        let nav4 = document.querySelector('#nav-4');
+
+        nav0.addEventListener('click', function() {
+            nav0.classList.add('active');
+            nav1.classList.remove('active');
+            nav2.classList.remove('active');
+            nav3.classList.remove('active');
+            nav4.classList.remove('active');
+        })
+        nav1.addEventListener('click', function() {
+            nav1.classList.add('active');
+            nav0.classList.remove('active');
+            nav2.classList.remove('active');
+            nav3.classList.remove('active');
+            nav4.classList.remove('active');
+        })
+        nav2.addEventListener('click', function() {
+            nav2.classList.add('active');
+            nav0.classList.remove('active');
+            nav1.classList.remove('active');
+            nav3.classList.remove('active');
+            nav4.classList.remove('active');
+        })
+        nav3.addEventListener('click', function() {
+            nav3.classList.add('active');
+            nav0.classList.remove('active');
+            nav1.classList.remove('active');
+            nav2.classList.remove('active');
+            nav4.classList.remove('active');
+        })
+        nav4.addEventListener('click', function() {
+            nav4.classList.add('active');
+            nav0.classList.remove('active');
+            nav1.classList.remove('active');
+            nav2.classList.remove('active');
+            nav3.classList.remove('active');
+        })
+    </script>
+</body>
+
+</html>

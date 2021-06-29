@@ -140,7 +140,7 @@
                 <button type="button" class="btn btn-dark rounded-circle align-items-center num_btn">0</button>
             </div>
             <div class="col-3 d-flex justify-content-center">
-                <button type="button" class="btn btn-dark rounded-circle align-items-center neg_btn">+/-</button>
+                <button type="button" class="btn btn-dark rounded-circle align-items-center neg_btn">-/+</button>
             </div>
             <div class="col-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-success rounded-circle align-items-center is_btn">=</button>
@@ -156,7 +156,7 @@
         let numFirst = 0;
         let numSecond = 0;
         let multi = 0;
-        
+
         const ACBtn = document.querySelector('.AC_btn');
 
         document.querySelector('.plus_btn').addEventListener("click", function (event) {
@@ -172,6 +172,8 @@
                 history.innerText = '';
                 history.innerText += `${numFirst}${Operator}`;
             }
+            let msg = new SpeechSynthesisUtterance('加');
+                window.speechSynthesis.speak(msg);
         });
 
         document.querySelector('.minus_btn').addEventListener("click", function (event) {
@@ -186,6 +188,8 @@
                 Operator = '-';
                 history.innerText = `${numFirst}${Operator}`;
             }
+            let msg = new SpeechSynthesisUtterance('減');
+                window.speechSynthesis.speak(msg);
         });
 
         document.querySelector('.times_btn').addEventListener("click", function (event) {
@@ -200,6 +204,8 @@
                 Operator = '×';
                 history.innerText = `${numFirst}${Operator}`;
             }
+            let msg = new SpeechSynthesisUtterance('乘以');
+                window.speechSynthesis.speak(msg);
         });
 
         document.querySelector('.division_btn').addEventListener("click", function (event) {
@@ -214,6 +220,8 @@
                 Operator = '÷';
                 history.innerText = `${numFirst}${Operator}`;
             }
+            let msg = new SpeechSynthesisUtterance('除以');
+                window.speechSynthesis.speak(msg);
         });
 
         document.querySelector('.is_btn').addEventListener("click", function (event) {
@@ -242,6 +250,9 @@
                 Operator = '';
                 numFirst = 0;
             }
+            let msg = new SpeechSynthesisUtterance(`等於${input.innerText}`);
+                window.speechSynthesis.speak(msg);
+
         });
 
 
@@ -257,6 +268,8 @@
                 Operator = '';
                 multi = 0;
             }
+            let msg = new SpeechSynthesisUtterance('歸零');
+                window.speechSynthesis.speak(msg);
         });
 
         document.querySelector('.backspace_btn').addEventListener("click", function (event) {
@@ -272,11 +285,15 @@
         document.querySelector('.sqrt_btn').addEventListener('click', function () {
             history.innerText = `sqrt(${input.innerText})`;
             input.innerText = Math.sqrt(input.innerText);
+            let msg = new SpeechSynthesisUtterance('根號');
+                window.speechSynthesis.speak(msg);
         });
 
         document.querySelector('.decimal_btn').addEventListener('click', function () {
             if (!input.innerText.includes('.'))
                 input.innerText += '.';
+                let msg = new SpeechSynthesisUtterance('點');
+                window.speechSynthesis.speak(msg);
         });
 
         document.querySelector('.neg_btn').addEventListener('click', function () {
@@ -303,8 +320,11 @@
                     ACBtn.innerText = 'C';
                     input.innerText += x.innerText;
                 }
+                let msg = new SpeechSynthesisUtterance(x.innerText);
+                window.speechSynthesis.speak(msg);
             });
         });
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
