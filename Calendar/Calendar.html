@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/d9344064ff.js" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .today {
+            background-color: cornflowerblue;
+
+        }
+
+        .row {
+            text-align: center;
+            align-items: center;
+        }
+
+        table * {
+            text-align: center;
+        }
+
+        .btn {
+            font-size: 30px;
+            margin: 5px;
+            padding: 0px 15px;
+
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        td:hover {
+            cursor: pointer;
+            background-color: #FFF8DC;
+        }
+    </style>
+</head>
+
+<body cz-shortcut-listen="true">
+    <div class="container">
+        <div class="row">
+            <button type="button" class="btn btn-danger" onclick="Remove()"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" class="btn btn-primary" onclick="MinMonth()"><i class="fas fa-angle-up"></i></button>
+            <button type="button" class="btn btn-primary" onclick="AddMonth()"><i
+                    class="fas fa-angle-down"></i></button>
+            <h2 id="year-month">2021年 6月</h2>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>日</th>
+                    <th>一</th>
+                    <th>二</th>
+                    <th>三</th>
+                    <th>四</th>
+                    <th>五</th>
+                    <th>六</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <!-- Modal Add -->
+    <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white">
+                    <h5 class="modal-title" id="inputModalLabel">排程</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="input-area" class="modal-body">
+                    <input readonly="" id="date" type="text">
+                    <input id="todo-item" type="text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                        onclick="SaveTodoItem()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Info -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="infoModalLabel">變更</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="info-area" class="modal-body">
+                    <input readonly="" id="info-date" type="text">
+                    <input id="info-todo-item" type="text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="EditTodoItem()">修改</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                        onclick="DeleteTodoItem()">刪除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let today = new Date();
+
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let date = today.getDate();
+
+        //每個資料的index
+        let indexItem = '';
+        function Init() {
+            let tbody = document.getElementsByTagName('tbody')[0];
+            tbody.innerHTML = "";
+
+            document.getElementById('year-month').innerText = `${new Date(year, month, 1).getFullYear()}年 ${new Date(year, month, 1).getMonth() + 1}月`
+
+            console.log(year)
+
+            //找出第一天是星期幾
+            let firsDay = new Date(year, month, 1).getDay();//getDay()回傳本地時間星期中的日子（0-6）
+
+            console.log(firsDay)
+            //找出當月有幾天 0是選取每個月全部日期的值  getData()是取每天的值
+            let dayOfMonth = new Date(year, month + 1, 0).getDate();
+
+            console.log(dayOfMonth)
+            let day = 1;
+            //ceil無條件進位
+            let rows = Math.ceil((dayOfMonth + firsDay) / 7);
+            console.log(firsDay)
+            console.log(rows)
+
+            for (var row = 0; row < rows; row++) {
+                let tr = document.createElement('tr');
+                for (let col = 0; col < 7; col++) {
+                    let td = document.createElement('td');
+                    if (row == 0 && col < firsDay) {
+                        //上個月
+                    }
+                    else {
+
+                        if (day <= dayOfMonth) {
+                            td.innerText = day;
+                            // console.log(day)
+                            td.addEventListener('click', function (e) {
+                                console.log(e)
+                                let target;
+
+                                if (e.target.localName == 'li' || e.target.localName == 'ul') {
+                                    indexItem = e.target.getAttribute('index').value;
+                                    target = e.target.offsetParent;
+
+                                    console.log(target)
+                                    $('#infoModal').modal('show');
+
+                                }
+                                else {
+                                    target = e.target;
+                                    console.log(target)
+                                    $('#inputModal').modal('show');
+                                }
+
+
+                                document.getElementById('date').value = `${year}-${month + 1}-${target.childNodes[0].data}`
+                                document.getElementById('info-date').value = `${year}-${month + 1}-${target.childNodes[0].data}`
+                                document.getElementById('info-todo-item').value = `${e.target.innerText}`
+
+
+                            })
+
+                            if (localStorage.getItem(`${year}-${month + 1}-${day}`) != null) {
+                                let ul = document.createElement('ul');
+                                let todoList = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${day}`));
+                                // console.log(todoList)
+                                todoList.forEach((item, index) => {
+                                    let li = document.createElement('li');
+                                    li.setAttribute('index', index)
+                                    li.innerText = item.title;
+                                    document.getElementById('info-date').setAttribute('data-id', index);
+                                    ul.appendChild(li);
+                                });
+                                td.appendChild(ul);
+                            }
+
+                        }
+                        else {
+
+                        }
+                        //下個月
+                        day++;
+                    }
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr)
+            }
+        }
+
+        //呼叫初始化
+        Init();
+        function SaveTodoItem() {
+            let date = document.getElementById('date').value;
+            let todoItem = document.getElementById('todo-item').value;
+
+            let todoObj = { title: todoItem }
+            // console.log(todoObj)
+
+            let todoList = [];
+            if (localStorage.getItem(date) == null) {
+                todoList.push(todoObj);
+            }
+            else {
+
+                todoList = JSON.parse(localStorage.getItem(date))
+
+                todoList.push(todoObj);
+                // console.log(todoList)
+
+            }
+
+            localStorage.setItem(date, JSON.stringify(todoList));
+            Init();
+        }
+
+        function DeleteTodoItem() {
+            if (indexItem != '') {
+                let date = document.getElementById('date').value;
+                console.log(data)
+                //抓key來刪除其中的資料
+                todoList = JSON.parse(localStorage.getItem(date))
+                console.log(todoList)
+                console.log(indexItem)
+                //刪除選取到的索引資料
+                todoList.splice(indexItem, 1)
+                console.log(todoList)
+
+
+                localStorage.setItem(date, JSON.stringify(todoList))
+            }
+            else {
+
+            }
+            Init();
+
+        }
+
+        function EditTodoItem() {
+            let date = document.getElementById('info-date');
+            let todoItem = document.getElementById('info-todo-item').value;
+            todoList = JSON.parse(localStorage.getItem(date.value))
+
+            let indexItems = date.getAttribute('data-id');
+            console.log(todoList)
+            console.log(todoItem)
+            console.log(indexItems)
+            todoList.map((item, index) => {
+                if (indexItems == index) {
+                    item.title = todoItem
+                    console.log(item)
+                    console.log(index)
+
+                }
+                return { title: item.title }
+            });
+            console.log(todoList)
+            localStorage.setItem(date.value, JSON.stringify(todoList))
+            Init();
+
+        }
+
+
+        function AddMonth() {
+            month++;
+            Init();
+        }
+        function MinMonth() {
+            month--;
+            Init();
+        }
+
+        function Remove() {
+            todoList = JSON.parse(localStorage.getItem(date.value))
+            localStorage.clear(todoList)
+            Init();
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
