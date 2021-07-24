@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://kit.fontawesome.com/d9344064ff.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #33415b;
+            color: #fff;
+        }
+
+        a {
+            color: #d0d3da;
+            text-decoration: none;
+            transition: .5s;
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .bg-transparent {
+            background: #33415b;
+            background: linear-gradient(to right, #33415b 0%, #4e648f 50%, #33415b 100%);
+        }
+        .bg-litegray {
+            background: #33415b;
+            background: linear-gradient(to right, #4e648f 0%, #364668 100%);
+        }
+
+        .fab {
+            font-size: 32px;
+        }
+        .col-md-9 > .card-body{
+            height: 100px;
+        }
+    </style>
+    <title>新增資金至您的 Wallet</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">OpenSeafood</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">客服</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            功能</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">我的帳號</a></li>
+                            <li><a class="dropdown-item" href="#">我的收藏</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">帳號隱私</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-xxl">
+        <div class="row bg-transparent" style=" margin-top: 10px; padding-top:15px;">
+            <h2>新增資金至您的 Wallet</h2>
+        </div>
+        <nav aria-label="breadcrumb" style="margin-top: 15px;">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                <li class="breadcrumb-item"><a href="#">會員</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> 新增資金至您的 Wallet</li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <P>新增資金至 Wallet</P>
+            <p>Wallet 的資金可用於在 Seafood 上購買物件及你所想的到藝術品，</p>
+            <p>也支援與其他會員及使用者交易使用。您將可以在下訂單前複核訂單內容。</p>
+        </div>
+
+        <div class="row flex-column-reverse flex-lg-row">
+            <div class="col-12 col-md-8">
+                <div class="card mb-3 bg-litegray">
+                    <div class="row g-0">
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">新增 NT$ 150</h5>
+                                <p class="card-text"><small class="text-info">最低儲值金額</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success float-end totalpay">新增資金</button>
+                </div>
+                <div class="card mb-3 bg-litegray">
+                    <div class="row g-0">
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">新增 NT$ 450</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success float-end totalpay">新增資金</button>
+                </div>
+                <div class="card mb-3 bg-litegray">
+                    <div class="row g-0">
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">新增 NT$ 1,500</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success float-end totalpay">新增資金</button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card text-white bg-dark" style="margin: 30px 0;">
+                    <div class="card-header">你的帳戶</div>
+                    <div class="card-body">
+                        <p class="card-title float-end fs-4">NT$ 0</p>
+                    </div>
+                    <button type="button" style="margin: 5px;" class="btn btn-light">查看使用紀錄</button>
+                    <button type="button" style="margin: 5px;" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">兌換禮物序號</button>
+                </div>
+            </div>
+
+            <div class="modal fade text-dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">兌換禮物或序號碼</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>儲值新增資金或至您的 Wallet</p>
+                        <p class="card-text"><small class="text-muted">序號碼</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">繼續</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <Script>
+                document.querySelector('.totalpay').addEventListener("click", function (event) {
+                    window.location.href='../checkout';
+                });
+            </Script>
+
+            <span>如需詳細資料，請參閱用戶協議。</span>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
