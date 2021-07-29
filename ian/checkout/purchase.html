@@ -39,10 +39,6 @@
         .fab {
             font-size: 32px;
         }
-
-        .col-md-9>.card-body {
-            height: 100px;
-        }
     </style>
     <title>覆核 + 選擇付款</title>
 </head>
@@ -95,15 +91,16 @@
         </nav>
 
         <div class="row flex-column-reverse flex-lg-row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-lg-8">
                 <div class="card text-white bg-dark" style="margin: 30px 0;">
                     <div class="card-body">
+                        <p class="card-text"><small class="" id="num">訂單編號 :</small></p>
                         <p class="card-text">新增資金 <small class="float-end" id="prices">NT$ 0</small></p>
                         <hr>
                         <p class="card-text">小計 : <small class=" float-end" id="sub">NT$ 0</small></p>
                         <hr>
                         <p class="card-text">總額 : <small class="float-end" id="total">NT$ 0</small></p>
-                        所有價格均包含增值稅（如適用）
+                        <small class="float-end">所有價格均包含增值稅（如適用）</small>
                     </div>
 
                     <button type="button" style="margin: 5px;" class="btn btn-success" data-bs-toggle="modal"
@@ -111,7 +108,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-lg-4">
                 <div class="card text-white bg-dark" style="margin: 30px 0;">
                     <div class="card-header">確認付款</div>
                     <div class="card-body">
@@ -148,14 +145,17 @@
                 let sub = 0;
                 let total = 0;
                 const prices = window.localStorage.getItem("prices");
+                const num = window.localStorage.getItem("num");
                 const log = document.getElementById('prices');
                 const sublog = document.getElementById('sub');
                 const tlblog = document.getElementById('total');
+                const numlog = document.getElementById('num');
                 log.innerText =`NT$ ${prices}`;
                 sub = prices;
                 total = sub * tax;
                 sublog.innerText =`NT$ ${sub}`;
                 tlblog.innerText =`NT$ ${total}`;
+                numlog.innerText = `訂單編號 : ${num}`;
 
                 
 
