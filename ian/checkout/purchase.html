@@ -30,6 +30,7 @@
             background: #33415b;
             background: linear-gradient(to right, #33415b 0%, #4e648f 50%, #33415b 100%);
         }
+
         .bg-litegray {
             background: #33415b;
             background: linear-gradient(to right, #4e648f 0%, #364668 100%);
@@ -38,7 +39,8 @@
         .fab {
             font-size: 32px;
         }
-        .col-md-9 > .card-body{
+
+        .col-md-9>.card-body {
             height: 100px;
         }
     </style>
@@ -96,11 +98,11 @@
             <div class="col-12 col-md-8">
                 <div class="card text-white bg-dark" style="margin: 30px 0;">
                     <div class="card-body">
-                        <p class="card-text">新增資金 <small class="float-end">NT$ 0</small></p>
+                        <p class="card-text">新增資金 <small class="float-end" id="prices">NT$ 0</small></p>
                         <hr>
-                        <p class="card-text">小計 : <small class="float-end">NT$ 0</small></p>
+                        <p class="card-text">小計 : <small class=" float-end" id="sub">NT$ 0</small></p>
                         <hr>
-                        <p class="card-text">總額 : <small class="float-end">NT$ 0</small></p>
+                        <p class="card-text">總額 : <small class="float-end" id="total">NT$ 0</small></p>
                         所有價格均包含增值稅（如適用）
                     </div>
 
@@ -116,31 +118,48 @@
                         <p>我們接受下列安全的付款方式：</p>
                         <img src="./img/payment_visa.png" alt="">
                         <p class="card-title"></p>
-                        <p class="card-text"><small class="text-info">當您送出付費資訊時，資料均受到通過數位認證的安全通訊端層 (SSL) 技術保護。</small></p>
+                        <p class="card-text"><small class="text-info">當您送出付費資訊時，資料均受到通過數位認證的安全通訊端層 (SSL) 技術保護。</small>
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="modal fade text-dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">覆核資訊</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>確認無誤</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">繼續</button>
+            <div class="modal fade text-dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">覆核資訊</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>確認無誤</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">繼續</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
             <span>如需詳細資料，請參閱用戶協議。</span>
+            <script>
+                const tax = 1;
+                let sub = 0;
+                let total = 0;
+                const prices = window.localStorage.getItem("prices");
+                const log = document.getElementById('prices');
+                const sublog = document.getElementById('sub');
+                const tlblog = document.getElementById('total');
+                log.innerText =`NT$ ${prices}`;
+                sub = prices;
+                total = sub * tax;
+                sublog.innerText =`NT$ ${sub}`;
+                tlblog.innerText =`NT$ ${total}`;
 
+                
+
+            </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
                 crossorigin="anonymous"></script>

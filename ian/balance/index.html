@@ -30,6 +30,7 @@
             background: #33415b;
             background: linear-gradient(to right, #33415b 0%, #4e648f 50%, #33415b 100%);
         }
+
         .bg-litegray {
             background: #33415b;
             background: linear-gradient(to right, #4e648f 0%, #364668 100%);
@@ -37,9 +38,6 @@
 
         .fab {
             font-size: 32px;
-        }
-        .col-md-9 > .card-body{
-            height: 100px;
         }
     </style>
     <title>新增資金至您的 Wallet</title>
@@ -115,7 +113,7 @@
                     <div class="row g-0">
                         <div class="col-md-9">
                             <div class="card-body">
-                                <h5 class="card-title">新增 NT$ 450</h5>
+                                <h5 class="card-title">新增 NT$ 500</h5>
                             </div>
                         </div>
                     </div>
@@ -125,7 +123,9 @@
                     <div class="row g-0">
                         <div class="col-md-9">
                             <div class="card-body">
-                                <h5 class="card-title">新增 NT$ 1,500</h5>
+                                <h5 class="card-title" id="inputtext">或是新增...</h5>
+                                    <input type="text" class="form-control" maxlength="5" placeholder="NT$" aria-label="Number"
+                                    aria-describedby="basic-addon1">
                             </div>
                         </div>
                     </div>
@@ -145,34 +145,88 @@
                 </div>
             </div>
 
-            <div class="modal fade text-dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">轉帳提領</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>提領資金</p>
-                        <p class="card-text"><small class="text-muted">現金</small></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">繼續</button>
+            <div class="modal fade text-dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">轉帳提領</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>提領資金</p>
+                            <p class="card-text"><small class="text-muted">現金</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">繼續</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
             <Script>
+
+                localStorage.clear();
+                const input = document.querySelector('input');
+                const log = document.getElementById('inputtext');
+                const inputBtm = document.querySelector('.price3');
+
+                input.addEventListener('input', updateValue);
+                inputBtm.disabled = true;
+                let Prices = 0;
+                function updateValue(i) {
+
+                    console.log(i.target.value);
+                    
+                    if (i.target.value >= 150 && i.target.value <= 30000) {
+                        log.textContent = `新增... NT$ ${i.target.value}`;
+                        inputBtm.disabled = false;
+                        Prices = i.target.value;
+                    }
+                    else{
+                        log.textContent = '或是新增...';
+                        inputBtm.disabled = true;
+                    }
+                }
+
+
+
+                //產出訂單編號 2145/10/9 上午8:30:10 =>結果為  os451009083010 + 亂數
+                let Number = '';
+                function randNumber() {
+                    const now = new Date();
+                    var yyyy = now.getFullYear() % 1000;
+                    var MM = (now.getMonth() + 1 < 10 ? '0' : '') + (now.getMonth() + 1);
+                    var dd = (now.getDate() < 10 ? '0' : '') + now.getDate();
+                    var h = (now.getHours() < 10 ? '0' : '') + now.getHours();
+                    var m = (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+                    var s = (now.getSeconds() < 10 ? '0' : '') + now.getSeconds();
+                    Number = yyyy + MM + dd + h + m + s + (Math.round(Math.random() * 89 + 100)).toString();
+                };
+                const userId = '0000';
+                
                 document.querySelector('.price1').addEventListener("click", function (event) {
-                    window.location.href="../checkout?prices='150'";
+                    console.log(randNumber());
+                    window.localStorage.setItem("userId", `${userId}`);
+                    window.localStorage.setItem("prices", "150");
+                    window.localStorage.setItem("num", `fs${Number}`);
+                    window.location.href='../checkout/index.html';
                 });
                 document.querySelector('.price2').addEventListener("click", function (event) {
-                    window.location.href="../checkout?prices='450'";
+                    console.log(randNumber());
+                    window.localStorage.setItem("userId", `${userId}`);
+                    window.localStorage.setItem("prices", "500");
+                    window.localStorage.setItem("num", `ss${Number}`);
+                    window.location.href='../checkout/index.html';
                 });
-                document.querySelector('.price3').addEventListener("click", function (event) {
-                    window.location.href="../checkout?prices='1500'";
+
+                inputBtm.addEventListener("click", function (event) {
+                    console.log(randNumber());
+                    window.localStorage.setItem("userId", `${userId}`);
+                    window.localStorage.setItem("prices", `${Prices}`);
+                    window.localStorage.setItem("num", `ts${Number}`);
+                    window.location.href='../checkout/index.html';
                 });
+
             </Script>
 
             <span>如需詳細資料，請參閱用戶協議。</span>
