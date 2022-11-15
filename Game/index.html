@@ -2,154 +2,248 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="img/icon.png">
-    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="google" content="notranslate">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Hello, world!</title>
-    <style>
-        body {
-            background-color: #1e1e1e;
-        }
 
-        .container-md {
-            background-color: black;
-            height: 100% !important;
-            max-width: 414px !important;
-            position: absolute;
-            top: 0%;
-            left: calc(50% - 207px);
-        }
+	<title>懶人SOP-QNAv2</title>
 
-        .row {
-            background-color: black;
-            height: 80px;
-            width: 414px !important;
-            position: absolute;
-            bottom: calc(0%);
-            left: calc(50% - 192px);
-        }
-
-        .col-2_5 {
-            border-top: 2px solid transparent;
-            flex: 0 0 20%;
-            max-width: 20%;
-            margin: auto;
-            cursor: pointer;
-            transition: .3s;
-        }
-
-        .btn-link {
-            text-decoration: none;
-            padding: 5px 5px;
-            color:white;
-        }
-        .btn-link:hover {
-            color:teal;
-        }
-        .active {
-            border-top: 2px solid #0d6efd;
-            color: #0d6efd;
-        }
-        .active>button{
-            color: #0d6efd;
-        }
-
-        img {
-            align-items: center;
-            width: 100%;
-        }
-    </style>
+	<link rel="shortcut icon" type="image/png" href="#">
+	<link rel="apple-touch-icon" sizes="120x120" href="#">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
-<body>
-    <span class="text-warning">Coin : <span class="text-light" id="coin">-</span></span>
-    <div class="container-md">
-        <p class="page info">明細</p>
-        <p class="page notify">通知</p>
-        <p class="page farm">農場</p>
-        <p class="page skill">天賦</p>
-        <p class="page store">商店</p>
+<body class="bg-light">
+	<div class="container gap-2">
+		<div class="row mt-5">
+			<div class="col-md-12 col-12">
+				<div class="card">
+					<div class="card-body ">
+						<h3 class="card-title">電腦汰換</h3>
+						<p class="card-text exctexts">
+							您好，這裡是負責電腦汰換的廠商。
+							您有預約電腦汰換，請問資料都備份完成了嗎？
+							書籤列匯出了嗎？
+							今天是否方便為您做電腦汰換呢？
+							都沒有問題的話，再跟您確認一下您的工位在哪裡？
+						</p>
+						<a href="#" class="btn btn-primary" id="excBtn">複製</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col-md-12 col-12">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">新人電腦</h3>
+						<p class="card-text newtexts">
+							您好，這裡是負責新人電腦廠商。
+							貴單位下週一有位新人，這裡有他的電腦設備。
+							請問今天是否方便為新人做簽收呢？
+							再跟您確認一下您的工位與新人的位置在哪裡？
+						</p>
+						<a href="#" class="btn btn-primary" id="newBtn">複製</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col-md-12 col-12">
+				<div class="card text-bg-light"></div>
+			</div>
+		</div>
 
-        <div class="row">
-            <div id="nav-0" class="navlist col-2_5">
-                <button type="button" class="btn btn-link align-items-center">明細</button>
-            </div>
-            <div id="nav-1" class="navlist col-2_5">
-                <button type="button" class="btn btn-link align-items-center">通知</button>
-            </div>
-            <div id="nav-2" class="navlist col-2_5 active">
-                <button type="button" class="btn btn-link align-items-center">農場</button>
-            </div>
-            <div id="nav-3" class="navlist col-2_5">
-                <button type="button" class="btn btn-link align-items-center">天賦</button>
-            </div>
-            <div id="nav-4" class="navlist col-2_5">
-                <button type="button" class="btn btn-link align-items-center">商店</button>
-            </div>
-        </div>
-    </div>
+		<div class="row mt-2">
+			<div class="col-md-6 col-12">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title"> BENQ 螢幕散單</h3>
+						<p class="card-text benqtexts" id="benqContainer">
+							您好，這裡是電腦廠商。
+							您先前訂購的 BENQ 24吋 螢幕已經到貨了。
+							請問今天是否方便做簽收呢？
+							再跟您確認一下您的位置在哪裡？
+						</p>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<a href="#" class="btn btn-primary" id="benQBtn">複製</a>
+							</div>
+							<input type="text" class="form-control" maxlength="3" placeholder="24" aria-label="Number"
+								aria-describedby="basic-addon1" id="benqInput">
+							<span class="input-group-text" id="basic-addon1">吋</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-12">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">LG 螢幕散單</h3>
+						<p class="card-text lgtexts" id="lgContainer">
+							您好，這裡是電腦廠商。
+							您先前訂購的 LG 24吋 螢幕已經到貨了。
+							請問今天是否方便做簽收呢？
+							再跟您確認一下您的位置在哪裡？
+						</p>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<a href="#" class="btn btn-primary" id="lgBtn">複製</a>
+							</div>
+							<input type="text" class="form-control" maxlength="3" placeholder="24" aria-label="Number"
+								aria-describedby="basic-addon1" id="lgInput">
+							<span class="input-group-text" id="basic-addon1">吋</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col-md-12 col-12">
+				<div class="card">
+					<div class="card-body">
+						<h3 class="card-title">散單</h3>
+						<p class="card-text itemtexts" id="itemContainer">
+							您好，這裡是電腦廠商。
+							您先前訂購的東西已經到貨了，請問今天是否方便簽收呢？
+							再跟您確認一下您的位置在哪裡？
+						</p>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<a href="#" class="btn btn-primary" id="itemBtn">複製</a>
+							</div>
+							<input type="text" class="form-control" maxlength="99" placeholder="什麼東西"
+								aria-describedby="basic-addon1" id="itemInput">
+							<span class="input-group-text" id="basic-addon1">輸入相應物品</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
-
-    <script>
-        let coin = 125;
-        let info = document.querySelector('#coin');
-        let showCoin = document.querySelector('#coin');
-        showCoin.innerHTML = coin;
-
-        let nav0 = document.querySelector('#nav-0');
-        let nav1 = document.querySelector('#nav-1');
-        let nav2 = document.querySelector('#nav-2');
-        let nav3 = document.querySelector('#nav-3');
-        let nav4 = document.querySelector('#nav-4');
-
-        nav0.addEventListener('click', function() {
-            nav0.classList.add('active');
-            nav1.classList.remove('active');
-            nav2.classList.remove('active');
-            nav3.classList.remove('active');
-            nav4.classList.remove('active');
-        })
-        nav1.addEventListener('click', function() {
-            nav1.classList.add('active');
-            nav0.classList.remove('active');
-            nav2.classList.remove('active');
-            nav3.classList.remove('active');
-            nav4.classList.remove('active');
-        })
-        nav2.addEventListener('click', function() {
-            nav2.classList.add('active');
-            nav0.classList.remove('active');
-            nav1.classList.remove('active');
-            nav3.classList.remove('active');
-            nav4.classList.remove('active');
-        })
-        nav3.addEventListener('click', function() {
-            nav3.classList.add('active');
-            nav0.classList.remove('active');
-            nav1.classList.remove('active');
-            nav2.classList.remove('active');
-            nav4.classList.remove('active');
-        })
-        nav4.addEventListener('click', function() {
-            nav4.classList.add('active');
-            nav0.classList.remove('active');
-            nav1.classList.remove('active');
-            nav2.classList.remove('active');
-            nav3.classList.remove('active');
-        })
-    </script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+	integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.8/dist/sweetalert2.all.min.js"></script>
+<script>
+	let benqContainer = document.getElementById("benqContainer");
+	let lgContainer = document.getElementById("lgContainer");
+	let itemContainer = document.getElementById("itemContainer");
+
+	const benqInput = document.getElementById('benqInput');
+	benqInput.addEventListener('input', benqupdateValue);
+	function benqupdateValue(i) {
+		benqContainer.innerHTML = "您好，這裡是電腦廠商。您先前訂購的 BenQ " + i.target.value + " 吋 螢幕已經到貨了。請問今天是否方便做簽收呢？再跟您確認一下您的位置在哪裡？";
+	}
+	const lgInput = document.getElementById('lgInput');
+	lgInput.addEventListener('input', lgupdateValue);
+	function lgupdateValue(i) {
+		lgContainer.innerHTML = "您好，這裡是電腦廠商。您先前訂購的 LG " + i.target.value + " 吋 螢幕已經到貨了。請問今天是否方便做簽收呢？再跟您確認一下您的位置在哪裡？";
+	}
+	const itemInput = document.getElementById('itemInput');
+	itemInput.addEventListener('input', itemupdateValue);
+	function itemupdateValue(i) {
+		itemContainer.innerHTML = "您好，這裡是電腦廠商。您先前訂購的 " + i.target.value + " 已經到貨了。請問今天是否方便做簽收呢？再跟您確認一下您的位置在哪裡？";
+	}
+	const excBtn = document.getElementById('excBtn')
+
+
+	excBtn.addEventListener('click', function (event) {
+		let range = document.createRange();
+		let texts = document.querySelector('.exctexts');
+		range.selectNode(texts);
+		const selection = window.getSelection();
+		selection.removeAllRanges();
+		selection.addRange(range);
+		document.execCommand('copy');
+		selection.removeAllRanges();
+		Swal.fire({
+			icon: 'success',
+			title: '複製成功',
+			showConfirmButton: false,
+			timer: 1300
+		})
+	})
+	const newBtn = document.getElementById('newBtn')
+	newBtn.addEventListener('click', function (event) {
+		let range = document.createRange();
+		let texts = document.querySelector('.newtexts');
+		range.selectNode(texts);
+		const selection = window.getSelection();
+		selection.removeAllRanges();
+		selection.addRange(range);
+		document.execCommand('copy');
+		selection.removeAllRanges();
+		Swal.fire({
+			icon: 'success',
+			title: '複製成功',
+			showConfirmButton: false,
+			timer: 1300
+		})
+	})
+	const benQBtn = document.getElementById('benQBtn')
+	benQBtn.addEventListener('click', function (event) {
+		let range = document.createRange();
+		let texts = document.querySelector('.benqtexts');
+		range.selectNode(texts);
+		const selection = window.getSelection();
+		selection.removeAllRanges();
+		selection.addRange(range);
+		document.execCommand('copy');
+		selection.removeAllRanges();
+		Swal.fire({
+			icon: 'success',
+			title: '複製成功',
+			showConfirmButton: false,
+			timer: 1300
+		})
+	})
+	const lgBtn = document.getElementById('lgBtn')
+	lgBtn.addEventListener('click', function (event) {
+		let range = document.createRange();
+		let texts = document.querySelector('.lgtexts');
+		range.selectNode(texts);
+		const selection = window.getSelection();
+		selection.removeAllRanges();
+		selection.addRange(range);
+		document.execCommand('copy');
+		selection.removeAllRanges();
+		Swal.fire({
+			icon: 'success',
+			title: '複製成功',
+			showConfirmButton: false,
+			timer: 1300
+		})
+	})
+	const itemBtn = document.getElementById('itemBtn')
+	itemBtn.addEventListener('click', function (event) {
+		let range = document.createRange();
+		let texts = document.querySelector('.itemtexts');
+		range.selectNode(texts);
+		const selection = window.getSelection();
+		selection.removeAllRanges();
+		selection.addRange(range);
+		document.execCommand('copy');
+		selection.removeAllRanges();
+		Swal.fire({
+			icon: 'success',
+			title: '複製成功',
+			showConfirmButton: false,
+			timer: 1300
+		})
+	})
+
+
+</script>
 
 </html>
